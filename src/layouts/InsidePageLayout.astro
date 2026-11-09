@@ -4,6 +4,7 @@ import AuthorGeoBox from '../components/shared/AuthorGeoBox.astro';
 import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
 import TestimonialSection from '../components/shared/TestimonialSection.astro';
 import ContactForm from '../components/shared/ContactForm.astro';
+import HeroWave from '../components/ui/HeroWave.astro';
 
 interface BreadcrumbItem {
   name: string;
@@ -117,6 +118,9 @@ const breadcrumbSchema = {
         </div>
       </div>
     </div>
+
+    <!-- SVG Wave Divider (Static on Inside Pages) -->
+    <HeroWave animated={false} id="inside" />
   </section>
 
   <!-- MDA 4-Pillar Value Proposition Bar (Không Border) -->
@@ -244,6 +248,7 @@ const breadcrumbSchema = {
     );
     border-bottom: 1px solid var(--border-subtle);
     overflow: hidden;
+    position: relative;
   }
 
   .inside-hero-grid {
@@ -256,7 +261,8 @@ const breadcrumbSchema = {
   .inside-hero-left {
     padding-left: max(var(--container-pad-x), calc((100% - var(--container-max)) / 2 + var(--container-pad-x)));
     padding-right: clamp(24px, 4vw, 48px);
-    padding-block: clamp(40px, 5vw, 64px);
+    padding-top: clamp(40px, 5vw, 64px);
+    padding-bottom: clamp(65px, 8vw, 100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -338,8 +344,9 @@ const breadcrumbSchema = {
 
   .inside-hero-overlay {
     position: absolute;
-    bottom: 20px;
+    bottom: clamp(60px, 7vw, 90px);
     left: 20px;
+    z-index: 5;
   }
 
   .banner-pill {

@@ -9,3 +9,5 @@
 5. Inside page farmtable-pillars-bar - bỏ border - và chuyển tên class thành mda-pillar-bar
 
 6. open-drawer-btn - bỏ border/background - tăng size/font của icon phù hợp
+
+7. Tích hợp SVG wave divider vào hero section của Homepage (animate) và Inside page (static), đồng bộ màu sắc thương hiệu MDA

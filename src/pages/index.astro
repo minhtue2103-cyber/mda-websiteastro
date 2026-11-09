@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TestimonialSection from '../components/shared/TestimonialSection.astro';
 import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
 import FaqAccordion from '../components/ui/FaqAccordion.astro';
+import HeroWave from '../components/ui/HeroWave.astro';
 
 const heroSlides = [
   {
@@ -104,6 +105,9 @@ const expertFaqs = [
         </div>
       </div>
     </div>
+
+    <!-- SVG Wave Divider (Animated on Homepage) -->
+    <HeroWave animated={true} id="home" />
   </section>
 
   <!-- SECTION 2: VÌ SAO CHỌN CHÚNG TÔI (Agro-Export Knowledge Style) -->
@@ -425,7 +429,8 @@ const expertFaqs = [
   .hero-bleed-left {
     padding-left: max(var(--container-pad-x), calc((100% - var(--container-max)) / 2 + var(--container-pad-x)));
     padding-right: clamp(24px, 4vw, 56px);
-    padding-block: clamp(48px, 6vw, 84px);
+    padding-top: clamp(48px, 6vw, 84px);
+    padding-bottom: clamp(75px, 9vw, 115px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -506,7 +511,7 @@ const expertFaqs = [
 
   .slider-dots--floating {
     position: absolute;
-    bottom: 24px;
+    bottom: clamp(65px, 8vw, 100px);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
