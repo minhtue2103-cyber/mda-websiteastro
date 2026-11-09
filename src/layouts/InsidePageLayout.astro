@@ -41,7 +41,7 @@ const {
   badge = "MDA Knowledge Ecosystem",
   heroTitle,
   lead,
-  heroImage = "https://picsum.photos/1200/460",
+  heroImage = "https://picsum.photos/1200/800",
   breadcrumbs,
   subNavigation = [],
   blufText,
@@ -64,24 +64,24 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout title={title} description={description} schema={breadcrumbSchema}>
-  <!-- Page Hero & Header (Farm Table Aesthetic) -->
-  <section class="inside-hero section--soft">
-    <div class="container">
-      <!-- Breadcrumb -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        {breadcrumbs.map((b, i) => (
-          <>
-            {i > 0 && <span class="breadcrumb__separator">/</span>}
-            {i === breadcrumbs.length - 1 ? (
-              <span class="breadcrumb__current" aria-current="page">{b.name}</span>
-            ) : (
-              <a href={b.url}>{b.name}</a>
-            )}
-          </>
-        ))}
-      </nav>
+  <!-- Page Hero & Header (Farm Table / ast-archive-description Bleed-Right Style) -->
+  <section class="inside-hero inside-hero--bleed">
+    <div class="inside-hero-grid">
+      <!-- Left Column: Breadcrumb, Badge, Title, Lead & Sub-nav (aligned with container left) -->
+      <div class="inside-hero-left">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          {breadcrumbs.map((b, i) => (
+            <>
+              {i > 0 && <span class="breadcrumb__separator">/</span>}
+              {i === breadcrumbs.length - 1 ? (
+                <span class="breadcrumb__current" aria-current="page">{b.name}</span>
+              ) : (
+                <a href={b.url}>{b.name}</a>
+              )}
+            </>
+          ))}
+        </nav>
 
-      <div class="inside-hero__content">
         <span class="badge badge--farmtable">{badge}</span>
         <h1 class="page-hero__title">{heroTitle}</h1>
         <p class="lead page-hero__lead">{lead}</p>
@@ -100,24 +100,28 @@ const breadcrumbSchema = {
         )}
       </div>
 
-      <!-- Farm Table Style Visual Banner (Lorem Image) -->
-      <div class="inside-hero__banner-wrap">
-        <img
-          src={heroImage}
-          alt={heroTitle}
-          width="1200"
-          height="460"
-          class="inside-hero__banner-img"
-          loading="eager"
-        />
-        <div class="inside-hero__banner-overlay">
-          <span class="banner-pill">
-            <i class="bi bi-patch-check-fill"></i> Mekong Delta Agri &bull; Hub Tri Thức XNK Nông Sản &amp; AI
-          </span>
+      <!-- Right Column: Photo Full Chiều Cao, Width Tràn Ra Phải Màn Hình (Không Border) -->
+      <div class="inside-hero-right">
+        <div class="inside-hero-photo-wrap">
+          <img
+            src={heroImage}
+            alt={heroTitle}
+            class="inside-hero-photo"
+            loading="eager"
+          />
+          <div class="inside-hero-overlay">
+            <span class="banner-pill">
+              <i class="bi bi-patch-check-fill"></i> Mekong Delta Agri &bull; Hub Tri Thức XNK Nông Sản &amp; AI
+            </span>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Farm Table Style 4-Pillar Value Proposition Bar -->
+  <!-- Farm Table Style 4-Pillar Value Proposition Bar -->
+  <section class="pillars-bar-section">
+    <div class="container">
       <div class="farmtable-pillars-bar">
         <div class="pillar-item">
           <i class="bi bi-file-earmark-check-fill"></i>
@@ -151,131 +155,59 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- Main Content Grid (8/4) -->
+  <!-- Main Content Grid (100% Full Width — BỎ SIDEBAR) -->
   <section class="section section--white inside-content-section">
     <div class="container">
-      <div class="grid-8-4">
-        <!-- Main Column (Prose) -->
-        <article class="inside-main-content">
-          {blufText && (
-            <div class="geo-bluf-box">
-              <div class="geo-bluf-box__title">
-                <i class="bi bi-lightning-charge-fill"></i>
-                <span>Tóm Tắt Nhanh (GEO BLUF)</span>
+      <article class="inside-main-content inside-main-content--full">
+        <!-- Course Metadata Full-Width Card (if courseSummary provided) -->
+        {courseSummary && (
+          <div class="course-meta-full-card">
+            <div class="course-meta-full-card__header">
+              <i class="bi bi-info-circle-fill"></i>
+              <h4>Thông Tin Chương Trình Đào Tạo</h4>
+            </div>
+            <div class="course-meta-full-grid">
+              <div class="meta-item">
+                <span class="meta-label">Hình thức:</span>
+                <strong class="meta-value">{courseSummary.format}</strong>
               </div>
-              <p>{blufText}</p>
-            </div>
-          )}
-
-          <div class="prose inside-prose">
-            <slot />
-          </div>
-        </article>
-
-        <!-- Sticky Sidebar (Farm Table Aesthetic) -->
-        <aside class="inside-sidebar">
-          <div class="sticky-sidebar-inner">
-            <!-- Expert Profile Card (Ms Jen Phạm) -->
-            <div class="sidebar-box expert-quick-card">
-              <div class="expert-quick-card__header">
-                <img
-                  src="/media/profile-jen-pham.webp"
-                  alt="Ms Jen Phạm - MDA Hub"
-                  width="72"
-                  height="72"
-                  class="expert-quick-card__avatar"
-                  loading="lazy"
-                />
-                <div>
-                  <span class="expert-quick-card__tag">Huấn Luyện Viên 1-1</span>
-                  <h4 class="expert-quick-card__name">Ms Jen Phạm</h4>
-                  <span class="expert-quick-card__role">Đồng sáng lập MDA Hub</span>
-                </div>
+              <div class="meta-item">
+                <span class="meta-label">Thời lượng:</span>
+                <strong class="meta-value">{courseSummary.duration}</strong>
               </div>
-              <p class="expert-quick-card__bio">
-                Nhiều năm trực tiếp điều hành xuất khẩu trái cây chế biến sâu &amp; tươi sang Hoa Kỳ, Úc, Canada và EU. Huấn luyện cầm tay chỉ việc trên bộ chứng từ thật.
-              </p>
-              <a
-                href="https://forms.google.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn--secondary btn--sm btn-full-width"
-              >
-                <i class="bi bi-chat-dots-fill"></i> Đăng Ký Tư Vấn 1-1
-              </a>
-            </div>
-
-            <!-- Service Tree Navigation -->
-            <div class="sidebar-box service-tree-box">
-              <h4 class="sidebar-title">
-                <i class="bi bi-diagram-3-fill"></i> Cây Dịch Vụ MDA
-              </h4>
-              <ul class="service-tree-list">
-                <li>
-                  <a href="/dich-vu/">
-                    <i class="bi bi-chevron-right"></i> Tổng quan hệ sinh thái
-                  </a>
-                </li>
-                <li>
-                  <a href="/dich-vu/dao-tao-xnk-1-1/">
-                    <i class="bi bi-chevron-right"></i> Đào tạo XNK 1-1 Thực chiến
-                  </a>
-                </li>
-                <li class="has-nested-tree">
-                  <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">
-                    <i class="bi bi-chevron-right"></i> Đào tạo Doanh nghiệp (In-house)
-                  </a>
-                  <ul class="nested-tree-list">
-                    <li>
-                      <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">
-                        &bull; Ứng dụng AI cho DN XNK
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">
-                        &bull; AI Marketing Nông sản
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Course Summary Box (if provided) -->
-            {courseSummary && (
-              <div class="sidebar-box course-meta-box">
-                <h4 class="sidebar-title">
-                  <i class="bi bi-info-circle-fill"></i> Thông Tin Khóa Học
-                </h4>
-                <ul class="course-meta-list">
-                  <li>
-                    <strong>Hình thức:</strong>
-                    <span>{courseSummary.format}</span>
-                  </li>
-                  <li>
-                    <strong>Thời lượng:</strong>
-                    <span>{courseSummary.duration}</span>
-                  </li>
-                  <li>
-                    <strong>Giảng viên:</strong>
-                    <span>{courseSummary.instructor}</span>
-                  </li>
-                </ul>
-                <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-full-width">
-                  <i class="bi bi-stars"></i> Đăng Ký Tư Vấn (Google Form)
+              <div class="meta-item">
+                <span class="meta-label">Giảng viên / Chuyên gia:</span>
+                <strong class="meta-value">{courseSummary.instructor}</strong>
+              </div>
+              <div class="meta-action">
+                <a
+                  href="https://forms.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--secondary btn--sm"
+                >
+                  <i class="bi bi-clipboard2-check"></i> Đăng Ký Tư Vấn (Google Form)
                 </a>
               </div>
-            )}
-
-            <!-- Hotline Box -->
-            <div class="sidebar-box hotline-box">
-              <span class="hotline-tag">Tư vấn viên trực tiếp:</span>
-              <p class="hotline-phone"><i class="bi bi-telephone-outbound-fill"></i> 0904.622.122</p>
-              <p class="hotline-note">Ms Jen Phạm &amp; Mr. Tuệ Phạm (Zalo / Call hỗ trợ 24/7)</p>
             </div>
           </div>
-        </aside>
-      </div>
+        )}
+
+        {blufText && (
+          <div class="geo-bluf-box">
+            <div class="geo-bluf-box__title">
+              <i class="bi bi-lightning-charge-fill"></i>
+              <span>Tóm Tắt Nhanh (GEO BLUF)</span>
+            </div>
+            <p>{blufText}</p>
+          </div>
+        )}
+
+        <!-- Prose: 100% Full Width -->
+        <div class="prose inside-prose inside-prose--full">
+          <slot />
+        </div>
+      </article>
     </div>
   </section>
 
@@ -298,34 +230,47 @@ const breadcrumbSchema = {
 
 <style>
   /* =====================================================================
-     HERO SECTION (Farm Table Style)
+     HERO SECTION (Farm Table / ast-archive-description Bleed-Right Style)
      ===================================================================== */
-  .inside-hero {
-    padding-block: 36px 48px;
+  .inside-hero--bleed {
+    padding-block: 0;
     background-color: #f7faf5;
     background-image: repeating-linear-gradient(
       45deg,
-      rgba(100, 116, 139, 0.05) 0px,
-      rgba(100, 116, 139, 0.05) 1px,
+      rgba(100, 116, 139, 0.06) 0px,
+      rgba(100, 116, 139, 0.06) 1px,
       transparent 1px,
       transparent 16px
     );
     border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
   }
 
-  .inside-hero__content {
-    max-width: 920px;
-    margin-bottom: 28px;
+  .inside-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 480px;
+  }
+
+  .inside-hero-left {
+    padding-left: max(var(--container-pad-x), calc((100% - var(--container-max)) / 2 + var(--container-pad-x)));
+    padding-right: clamp(24px, 4vw, 48px);
+    padding-block: clamp(40px, 5vw, 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .badge--farmtable {
     background: var(--primary-dark);
     color: #ffffff;
     font-weight: 700;
+    align-self: flex-start;
   }
 
   .page-hero__title {
-    font-size: clamp(2rem, 3.2vw, 2.6rem);
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
     margin: 12px 0 16px;
     line-height: 1.25;
     color: var(--primary-deep);
@@ -354,7 +299,7 @@ const breadcrumbSchema = {
     font-weight: 600;
     color: var(--text-primary);
     transition: all var(--transition-fast);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   }
 
   .sub-nav-pill:hover,
@@ -364,27 +309,37 @@ const breadcrumbSchema = {
     border-color: var(--primary-dark);
   }
 
-  /* Farm Table Style Landscape Banner */
-  .inside-hero__banner-wrap {
+  /* Right Column: Full Height, Borderless Photo Bleeding to Right Edge */
+  .inside-hero-right {
     position: relative;
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    aspect-ratio: 16 / 7;
-    background: var(--primary-50);
-    margin-bottom: 24px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
   }
 
-  .inside-hero__banner-img {
+  .inside-hero-photo-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    background: var(--primary-50);
+  }
+
+  .inside-hero-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 0;
+    display: block;
   }
 
-  .inside-hero__banner-overlay {
+  .inside-hero-overlay {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
+    bottom: 20px;
+    left: 20px;
   }
 
   .banner-pill {
@@ -400,12 +355,20 @@ const breadcrumbSchema = {
     gap: 6px;
   }
 
-  /* Farm Table Value Proposition Bar */
+  /* =====================================================================
+     PILLARS BAR SECTION
+     ===================================================================== */
+  .pillars-bar-section {
+    padding-block: 28px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
   .farmtable-pillars-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    background: #ffffff;
+    background: var(--bg-secondary);
     border-radius: var(--card-radius);
     padding: 20px 24px;
     border: 1px solid var(--border-subtle);
@@ -436,196 +399,95 @@ const breadcrumbSchema = {
   }
 
   /* =====================================================================
-     CONTENT & SIDEBAR
+     FULL-WIDTH MAIN CONTENT (BỎ SIDEBAR, 100% WIDTH)
      ===================================================================== */
   .inside-content-section {
     padding-block: var(--section-py-desktop);
   }
 
-  .inside-prose {
+  .inside-main-content--full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .inside-prose--full {
+    max-width: 100%;
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
-  .inside-sidebar {
-    position: relative;
-  }
-
-  .sticky-sidebar-inner {
-    position: sticky;
-    top: 96px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .sidebar-box {
-    background: #ffffff;
+  /* Course Meta Full-Width Card */
+  .course-meta-full-card {
+    background: var(--primary-50);
+    border: 1px solid var(--primary-light);
     border-radius: var(--card-radius);
-    padding: 24px;
-    border: 1px solid var(--border-subtle);
+    padding: 22px 28px;
+    margin-bottom: 32px;
     box-shadow: var(--shadow-sm);
   }
 
-  /* Expert Quick Card */
-  .expert-quick-card {
-    border-top: 4px solid var(--primary-light);
-    background: linear-gradient(180deg, #ffffff 0%, #fafcf8 100%);
-  }
-
-  .expert-quick-card__header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 12px;
-  }
-
-  .expert-quick-card__avatar {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--primary-light);
-    flex-shrink: 0;
-  }
-
-  .expert-quick-card__tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    text-transform: uppercase;
-    display: block;
-  }
-
-  .expert-quick-card__name {
-    font-size: 1.1rem;
-    color: var(--primary-deep);
-    margin: 2px 0;
-  }
-
-  .expert-quick-card__role {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-    display: block;
-  }
-
-  .expert-quick-card__bio {
-    font-size: 0.86rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-    margin: 0 0 16px;
-  }
-
-  /* Service Tree */
-  .sidebar-title {
-    font-size: 1.05rem;
-    color: var(--primary-deep);
-    margin: 0 0 16px;
+  .course-meta-full-card__header {
     display: flex;
     align-items: center;
     gap: 8px;
-    border-bottom: 2px solid var(--primary-light);
-    padding-bottom: 8px;
+    margin-bottom: 14px;
   }
 
-  .service-tree-list {
-    list-style: none;
-    padding: 0;
+  .course-meta-full-card__header i {
+    font-size: 20px;
+    color: var(--primary-dark);
+  }
+
+  .course-meta-full-card__header h4 {
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .service-tree-list a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.92rem;
-    color: var(--text-primary);
-    font-weight: 600;
-  }
-
-  .service-tree-list a:hover {
-    color: var(--primary-dark);
-    padding-left: 4px;
-  }
-
-  .nested-tree-list {
-    list-style: none;
-    padding-left: 20px;
-    margin: 8px 0 4px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .nested-tree-list a {
-    font-size: 0.86rem;
-    font-weight: normal;
-    color: var(--text-secondary);
-  }
-
-  /* Course Meta Box */
-  .course-meta-box {
-    background: #ffffff;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .course-meta-list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 0.9rem;
-  }
-
-  .course-meta-list li {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px dashed var(--border-subtle);
-    padding-bottom: 6px;
-  }
-
-  .btn-full-width {
-    width: 100%;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-  }
-
-  /* Hotline Box */
-  .hotline-box {
-    background: var(--primary-50);
-    border-left: 4px solid var(--primary-light);
-  }
-
-  .hotline-tag {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--primary-dark);
-    text-transform: uppercase;
-  }
-
-  .hotline-phone {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.1rem;
     color: var(--primary-deep);
-    margin: 6px 0 2px;
   }
 
-  .hotline-note {
-    font-size: 0.82rem;
+  .course-meta-full-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .meta-label {
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 
-  /* Responsive */
+  .meta-value {
+    font-size: 0.95rem;
+    color: var(--primary-deep);
+  }
+
+  /* =====================================================================
+     RESPONSIVE BREAKPOINTS
+     ===================================================================== */
   @media (max-width: 992px) {
+    .inside-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .inside-hero-left {
+      padding-inline: var(--container-pad-x);
+      padding-block: 40px 24px;
+    }
+
+    .inside-hero-right {
+      height: 380px;
+      min-height: 380px;
+    }
+
     .farmtable-pillars-bar {
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
@@ -633,8 +495,18 @@ const breadcrumbSchema = {
   }
 
   @media (max-width: 576px) {
+    .inside-hero-right {
+      height: 260px;
+      min-height: 260px;
+    }
+
     .farmtable-pillars-bar {
       grid-template-columns: 1fr;
+    }
+
+    .course-meta-full-grid {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 </style>

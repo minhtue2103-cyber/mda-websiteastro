@@ -51,59 +51,55 @@ const expertFaqs = [
   title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Nông sản"
   description="Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Huấn luyện thực chiến 1-1 cùng Ms Jen Phạm, tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI chuyên sâu cho doanh nghiệp XNK."
 >
-  <!-- SECTION 1: HERO & WELCOME TO MDA AGRO KNOWLEDGE HUB -->
-  <section class="section section--soft hero-section">
-    <div class="container">
-      <div class="grid-2 hero-grid">
-        <!-- Left Column: Chào Mừng & Định Vị -->
-        <div class="hero-left">
-          <span class="badge">Cộng đồng TP.HCM về Chứng từ &amp; AI XNK</span>
-          <h1 class="section-title hero-title">
-            Chào mừng đến với Trung tâm Tri thức Nông sản &amp; XNK MDA
-          </h1>
-          <p class="lead hero-lead">
-            <strong>MDA Hub</strong> là hệ sinh thái tri thức và chứng từ thương mại toàn diện dành cho ngành nông sản Việt Nam. Dưới sự dẫn dắt chuyên môn của <strong>Ms Jen Phạm</strong> và Hội đồng Pháp lý MDA, chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>), phân loại mã HS chính xác và tích hợp AI an toàn cho doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
-          </p>
-          <div class="hero-cta-group">
-            <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
-              <i class="bi bi-clipboard2-check"></i> Đăng Ký Tư Vấn Khóa Học
-            </a>
-            <a href="/dich-vu/" class="btn btn--outline">
-              <i class="bi bi-arrow-right-circle"></i> Khám Phá Dịch Vụ
-            </a>
-          </div>
+  <!-- SECTION 1: HERO & WELCOME TO MDA AGRO KNOWLEDGE HUB (Farm Table Style Bleed-Right) -->
+  <section class="hero-section hero-section--bleed">
+    <div class="hero-grid hero-grid--bleed">
+      <!-- Left Column: Chào Mừng & Định Vị (aligned with container left) -->
+      <div class="hero-left hero-bleed-left">
+        <span class="badge">Cộng đồng TP.HCM về Chứng từ &amp; AI XNK</span>
+        <h1 class="section-title hero-title">
+          Chào mừng đến với Trung tâm Tri thức Nông sản &amp; XNK MDA
+        </h1>
+        <p class="lead hero-lead">
+          <strong>MDA Hub</strong> là hệ sinh thái tri thức và chứng từ thương mại toàn diện dành cho ngành nông sản Việt Nam. Dưới sự dẫn dắt chuyên môn của <strong>Ms Jen Phạm</strong> và Hội đồng Pháp lý MDA, chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>), phân loại mã HS chính xác và tích hợp AI an toàn cho doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
+        </p>
+        <div class="hero-cta-group">
+          <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+            <i class="bi bi-clipboard2-check"></i> Đăng Ký Tư Vấn Khóa Học
+          </a>
+          <a href="/dich-vu/" class="btn btn--outline">
+            <i class="bi bi-arrow-right-circle"></i> Khám Phá Dịch Vụ
+          </a>
         </div>
+      </div>
 
-        <!-- Right Column: Slider Hình Ảnh Trực Quan (Chỉ hình ảnh) -->
-        <div class="hero-right">
-          <div class="hero-slider" id="heroSlider">
-            <div class="hero-slides-wrapper" id="heroSlidesTrack">
-              {heroSlides.map((slide, index) => (
-                <div class={`hero-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
-                  <div class="hero-slide__image-wrap">
-                    <img
-                      src={slide.image}
-                      alt={slide.alt}
-                      width="600"
-                      height="380"
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                    />
-                  </div>
+      <!-- Right Column: Photo Full Chiều Cao, Width Tràn Ra Phải Màn Hình (Không Border) -->
+      <div class="hero-right hero-bleed-right">
+        <div class="hero-slider hero-slider--full" id="heroSlider">
+          <div class="hero-slides-wrapper" id="heroSlidesTrack">
+            {heroSlides.map((slide, index) => (
+              <div class={`hero-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
+                <div class="hero-slide__image-wrap hero-slide__image-wrap--full">
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
+          </div>
 
-            <!-- Slider Dots -->
-            <div class="slider-dots" id="sliderDots">
-              {heroSlides.map((_, i) => (
-                <button
-                  type="button"
-                  class={`dot-btn ${i === 0 ? 'active' : ''}`}
-                  data-slide={i}
-                  aria-label={`Chuyển đến hình ảnh ${i + 1}`}
-                ></button>
-              ))}
-            </div>
+          <!-- Slider Dots -->
+          <div class="slider-dots slider-dots--floating" id="sliderDots">
+            {heroSlides.map((_, i) => (
+              <button
+                type="button"
+                class={`dot-btn ${i === 0 ? 'active' : ''}`}
+                data-slide={i}
+                aria-label={`Chuyển đến hình ảnh ${i + 1}`}
+              ></button>
+            ))}
           </div>
         </div>
       </div>
@@ -378,10 +374,10 @@ const expertFaqs = [
 
 <style>
   /* =====================================================================
-     HERO SECTION (Diagonal 45-degree grey line pattern)
+     HERO SECTION (Farm Table Style Bleed-Right & 45-degree diagonal pattern)
      ===================================================================== */
-  .hero-section {
-    padding-block: var(--section-py-desktop);
+  .hero-section--bleed {
+    padding-block: 0;
     background-color: #f8faf6;
     background-image: repeating-linear-gradient(
       45deg,
@@ -392,10 +388,23 @@ const expertFaqs = [
     );
     position: relative;
     border-bottom: 1px solid var(--border-subtle);
+    overflow: hidden;
   }
 
-  .hero-grid {
-    align-items: center;
+  .hero-grid--bleed {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    min-height: 560px;
+  }
+
+  .hero-bleed-left {
+    padding-left: max(var(--container-pad-x), calc((100% - var(--container-max)) / 2 + var(--container-pad-x)));
+    padding-right: clamp(24px, 4vw, 56px);
+    padding-block: clamp(48px, 6vw, 84px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero-title {
@@ -412,61 +421,95 @@ const expertFaqs = [
     gap: 14px;
   }
 
-  /* Slider - Image only */
-  .hero-slider {
+  /* Slider - Full height, No border, Bleeding to right edge */
+  .hero-bleed-right {
     position: relative;
-    background: #ffffff;
-    border-radius: var(--card-radius);
-    padding: 14px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-subtle);
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .hero-slider--full {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
   }
 
   .hero-slide {
     display: none;
-    flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 
   .hero-slide.active {
     display: flex;
   }
 
-  .hero-slide__image-wrap {
+  .hero-slide__image-wrap--full {
     position: relative;
-    aspect-ratio: 16 / 10;
-    border-radius: 12px;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 0;
     overflow: hidden;
     background: var(--primary-50);
   }
 
-  .hero-slide__image-wrap img {
+  .hero-slide__image-wrap--full img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    border: none;
+    border-radius: 0;
   }
 
-  .slider-dots {
+  .slider-dots--floating {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
-    margin-top: 14px;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(6px);
+    padding: 6px 14px;
+    border-radius: 20px;
+    z-index: 5;
   }
 
   .dot-btn {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: none;
-    background: var(--border-subtle);
+    background: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     transition: all var(--transition-fast);
   }
 
   .dot-btn.active {
-    background: var(--secondary);
-    width: 24px;
-    border-radius: 10px;
+    background: #ffffff;
+    width: 22px;
+    border-radius: 8px;
   }
 
   /* =====================================================================
@@ -895,9 +938,25 @@ const expertFaqs = [
       gap: 36px;
     }
 
-    .hero-grid {
+    .hero-grid--bleed {
       grid-template-columns: 1fr;
-      gap: 32px;
+    }
+
+    .hero-bleed-left {
+      padding-inline: var(--container-pad-x);
+      padding-block: 40px 28px;
+    }
+
+    .hero-bleed-right {
+      height: 380px;
+      min-height: 380px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero-bleed-right {
+      height: 280px;
+      min-height: 280px;
     }
   }
 </style>
