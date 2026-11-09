@@ -1,16 +1,59 @@
 ---
 interface Props {
+  role?: 'jen-pham' | 'legal' | 'tue-pham' | string;
   extended?: boolean;
 }
 
-const { extended = false } = Astro.props;
+const { role = 'tue-pham', extended = false } = Astro.props;
+
+interface AuthorProfile {
+  name: string;
+  tag: string;
+  jobTitle: string;
+  avatar: string;
+  bio: string;
+  zalo?: string;
+  email: string;
+}
+
+const profiles: Record<string, AuthorProfile> = {
+  'jen-pham': {
+    name: 'Mrs Jen Phạm',
+    tag: 'Đồng Sáng Lập & Chuyên Gia Huấn Luyện 1-1',
+    jobTitle: 'Chuyên gia Chiến lược XNK & Ứng dụng AI Nông sản | Đồng sáng lập MDA Hub',
+    avatar: '/media/avatar-jen-pham.svg',
+    bio: 'Với nhiều năm trực tiếp điều hành xuất khẩu nông sản chế biến sâu (trái cây sấy thăng hoa, nông sản đặc sản ĐBSCL) sang các thị trường khắt khe như Hoa Kỳ, Úc, Canada và EU. Trực tiếp mổ xẻ chứng từ sống (Invoice, Packing List, B/L, L/C MT700, FDA/BICON) và đào tạo nhân sự XNK làm chủ năng lực Quản lý ngoại lệ (Exception Management).',
+    zalo: '0904.622.122',
+    email: 'tue.pham@mekongdeltaagri.com',
+  },
+  'legal': {
+    name: 'Ban Pháp Lý & Tuân Thủ Hải Quan MDA',
+    tag: 'MDA Trade Compliance & Legal Desk',
+    jobTitle: 'Hội đồng Thẩm định Pháp lý Thương mại Quốc tế, Mã HS & SPS',
+    avatar: '/media/avatar-legal-desk.svg',
+    bio: 'Tư vấn chuyên sâu về các thông tư thuế hải quan cập nhật (85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC), quy tắc thực hành tín dụng chứng từ (UCP 600, ISBP 821) và rào cản kiểm dịch (FDA, BICON, SPS). Chuyển hóa các quy định pháp luật phức tạp thành bảng kiểm tra (Checklist) hành động cụ thể cho doanh nghiệp.',
+    zalo: '0904.622.122',
+    email: 'tue.pham@mekongdeltaagri.com',
+  },
+  'tue-pham': {
+    name: 'Mr. Tuệ Phạm',
+    tag: 'Kiến Trúc Sư Giải Pháp Local AI & GEO',
+    jobTitle: 'Trưởng ban Công nghệ AI & Chiến lược Tối ưu GEO | Sáng lập MDA Hub',
+    avatar: '/media/avatar-tue-pham.svg',
+    bio: 'Chuyên gia thiết kế luồng Middleware Local AI độc lập và luồng Agentic AI tích hợp Data Masking cục bộ. Giúp doanh nghiệp SME tự động hóa đối soát chứng từ, tra cứu mã HS bằng RAG và triển khai AI Marketing chuẩn GEO mà không can thiệp phần mềm ERP cũ hay lo ngại rò rỉ bí mật thương mại theo chuẩn GDPR/EU.',
+    zalo: '0904.622.122',
+    email: 'tue.pham@mekongdeltaagri.com',
+  },
+};
+
+const currentAuthor = profiles[role] || profiles['tue-pham'];
 ---
 
 <aside class={`author-geo-box ${extended ? 'author-geo-box--extended' : ''}`} itemscope itemtype="https://schema.org/Person">
   <div class="author-header">
     <img
-      src="/media/avatar-tue-pham.svg"
-      alt="Tuệ Phạm (Mr. Tuệ) - Chuyên gia XNK & AI Nông sản MDA Hub"
+      src={currentAuthor.avatar}
+      alt={`${currentAuthor.name} - MDA Hub`}
       class="author-avatar"
       width="90"
       height="90"
@@ -18,36 +61,41 @@ const { extended = false } = Astro.props;
       loading="lazy"
     />
     <div class="author-meta">
-      <span class="author-tag">Chuyên gia Thẩm định &amp; Tác giả</span>
-      <h3 class="author-name" itemprop="name">Tuệ Phạm (Mr. Tuệ)</h3>
+      <span class="author-tag">{currentAuthor.tag}</span>
+      <h3 class="author-name" itemprop="name">{currentAuthor.name}</h3>
       <p class="author-title" itemprop="jobTitle">
-        Chuyên gia Tư vấn Chiến lược XNK Nông sản &amp; Ứng dụng AI | Đồng sáng lập MDA Hub
+        {currentAuthor.jobTitle}
       </p>
     </div>
   </div>
 
   <div class="author-bio" itemprop="description">
-    <p>
-      Hơn 10 năm kinh nghiệm thực chiến tư vấn thủ tục hải quan, thẩm định mã HS và xây dựng chuỗi cung ứng xuất khẩu trái cây tươi và thực phẩm sấy thăng hoa sang các thị trường khó tính như Úc (tiêu chuẩn BICON), Hoa Kỳ (tiêu chuẩn FDA), và Canada. Trực tiếp thiết kế và giảng dạy các chương trình Đào tạo XNK 1-1 và huấn luyện In-house ứng dụng AI tự động hóa rà soát chứng từ thương mại.
-    </p>
+    <p>{currentAuthor.bio}</p>
   </div>
 
   {extended && (
     <div class="author-board">
-      <h4 class="board-title">Hội đồng Thẩm định Pháp lý &amp; Công nghệ AI MDA:</h4>
+      <h4 class="board-title">Hội đồng Chuyên môn &amp; Thẩm định Toàn diện MDA Hub:</h4>
       <div class="board-grid">
+        <div class="board-item">
+          <i class="bi bi-person-check-fill"></i>
+          <div>
+            <strong>Mrs Jen Phạm:</strong>
+            <p>Trực tiếp phụ trách đào tạo thực chiến 1-1 và huấn luyện In-house doanh nghiệp.</p>
+          </div>
+        </div>
         <div class="board-item">
           <i class="bi bi-shield-check"></i>
           <div>
             <strong>Ban Pháp lý &amp; Hải quan:</strong>
-            <p>Thẩm định tính chính xác của Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT và quy tắc xuất xứ FTA.</p>
+            <p>Thẩm định tính chính xác của Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT và quy tắc FTA.</p>
           </div>
         </div>
         <div class="board-item">
           <i class="bi bi-cpu"></i>
           <div>
-            <strong>Ban Công nghệ AI &amp; GEO Marketing:</strong>
-            <p>Kiểm định quy trình Prompt Engineering và tối ưu hóa hiện diện số chuẩn Generative Engine Optimization.</p>
+            <strong>Mr. Tuệ Phạm:</strong>
+            <p>Thiết kế luồng Middleware Local AI, bảo mật Data Masking và tối ưu hóa GEO toàn cầu.</p>
           </div>
         </div>
       </div>
@@ -59,8 +107,8 @@ const { extended = false } = Astro.props;
       <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" class="contact-pill">
         <i class="bi bi-chat-dots-fill"></i> Zalo: 0904.622.122
       </a>
-      <a href="mailto:tue.pham@mekongdeltaagri.com" class="contact-pill">
-        <i class="bi bi-envelope-fill"></i> tue.pham@mekongdeltaagri.com
+      <a href={`mailto:${currentAuthor.email}`} class="contact-pill">
+        <i class="bi bi-envelope-fill"></i> {currentAuthor.email}
       </a>
     </div>
     <span class="eeat-badge">
@@ -137,11 +185,11 @@ const { extended = false } = Astro.props;
 
   .board-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     .board-grid {
       grid-template-columns: 1fr;
     }
@@ -215,4 +263,3 @@ const { extended = false } = Astro.props;
     color: var(--primary-dark);
   }
 </style>
-

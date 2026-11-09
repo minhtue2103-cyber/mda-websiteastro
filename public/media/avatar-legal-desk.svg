@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="legalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D5E2D" />
+      <stop offset="100%" style="stop-color:#1E3A1E" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#legalGrad)"/>
+  <path d="M 100 45 L 145 65 V 105 C 145 135 125 155 100 165 C 75 155 55 135 55 105 V 65 Z" fill="#8DC435"/>
+  <path d="M 85 105 L 97 117 L 120 92" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#E5F6C8" stroke-width="6"/>
+</svg>
