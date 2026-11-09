@@ -46,33 +46,22 @@ import SocialLinks from '../shared/SocialLinks.astro';
         </ul>
       </div>
 
-      <!-- Col 2: Training & Services Sitemap -->
+      <!-- Col 2: Training Services & Knowledge Hub (Gộp rút gọn tối đa 8 links) -->
       <div class="footer-col">
-        <h4 class="footer-col__title">Hệ Sinh Thái Đào Tạo</h4>
+        <h4 class="footer-col__title">Dịch Vụ &amp; Tri Thức XNK</h4>
         <ul class="footer-links">
-          <li><a href="/dich-vu/">Tổng Quan Dịch Vụ</a></li>
-          <li><a href="/dich-vu/dao-tao-xnk-1-1/">Đào Tạo XNK Thực Chiến 1-1</a></li>
-          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">Đào Tạo Chuyên Sâu Doanh Nghiệp</a></li>
-          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">Ứng Dụng AI Cho Doanh Nghiệp XNK</a></li>
-          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">AI Marketing Nông Sản Quốc Tế</a></li>
-          <li><a href="/dang-ky-thu-khoa-hoc/">Đăng Ký Học Thử Miễn Phí</a></li>
+          <li><a href="/dich-vu/">Tổng Quan Hệ Sinh Thái Dịch Vụ</a></li>
+          <li><a href="/dich-vu/dao-tao-xnk-1-1/">Đào Tạo XNK Thực Chiến 1-1 (Ms Jen Phạm)</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">Đào Tạo Doanh Nghiệp In-house</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">Ứng Dụng AI Rà Soát Chứng Từ XNK</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">AI Marketing &amp; Hiện Diện Số GEO</a></li>
+          <li><a href="/blog/">Cẩm Nang Tri Thức &amp; Pháp Lý Hải Quan</a></li>
+          <li><a href="/tin-tuc/">Bản Tin Thời Sự XNK Nông Sản</a></li>
+          <li><a href="/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf" target="_blank" rel="noopener noreferrer">Tải Trọn Bộ Tài Liệu Mẫu (.PDF)</a></li>
         </ul>
       </div>
 
-      <!-- Col 3: Knowledge Base & Legal Links -->
-      <div class="footer-col">
-        <h4 class="footer-col__title">Tri Thức &amp; Pháp Lý</h4>
-        <ul class="footer-links">
-          <li><a href="/blog/">Cẩm Nang Tri Thức XNK &amp; AI</a></li>
-          <li><a href="/tin-tuc/">Bản Tin Thời Sự Hải Quan</a></li>
-          <li><a href="/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf" target="_blank">Tải Tài Liệu Đào Tạo Mẫu (.PDF)</a></li>
-          <li><a href="/llms.txt" target="_blank">Hồ Sơ Chuẩn llms.txt (AI Hub)</a></li>
-          <li><a href="/.well-known/ai-catalog.json" target="_blank">Khai Báo Chuẩn ARD Agentic</a></li>
-          <li><a href="/sitemap.xml" target="_blank">Sitemap Hệ Thống</a></li>
-        </ul>
-      </div>
-
-      <!-- Col 4: Community & Social Connect -->
+      <!-- Col 3: Community & Social Connect -->
       <div class="footer-col">
         <h4 class="footer-col__title">Kết Nối Cộng Đồng</h4>
         <p class="footer-social-intro">
@@ -114,12 +103,12 @@ import SocialLinks from '../shared/SocialLinks.astro';
 
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+    grid-template-columns: 1.8fr 1.3fr 1.3fr;
     gap: 40px;
     padding-bottom: 56px;
   }
 
-  @media (max-width: 1080px) {
+  @media (max-width: 992px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;
       gap: 32px;

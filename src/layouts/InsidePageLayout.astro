@@ -119,10 +119,10 @@ const breadcrumbSchema = {
     </div>
   </section>
 
-  <!-- Farm Table Style 4-Pillar Value Proposition Bar -->
+  <!-- MDA 4-Pillar Value Proposition Bar (Không Border) -->
   <section class="pillars-bar-section">
     <div class="container">
-      <div class="farmtable-pillars-bar">
+      <div class="mda-pillar-bar">
         <div class="pillar-item">
           <i class="bi bi-file-earmark-check-fill"></i>
           <div>
@@ -356,7 +356,7 @@ const breadcrumbSchema = {
   }
 
   /* =====================================================================
-     PILLARS BAR SECTION
+     PILLARS BAR SECTION (Bỏ Border)
      ===================================================================== */
   .pillars-bar-section {
     padding-block: 28px;
@@ -364,15 +364,15 @@ const breadcrumbSchema = {
     border-bottom: 1px solid var(--border-subtle);
   }
 
-  .farmtable-pillars-bar {
+  .mda-pillar-bar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
     background: var(--bg-secondary);
     border-radius: var(--card-radius);
     padding: 20px 24px;
-    border: 1px solid var(--border-subtle);
-    box-shadow: var(--shadow-sm);
+    border: none;
+    box-shadow: none;
   }
 
   .pillar-item {
@@ -488,7 +488,7 @@ const breadcrumbSchema = {
       min-height: 380px;
     }
 
-    .farmtable-pillars-bar {
+    .mda-pillar-bar {
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
@@ -500,7 +500,7 @@ const breadcrumbSchema = {
       min-height: 260px;
     }
 
-    .farmtable-pillars-bar {
+    .mda-pillar-bar {
       grid-template-columns: 1fr;
     }
 

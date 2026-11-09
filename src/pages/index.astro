@@ -257,36 +257,60 @@ const expertFaqs = [
             </p>
           </div>
 
-          <div class="core-benefits-card">
-            <h3 class="core-benefits-card__title">
+          <!-- 4 Lợi Ích Cốt Lõi (Dạng ft-sub-benefit Bỏ Border) -->
+          <div class="core-benefits-wrapper">
+            <h3 class="core-benefits__title">
               <i class="bi bi-stars"></i> 4 Lợi Ích Cốt Lõi:
             </h3>
-            <ul class="benefit-list">
-              <li>
-                <i class="bi bi-check-circle-fill"></i>
-                <div>
-                  <strong>May đo trên hồ sơ thật:</strong> Đào tạo trực tiếp trên Invoice, Packing List, B/L, L/C thực tế; rèn phản xạ xử lý rủi ro ngoại lệ cảng đến.
+            <div class="ft-sub-benefits-list">
+              <div class="ft-sub-benefit-item">
+                <div class="ft-sub-benefit__icon">
+                  <i class="bi bi-file-earmark-check-fill"></i>
                 </div>
-              </li>
-              <li>
-                <i class="bi bi-check-circle-fill"></i>
-                <div>
-                  <strong>Tối ưu thuế quan &amp; Bảo vệ mã HS:</strong> Khai thác triệt để ưu đãi FTA (CPTPP, EVFTA) và phòng ngừa truy thu thuế sau thông quan.
+                <div class="ft-sub-benefit__content">
+                  <h4 class="ft-sub-benefit__heading">May đo trên hồ sơ thật</h4>
+                  <p class="ft-sub-benefit__desc">
+                    Đào tạo trực tiếp trên Invoice, Packing List, B/L, L/C thực tế; rèn phản xạ xử lý rủi ro ngoại lệ cảng đến.
+                  </p>
                 </div>
-              </li>
-              <li>
-                <i class="bi bi-check-circle-fill"></i>
-                <div>
-                  <strong>Tích hợp Local AI an toàn dữ liệu:</strong> Tự động hóa đối soát với cơ chế Data Masking, tuyệt đối không rò rỉ bí mật thương mại.
+              </div>
+
+              <div class="ft-sub-benefit-item">
+                <div class="ft-sub-benefit__icon">
+                  <i class="bi bi-shield-check"></i>
                 </div>
-              </li>
-              <li>
-                <i class="bi bi-check-circle-fill"></i>
-                <div>
-                  <strong>Đồng hành chuyên gia 1-1:</strong> Ms Jen Phạm và Hội đồng Pháp lý MDA trực tiếp tháo gỡ điểm nghẽn trong suốt hành trình thực thi.
+                <div class="ft-sub-benefit__content">
+                  <h4 class="ft-sub-benefit__heading">Tối ưu thuế quan &amp; Bảo vệ mã HS</h4>
+                  <p class="ft-sub-benefit__desc">
+                    Khai thác triệt để ưu đãi FTA (CPTPP, EVFTA) và phòng ngừa truy thu thuế sau thông quan.
+                  </p>
                 </div>
-              </li>
-            </ul>
+              </div>
+
+              <div class="ft-sub-benefit-item">
+                <div class="ft-sub-benefit__icon">
+                  <i class="bi bi-cpu-fill"></i>
+                </div>
+                <div class="ft-sub-benefit__content">
+                  <h4 class="ft-sub-benefit__heading">Tích hợp Local AI an toàn dữ liệu</h4>
+                  <p class="ft-sub-benefit__desc">
+                    Tự động hóa đối soát với cơ chế Data Masking, tuyệt đối không rò rỉ bí mật thương mại.
+                  </p>
+                </div>
+              </div>
+
+              <div class="ft-sub-benefit-item">
+                <div class="ft-sub-benefit__icon">
+                  <i class="bi bi-person-check-fill"></i>
+                </div>
+                <div class="ft-sub-benefit__content">
+                  <h4 class="ft-sub-benefit__heading">Đồng hành chuyên gia 1-1</h4>
+                  <p class="ft-sub-benefit__desc">
+                    Ms Jen Phạm và Hội đồng Pháp lý MDA trực tiếp tháo gỡ điểm nghẽn trong suốt hành trình thực thi.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -753,53 +777,80 @@ const expertFaqs = [
     line-height: 1.6;
   }
 
-  .core-benefits-card {
-    background: #ffffff;
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--card-radius);
-    padding: 24px;
-    box-shadow: var(--shadow-sm);
+  /* Core Benefits (ft-sub-benefit Farm Table Style - Bỏ Border) */
+  .core-benefits-wrapper {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
   }
 
-  .core-benefits-card__title {
-    font-size: 1.15rem;
+  .core-benefits__title {
+    font-size: 1.18rem;
     color: var(--primary-deep);
-    margin: 0 0 18px;
+    margin: 0 0 16px;
     display: flex;
     align-items: center;
     gap: 8px;
   }
 
-  .core-benefits-card__title i {
+  .core-benefits__title i {
     color: var(--secondary);
   }
 
-  .benefit-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .ft-sub-benefits-list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
   }
 
-  .benefit-list li {
+  .ft-sub-benefit-item {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
-    font-size: 0.92rem;
-    line-height: 1.55;
+    gap: 14px;
+    background: var(--bg-secondary);
+    border: none;
+    border-radius: 12px;
+    padding: 16px 18px;
+    transition: transform var(--transition-fast), background var(--transition-fast);
   }
 
-  .benefit-list i {
-    color: var(--primary-mid);
+  .ft-sub-benefit-item:hover {
+    transform: translateX(4px);
+    background: var(--primary-50);
+  }
+
+  .ft-sub-benefit__icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 18px;
     flex-shrink: 0;
-    margin-top: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   }
 
-  .benefit-list strong {
+  .ft-sub-benefit__content {
+    flex-grow: 1;
+  }
+
+  .ft-sub-benefit__heading {
+    font-size: 0.96rem;
+    font-weight: 700;
     color: var(--primary-deep);
+    margin: 0 0 4px;
+    line-height: 1.4;
+  }
+
+  .ft-sub-benefit__desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
   }
 
   .faq-col-right :global(.faq-accordion-block) {

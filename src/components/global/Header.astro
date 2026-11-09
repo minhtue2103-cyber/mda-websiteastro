@@ -113,33 +113,32 @@ import SocialLinks from '../shared/SocialLinks.astro';
     }
   }
 
-  /* Drawer Toggle - Icon lớn, không chữ */
+  /* Drawer Toggle - Bỏ border/background, icon lớn nổi bật */
   .drawer-toggle-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
-    background-color: var(--primary-50);
-    border: 1.5px solid var(--primary-light);
+    background: transparent;
+    border: none;
     color: var(--primary-deep);
-    border-radius: 10px;
     cursor: pointer;
-    transition: all var(--transition-fast);
-    padding: 0;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    padding: 4px;
+    line-height: 1;
   }
 
   .drawer-toggle-btn:hover {
-    background-color: var(--primary-dark);
-    color: #ffffff;
-    border-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+    background: transparent;
+    color: var(--secondary);
+    border: none;
+    transform: scale(1.1);
+    box-shadow: none;
   }
 
   .drawer-toggle-btn i {
-    font-size: 28px;
+    font-size: 36px;
     line-height: 1;
+    display: block;
   }
 </style>
 
