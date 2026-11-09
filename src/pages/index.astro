@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactForm from '../components/shared/ContactForm.astro';
 import TestimonialSection from '../components/shared/TestimonialSection.astro';
 import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
 import FaqAccordion from '../components/ui/FaqAccordion.astro';
@@ -8,49 +7,49 @@ import FaqAccordion from '../components/ui/FaqAccordion.astro';
 const heroSlides = [
   {
     image: '/media/hero-slide-1.svg',
-    title: 'Sự thật về Xuất khẩu Trái cây Việt Nam',
-    desc: 'Truy xuất nguồn gốc minh bạch & Thu mua an toàn từ vùng nguyên liệu ĐBSCL.',
-    tag: 'Thực Chiến Chuỗi Cung Ứng',
+    alt: 'Sự thật về Xuất khẩu Trái cây Việt Nam & Chuỗi cung ứng ĐBSCL',
   },
   {
     image: '/media/hero-slide-2.svg',
-    title: 'Tuân thủ & Xác thực bằng AI',
-    desc: 'Đáp ứng tiêu chuẩn khắt khe của FDA (Hoa Kỳ), BICON (Úc) và SPS quốc tế.',
-    tag: 'Tiêu Chuẩn Toàn Cầu',
+    alt: 'Tuân thủ & Xác thực Tiêu chuẩn FDA, BICON, SPS bằng AI',
   },
   {
     image: '/media/hero-slide-3.svg',
-    title: 'AI Marketing cho Ngành Nông sản',
-    desc: 'Định vị thương hiệu nông sản Việt trên bản đồ chuỗi cung ứng toàn cầu.',
-    tag: 'Tối Ưu Hóa GEO',
+    alt: 'Chiến lược AI Marketing Nông sản & Tối ưu hóa GEO Toàn cầu',
   },
   {
     image: '/media/hero-slide-4.svg',
-    title: 'Mã HS & Tuân thủ Thương mại XNK',
-    desc: 'Giải mã chuẩn xác 85/2026/TT-BTC, 42/2026/TT-BCT và 110/2026/TT-BTC.',
-    tag: 'Cơ Sở Pháp Lý',
+    alt: 'Phân loại Mã HS & Tuân thủ Thông tư Thuế Hải quan XNK 85/2026/TT-BTC',
   },
 ];
 
-const geoFaqs = [
+const expertFaqs = [
   {
-    question: "Làm thế nào AI biến doanh nghiệp địa phương thành đối thủ toàn cầu?",
-    answer: "AI giúp tự động hóa quá trình đối soát chứng từ, dịch thuật hồ sơ kỹ thuật theo chuẩn FDA/BICON trong vài phút, đồng thời phân tích dữ liệu hải quan thế giới để doanh nghiệp nhỏ nắm bắt thị hiếu người mua quốc tế ngang ngửa các tập đoàn lớn."
+    question: "Làm thế nào để ứng dụng AI vào rà soát L/C và hợp đồng ngoại thương mà không lo ngại rò rỉ bí mật thương mại?",
+    answer: "MDA áp dụng kiến trúc Middleware Local AI độc lập kết hợp cơ chế Data Masking cục bộ ngay tại máy trạm. Trước khi dữ liệu chứng từ được xử lý qua mô hình ngôn ngữ lớn, toàn bộ thông tin nhạy cảm (tên người mua/bán, đơn giá CIF/FOB, số tài khoản, điều khoản thanh toán riêng) đều được mã hóa hoặc ẩn danh. Hệ thống chỉ đối soát logic tính toán và tính tương thích quy tắc UCP 600, ISBP 821, tuân thủ nghiêm ngặt chuẩn bảo mật doanh nghiệp và GDPR/EU mà không gửi dữ liệu thô lên đám mây công cộng."
   },
   {
-    question: "Bạn đang kể câu chuyện chung chung hay đang 'Story Answering' đúng nhu cầu người mua quốc tế?",
-    answer: "Người mua hàng B2B không tìm kiếm các bài viết quảng cáo mơ hồ. Họ cần câu trả lời trực diện: Thông số kỹ thuật, tỷ lệ độ ẩm, chứng nhận kiểm dịch, mã số vùng trồng và quy trình đóng gói. 'Story Answering' là phương pháp biên soạn dữ liệu kỹ thuật có cấu trúc giúp khách hàng và các công cụ AI tìm thấy bạn ngay lập tức."
+    question: "Tại sao doanh nghiệp xuất khẩu trái cây sấy thăng hoa và trái cây tươi thường gặp rủi ro phạt thuế hoặc ách tắc mã HS tại cảng đến?",
+    answer: "Theo quy định tại Thông tư 85/2026/TT-BTC và chuẩn phân loại hải quan thế giới (WCO), trái cây tươi (thuộc Chương 08) và trái cây qua xử lý nhiệt hoặc sấy thăng hoa (thuộc Chương 20) chịu sự điều chỉnh của hai khung thuế suất, tiêu chuẩn kỹ thuật và kiểm dịch SPS hoàn toàn khác nhau. Một sai lệch nhỏ ở 2 chữ số phân nhóm phụ có thể khiến lô hàng bị tạm giữ, kiểm tra thực tế (luồng Đỏ), phạt chậm thông quan và bị cơ quan hải quan truy thu thuế sau thông quan. MDA hướng dẫn doanh nghiệp lập Hồ sơ kỹ thuật quy trình sản xuất và Bảng thẩm định mã HS để giải trình minh bạch."
   },
   {
-    question: "Hiện diện số của bạn đã đủ chuẩn 'GEO-friendly' để các công cụ AI trích dẫn như một nguồn cung uy tín?",
-    answer: "Hiện diện số chuẩn GEO (Generative Engine Optimization) đòi hỏi cấu trúc dữ liệu JSON-LD Schema đa tầng, định dạng BLUF tóm tắt ngắn gọn và tệp llms.txt. Khi đáp ứng các tiêu chuẩn này, ChatGPT, Perplexity và Gemini sẽ trích dẫn doanh nghiệp của bạn như một đơn vị xuất khẩu nông sản uy tín hàng đầu từ Việt Nam."
+    question: "Doanh nghiệp của chúng tôi có quy mô vừa và nhỏ (SME), dữ liệu chưa số hóa bài bản thì có thể ứng dụng AI vào quy trình XNK được không?",
+    answer: "Hoàn toàn khả thi. MDA thiết kế lộ trình tiếp cận dựa trên 'Độ sẵn sàng dữ liệu' (Data Readiness) thực tế của từng doanh nghiệp. Chúng tôi không yêu cầu doanh nghiệp phải đầu tư hệ thống ERP đắt đỏ hay thay đổi phần mềm đang dùng. Thay vào đó, chuyên gia sẽ hướng dẫn nhân sự chuẩn hóa các biểu mẫu Excel, PDF chứng từ hiện hữu, ứng dụng bộ Prompt Template chuyên ngành ngoại thương và áp dụng phương pháp Human-in-the-Loop (AI gợi ý kiểm tra, con người đối chiếu và phê duyệt cuối cùng), giúp tiết kiệm ngay 60-70% thời gian xử lý sự vụ."
+  },
+  {
+    question: "Chương trình Huấn luyện Thực chiến 1-1 của Ms Jen Phạm khác biệt như thế nào so với các khóa học xuất nhập khẩu đại trà?",
+    answer: "Khác biệt cốt lõi nằm ở tính thực chiến và cá nhân hóa tuyệt đối: Không dạy lý thuyết suông trên tình huống mẫu. Ms Jen Phạm trực tiếp ngồi lại cùng bạn để mổ xẻ trên chính bộ chứng từ (Invoice, Packing List, B/L, C/O, Kiểm dịch) của mặt hàng bạn đang kinh doanh. Trọng tâm của khóa học là năng lực Quản lý ngoại lệ (Exception Management): cách ứng biến khi tàu hủy chuyến (Blank Sailing), chứng từ có sai sót (Discrepancy), hãng tàu phát sinh phụ phí bất hợp lý hoặc khách hàng quốc tế khiếu nại chất lượng hàng."
+  },
+  {
+    question: "Quy trình triển khai tư vấn và tích hợp AI cho doanh nghiệp xuất khẩu diễn ra theo các giai đoạn nào?",
+    answer: "MDA luôn khởi đầu bằng Giai đoạn Khảo sát & Đánh giá (Discovery Phase) kéo dài 30 ngày. Trong giai đoạn này, chuyên gia MDA sẽ phỏng vấn trực tiếp các bộ phận (Mua hàng, Chứng từ, Logistics, Pháp chế) để lập bản đồ luồng công việc và nhận diện 2–3 'điểm nghẽn' gây lãng phí chi phí nhất. Sau đó, chúng tôi mới đề xuất giải pháp đào tạo In-house hoặc tích hợp Middleware Local AI với chỉ số KPI cam kết cụ thể, đảm bảo doanh nghiệp nhìn thấy hiệu quả hoàn vốn (ROI) rõ ràng trước khi mở rộng quy mô."
   }
 ];
 ---
 
 <BaseLayout
   title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Nông sản"
-  description="Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI & AI Marketing chuyên sâu cho doanh nghiệp XNK."
+  description="Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Huấn luyện thực chiến 1-1 cùng Ms Jen Phạm, tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI chuyên sâu cho doanh nghiệp XNK."
 >
   <!-- SECTION 1: HERO & WELCOME TO MDA AGRO KNOWLEDGE HUB -->
   <section class="section section--soft hero-section">
@@ -63,11 +62,11 @@ const geoFaqs = [
             Chào mừng đến với Trung tâm Tri thức Nông sản &amp; XNK MDA
           </h1>
           <p class="lead hero-lead">
-            <strong>MDA Hub</strong> là hệ sinh thái tri thức và chứng từ thương mại toàn diện dành cho ngành nông sản Việt Nam. Chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>) chuyên biệt cho xuất khẩu trái cây nhiệt đới và nông sản chế biến; kết hợp đào tạo thực chiến giúp doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
+            <strong>MDA Hub</strong> là hệ sinh thái tri thức và chứng từ thương mại toàn diện dành cho ngành nông sản Việt Nam. Dưới sự dẫn dắt chuyên môn của <strong>Ms Jen Phạm</strong> và Hội đồng Pháp lý MDA, chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>), phân loại mã HS chính xác và tích hợp AI an toàn cho doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
           </p>
           <div class="hero-cta-group">
-            <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary">
-              <i class="bi bi-stars"></i> Đăng Ký Thử Khóa Học
+            <a href="https://forms.google.com/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary">
+              <i class="bi bi-clipboard2-check"></i> Đăng Ký Tư Vấn Khóa Học
             </a>
             <a href="/dich-vu/" class="btn btn--outline">
               <i class="bi bi-arrow-right-circle"></i> Khám Phá Dịch Vụ
@@ -75,19 +74,20 @@ const geoFaqs = [
           </div>
         </div>
 
-        <!-- Right Column: Slider 4 Trụ Cột Cốt Lõi -->
+        <!-- Right Column: Slider Hình Ảnh Trực Quan (Chỉ hình ảnh) -->
         <div class="hero-right">
           <div class="hero-slider" id="heroSlider">
             <div class="hero-slides-wrapper" id="heroSlidesTrack">
               {heroSlides.map((slide, index) => (
                 <div class={`hero-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
                   <div class="hero-slide__image-wrap">
-                    <img src={slide.image} alt={slide.title} width="600" height="340" />
-                    <span class="hero-slide__badge">{slide.tag}</span>
-                  </div>
-                  <div class="hero-slide__content">
-                    <h3 class="hero-slide__title">{slide.title}</h3>
-                    <p class="hero-slide__desc">{slide.desc}</p>
+                    <img
+                      src={slide.image}
+                      alt={slide.alt}
+                      width="600"
+                      height="380"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                    />
                   </div>
                 </div>
               ))}
@@ -100,7 +100,7 @@ const geoFaqs = [
                   type="button"
                   class={`dot-btn ${i === 0 ? 'active' : ''}`}
                   data-slide={i}
-                  aria-label={`Chuyển đến slide ${i + 1}`}
+                  aria-label={`Chuyển đến hình ảnh ${i + 1}`}
                 ></button>
               ))}
             </div>
@@ -110,57 +110,72 @@ const geoFaqs = [
     </div>
   </section>
 
-  <!-- SECTION 2: THƯ VIỆN TRI THỨC & ĐIỂM NÓNG PHÁP LÝ XNK -->
-  <section class="section section--white">
+  <!-- SECTION 2: VÌ SAO CHỌN CHÚNG TÔI (Agro-Export Knowledge Style) -->
+  <section class="section section--white why-choose-section">
     <div class="container">
       <div class="section-header text-center">
-        <span class="badge">Pháp Lý &amp; Hải Quan</span>
-        <h2 class="section-title">Tri Thức Xuất Khẩu Nông Sản &amp; Cập Nhật Pháp Lý Hải Quan</h2>
+        <span class="badge">Giá Trị Khác Biệt</span>
+        <h2 class="section-title">Vì Sao Chọn Chúng Tôi</h2>
         <p class="lead">
-          Tuyển chọn, biên soạn và giải mã các quy định phức tạp thành hướng dẫn thực thi dễ hiểu nhất cho doanh nghiệp xuất khẩu.
+          Mekong Delta Agri (MDA Hub) mang đến bộ giải pháp 3 trụ cột vững chắc, kết hợp giữa nghiệp vụ xuất nhập khẩu nông sản thực chiến và công nghệ AI bảo mật cao cấp dành riêng cho doanh nghiệp Việt Nam.
         </p>
       </div>
 
-      <div class="grid-3">
-        <!-- Thẻ Pháp Lý 1 -->
-        <div class="card card--tint legal-card">
-          <div class="legal-badge">
-            <i class="bi bi-file-earmark-check-fill"></i> 85/2026/TT-BTC
+      <div class="grid-3 why-choose-grid">
+        <!-- Cột 1: Đào tạo ứng dụng quy trình -->
+        <div class="why-card">
+          <div class="why-card__badge">
+            <i class="bi bi-person-workspace"></i> Đào Tạo Ứng Dụng Quy Trình
           </div>
-          <h3 class="legal-title">Quy Định Mới Về Chứng Từ Thuế XNK &amp; Phân Loại Mã HS</h3>
-          <p class="legal-desc">
-            Hướng dẫn phân định rõ ràng giữa nông sản tươi và nông sản sấy thăng hoa, phòng ngừa rủi ro bị truy thu thuế sau thông quan.
+          <h3 class="why-card__title">Đào Tạo Ứng Dụng Quy Trình Thực Tế</h3>
+          <p class="why-card__desc">
+            Chương trình huấn luyện may đo theo đặc thù mặt hàng (trái cây tươi, sấy thăng hoa, nông sản ĐBSCL) và năng lực thực tế của doanh nghiệp. Học viên trực tiếp mổ xẻ chứng từ sống, rèn luyện kỹ năng Quản lý ngoại lệ (Exception Management) và tháo gỡ điểm nghẽn thực chiến cùng Ms Jen Phạm.
           </p>
-          <a href="/blog/ma-hs-va-tuan-thu-thuong-mai-xnk/" class="legal-link">
-            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          <ul class="why-card__features">
+            <li><i class="bi bi-check-circle-fill"></i> May đo 1-1 trên hợp đồng &amp; hồ sơ thật của doanh nghiệp</li>
+            <li><i class="bi bi-check-circle-fill"></i> Kỹ năng xử lý ngoại lệ: trễ tàu, sai khác B/L, luồng Đỏ</li>
+            <li><i class="bi bi-check-circle-fill"></i> Đồng bộ quy trình liên phòng ban Kinh doanh &amp; Logistics</li>
+          </ul>
+          <a href="/dich-vu/dao-tao-xnk-thuc-chien-1-1/" class="why-card__link">
+            Tìm hiểu khóa đào tạo 1-1 <i class="bi bi-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Thẻ Pháp Lý 2 -->
-        <div class="card card--tint legal-card">
-          <div class="legal-badge">
-            <i class="bi bi-shield-check"></i> 42/2026/TT-BCT
+        <!-- Cột 2: Tích hợp AI Business Integration -->
+        <div class="why-card why-card--highlight">
+          <div class="why-card__badge">
+            <i class="bi bi-cpu-fill"></i> AI Business Integration
           </div>
-          <h3 class="legal-title">Quy Tắc Xuất Xứ (C/O) &amp; Ưu Đãi Thuế Quan Hiệp Định FTA</h3>
-          <p class="legal-desc">
-            Nắm vững cơ chế tự chứng nhận xuất xứ số hóa và cách khai báo hàm lượng giá trị khu vực (RVC) để hưởng thuế 0% vào CPTPP và EVFTA.
+          <h3 class="why-card__title">Tích Hợp AI Business Vào Quy Trình XNK</h3>
+          <p class="why-card__desc">
+            Giải pháp Middleware Local AI độc lập, bảo mật dữ liệu cục bộ theo chuẩn GDPR/EU với công nghệ Data Masking. Tự động hóa rà soát Hợp đồng ngoại thương, đối soát chứng từ và kiểm tra sự phù hợp điều khoản UCP 600 trong 60 giây mà không cần thay đổi phần mềm ERP sẵn có.
           </p>
-          <a href="/tin-tuc/tin-tuc-1-thong-tu-hai-quan-2026/" class="legal-link">
-            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          <ul class="why-card__features">
+            <li><i class="bi bi-check-circle-fill"></i> Kiến trúc Local AI &amp; Data Masking bảo vệ bí mật kinh doanh</li>
+            <li><i class="bi bi-check-circle-fill"></i> Đối soát L/C MT700, Invoice, Packing List chỉ trong 60 giây</li>
+            <li><i class="bi bi-check-circle-fill"></i> Triển khai phương pháp Human-in-the-Loop kiểm soát chặt chẽ</li>
+          </ul>
+          <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/" class="why-card__link">
+            Khám phá giải pháp AI XNK <i class="bi bi-arrow-right"></i>
           </a>
         </div>
 
-        <!-- Thẻ Pháp Lý 3 -->
-        <div class="card card--tint legal-card">
-          <div class="legal-badge">
-            <i class="bi bi-motherboard"></i> 110/2026/TT-BTC
+        <!-- Cột 3: Cập nhật thủ tục hải quan & nghiệp vụ chuyên sâu -->
+        <div class="why-card">
+          <div class="why-card__badge">
+            <i class="bi bi-shield-check"></i> Pháp Lý &amp; Nghiệp Vụ Chuyên Sâu
           </div>
-          <h3 class="legal-title">Thủ Tục Hải Quan Điện Tử &amp; Kiểm Tra Chuyên Ngành Nông Sản</h3>
-          <p class="legal-desc">
-            Quy trình liên thông dữ liệu Một cửa Quốc gia (NSW) và tra cứu trực tuyến giấy kiểm dịch thực vật quốc tế (Phytosanitary).
+          <h3 class="why-card__title">Cập Nhật Thủ Tục Hải Quan &amp; Nghiệp Vụ</h3>
+          <p class="why-card__desc">
+            Đồng hành cùng Ban Pháp Lý &amp; Tuân Thủ Hải Quan MDA: Thẩm định mã HS nông sản chế biến/sấy thăng hoa, nắm bắt kịp thời các thông tư thuế cập nhật (85/2026/TT-BTC, 42/2026/TT-BCT, 110/2026/TT-BTC) và đáp ứng các rào cản kỹ thuật quốc tế khắt khe như FDA, BICON, SPS.
           </p>
-          <a href="/blog/su-that-xuat-khau-trai-cay-viet-nam/" class="legal-link">
-            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          <ul class="why-card__features">
+            <li><i class="bi bi-check-circle-fill"></i> Giải mã thông tư thuế 85/2026 &amp; thủ tục hải quan số NSW</li>
+            <li><i class="bi bi-check-circle-fill"></i> Thẩm định mã HS, phòng tránh rủi ro truy thu sau thông quan</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hướng dẫn đáp ứng tiêu chuẩn kiểm dịch FDA, BICON, SPS</li>
+          </ul>
+          <a href="/blog/ma-hs-va-tuan-thu-thuong-mai-xnk/" class="why-card__link">
+            Xem cập nhật pháp lý XNK <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -190,32 +205,32 @@ const geoFaqs = [
           <span class="badge">Đội Ngũ Huấn Luyện Thực Chiến</span>
           <h2 class="section-title">Chuyên Gia Đào Tạo XNK &amp; Chiến Lược AI Marketing Nông Sản</h2>
           <p class="lead">
-            Đội ngũ MDA đồng hành từ ý tưởng mới đến mở rộng doanh nghiệp xuất khẩu qua 4 chương trình đào tạo mũi nhọn:
+            Dưới sự dẫn dắt của <strong>Ms Jen Phạm</strong> cùng các cố vấn công nghệ &amp; pháp lý, MDA Hub đồng hành từ bước thẩm định tiềm năng đến chuẩn hóa vận hành qua 4 chương trình đào tạo mũi nhọn:
           </p>
 
           <ul class="program-list">
             <li>
               <div class="program-icon"><i class="bi bi-mortarboard-fill"></i></div>
               <div>
-                <strong>Đào Tạo XNK Thực Chiến 1-1:</strong> Huấn luyện cầm tay chỉ việc trên bộ chứng từ thật của chính doanh nghiệp bạn.
+                <strong>Đào Tạo XNK Thực Chiến 1-1 (Ms Jen Phạm):</strong> Huấn luyện cầm tay chỉ việc trên bộ chứng từ thật của chính doanh nghiệp bạn, rèn luyện kỹ năng xử lý ngoại lệ.
               </div>
             </li>
             <li>
               <div class="program-icon"><i class="bi bi-buildings-fill"></i></div>
               <div>
-                <strong>Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house):</strong> Chuẩn hóa quy trình xuất khẩu cho toàn bộ phòng ban kinh doanh &amp; xuất nhập khẩu.
+                <strong>Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house):</strong> Chuẩn hóa quy trình xuất khẩu cho toàn bộ phòng ban kinh doanh, logistics &amp; xuất nhập khẩu.
               </div>
             </li>
             <li>
               <div class="program-icon"><i class="bi bi-cpu-fill"></i></div>
               <div>
-                <strong>Ứng Dụng AI Cho Doanh Nghiệp XNK:</strong> Tự động hóa rà soát hợp đồng ngoại thương và đối soát chứng từ trong 60 giây.
+                <strong>Ứng Dụng AI Cho Doanh Nghiệp XNK:</strong> Tự động hóa rà soát hợp đồng ngoại thương và đối soát chứng từ trong 60 giây bằng Middleware Local AI bảo mật.
               </div>
             </li>
             <li>
               <div class="program-icon"><i class="bi bi-globe-americas"></i></div>
               <div>
-                <strong>AI Marketing Nông Sản Quốc Tế:</strong> Chiến lược Story Answering &amp; tối ưu GEO giúp thương hiệu được AI toàn cầu trích dẫn.
+                <strong>AI Marketing Nông Sản Quốc Tế:</strong> Chiến lược Story Answering &amp; tối ưu GEO giúp thương hiệu được AI và nhà mua hàng quốc tế tin tưởng trích dẫn.
               </div>
             </li>
           </ul>
@@ -230,78 +245,131 @@ const geoFaqs = [
     </div>
   </section>
 
-  <!-- SECTION 4: HỎI ĐÁP CHUYÊN SÂU & LỢI ÍCH HỢP TÁC -->
-  <section class="section section--white">
+  <!-- SECTION 4: HỎI ĐÁP CHUYÊN SÂU & LỢI ÍCH HỢP TÁC (Chia 30% - 70%) -->
+  <section class="section section--white faq-section">
     <div class="container">
-      <div class="grid-2 faq-section-grid">
-        <!-- Cột Trái: Câu hỏi trọng tâm & Lợi ích cốt lõi -->
-        <div class="faq-left">
+      <div class="faq-split-grid">
+        <!-- Cột Trái 30%: 4 Lợi Ích Cốt Lõi Khi Hợp Tác Cùng MDA Hub -->
+        <div class="faq-col-left">
           <span class="badge">Giải Đáp Thực Chiến</span>
-          <h2 class="section-title">Giải Đáp Thực Chiến Xuất Khẩu Nông Sản (Q&amp;A)</h2>
+          <h2 class="section-title faq-col-left__title">Lợi Ích Hợp Tác Cùng MDA Hub</h2>
+          
           <div class="faq-highlight-box">
-            <i class="bi bi-question-diamond-fill"></i>
+            <i class="bi bi-patch-question-fill"></i>
             <p>
-              "Việc áp sai Mã HS có đang khiến nông sản cao cấp của bạn trở nên <strong>'vô hình'</strong> trước cơ quan hải quan và nhà mua hàng quốc tế?"
+              "Áp sai Mã HS hoặc thiếu chuẩn bị cho ngoại lệ cảng đến có thể biến lô hàng nông sản trị giá hàng chục nghìn USD thành rủi ro tồn ứ và phạt thuế."
             </p>
           </div>
 
-          <h3 style="font-size: 1.15rem; margin: 24px 0 16px; color: var(--primary-deep);">
-            4 Lợi Ích Cốt Lõi Khi Hợp Tác Cùng MDA Hub:
-          </h3>
-          <ul class="benefit-list">
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Hoàn thiện bộ chứng từ &amp; đạt chuẩn kiểm dịch quốc tế (FDA, BICON, SPS).</span>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Xác định đúng thị trường mục tiêu và thị hiếu nhà mua hàng B2B.</span>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Tận dụng tối đa các hiệp định FTA để tối ưu thuế quan và chi phí logistics.</span>
-            </li>
-            <li>
-              <i class="bi bi-check-circle-fill"></i>
-              <span>Biến thách thức pháp lý thành lợi thế cạnh tranh dài hạn trên nền tảng AI.</span>
-            </li>
-          </ul>
+          <div class="core-benefits-card">
+            <h3 class="core-benefits-card__title">
+              <i class="bi bi-stars"></i> 4 Lợi Ích Cốt Lõi:
+            </h3>
+            <ul class="benefit-list">
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>May đo trên hồ sơ thật:</strong> Đào tạo trực tiếp trên Invoice, Packing List, B/L, L/C thực tế; rèn phản xạ xử lý rủi ro ngoại lệ cảng đến.
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Tối ưu thuế quan &amp; Bảo vệ mã HS:</strong> Khai thác triệt để ưu đãi FTA (CPTPP, EVFTA) và phòng ngừa truy thu thuế sau thông quan.
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Tích hợp Local AI an toàn dữ liệu:</strong> Tự động hóa đối soát với cơ chế Data Masking, tuyệt đối không rò rỉ bí mật thương mại.
+                </div>
+              </li>
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                <div>
+                  <strong>Đồng hành chuyên gia 1-1:</strong> Ms Jen Phạm và Hội đồng Pháp lý MDA trực tiếp tháo gỡ điểm nghẽn trong suốt hành trình thực thi.
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Cột Phải: 3 Accordion GEO-Friendly -->
-        <div class="faq-right">
-          <FaqAccordion items={geoFaqs} title="3 Câu Hỏi Chiến Lược Thời Đại AI" renderSchema={true} />
+        <!-- Cột Phải 70%: 5 Câu hỏi thực tế & Câu trả lời chuyên gia -->
+        <div class="faq-col-right">
+          <FaqAccordion
+            items={expertFaqs}
+            title="5 Câu Hỏi Thực Tế & Góc Nhìn Tư Vấn Chuyên Gia"
+            renderSchema={true}
+          />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 5: SHARED ELEMENTS — GALLERY NỘI DUNG ĐÀO TẠO MẪU & TESTIMONIALS -->
+  <!-- SECTION 5: GALLERY NỘI DUNG ĐÀO TẠO MẪU & TESTIMONIALS -->
   <TrainingGalleryPdf />
   <TestimonialSection />
 
-  <!-- SECTION 6: KẾT NỐI VỚI CHÚNG TÔI (Full-Width Banner) -->
+  <!-- SECTION 6: ĐỒNG HÀNH CÙNG BẠN (Full-Width Banner kết hợp Image & Google Form CTA) -->
   <section class="section section--gradient connect-section">
     <div class="container">
       <div class="grid-2 connect-grid">
+        <!-- Cột Trái: Thông tin liên hệ & Triết lý -->
         <div class="connect-info">
           <span class="badge badge--accent">Đồng Hành Cùng Bạn</span>
-          <h2 style="color: #ffffff; border-bottom: 2px solid var(--primary-light); padding-bottom: 16px; margin-bottom: 20px;">
-            Kết Nối Cùng Chuyên Gia XNK &amp; AI MDA
+          <h2 class="connect-title">
+            Kết Nối Cùng Chuyên Gia XNK &amp; AI MDA Hub
           </h2>
           <blockquote class="connect-quote">
-            "Xuất khẩu không chỉ là đưa hàng ra thế giới — đó là hành trình chiến lược từ thủ tục pháp lý minh bạch đến thấu hiểu sâu sắc thị trường Úc, Canada và Hoa Kỳ."
+            "Xuất khẩu không chỉ là đưa hàng ra thế giới — đó là hành trình chiến lược từ thủ tục pháp lý minh bạch đến làm chủ công nghệ AI và thấu hiểu sâu sắc thị trường Úc, Canada, EU và Hoa Kỳ."
           </blockquote>
 
           <div class="connect-contact-details">
             <p><i class="bi bi-geo-alt-fill"></i> <strong>Địa chỉ:</strong> Tầng 1, 53/104 Trần Khánh Dư, P. Tân Định, Quận 1, TP.HCM</p>
-            <p><i class="bi bi-telephone-fill"></i> <strong>Hotline:</strong> 0904.622.122 (Mr. Tuệ Phạm)</p>
+            <p><i class="bi bi-telephone-fill"></i> <strong>Hotline Chuyên Môn:</strong> 0904.622.122 (Ms Jen Phạm &amp; Mr. Tuệ Phạm)</p>
             <p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> tue.pham@mekongdeltaagri.com</p>
           </div>
         </div>
 
-        <div class="connect-form-side">
-          <ContactForm />
+        <!-- Cột Phải: Hình ảnh + Nút Link Google Form -->
+        <div class="connect-action-side">
+          <div class="action-card">
+            <div class="action-card__image-wrap">
+              <img
+                src="https://picsum.photos/id/1067/800/500"
+                alt="Đồng hành cùng Chuyên gia Xuất Nhập Khẩu MDA Hub"
+                width="800"
+                height="500"
+                loading="lazy"
+                class="action-card__img"
+              />
+              <div class="action-card__overlay">
+                <span class="action-card__pill"><i class="bi bi-shield-check"></i> Đào tạo Thực chiến &amp; Bảo mật Dữ liệu</span>
+              </div>
+            </div>
+
+            <div class="action-card__body">
+              <h3 class="action-card__title">Đăng Ký Tư Vấn &amp; Nhận Lộ Trình Đào Tạo May Đo</h3>
+              <p class="action-card__desc">
+                Hãy chia sẻ với chúng tôi về mặt hàng xuất khẩu, vướng mắc chứng từ hoặc định hướng ứng dụng AI của doanh nghiệp bạn. Chuyên gia <strong>Ms Jen Phạm</strong> và đội ngũ MDA Hub sẽ phản hồi giải pháp tối ưu trong 24 giờ.
+              </p>
+
+              <div class="action-card__btn-wrap">
+                <a
+                  href="https://forms.google.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn--secondary btn--lg action-card__btn"
+                >
+                  <i class="bi bi-clipboard2-check-fill"></i> Mở Biểu Mẫu Đăng Ký (Google Form)
+                </a>
+              </div>
+
+              <div class="action-card__trust">
+                <i class="bi bi-lock-fill"></i> Cam kết bảo mật 100% hồ sơ thương mại &amp; dữ liệu doanh nghiệp
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -309,9 +377,21 @@ const geoFaqs = [
 </BaseLayout>
 
 <style>
-  /* Hero */
+  /* =====================================================================
+     HERO SECTION (Diagonal 45-degree grey line pattern)
+     ===================================================================== */
   .hero-section {
     padding-block: var(--section-py-desktop);
+    background-color: #f8faf6;
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgba(100, 116, 139, 0.08) 0px,
+      rgba(100, 116, 139, 0.08) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+    position: relative;
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   .hero-grid {
@@ -332,13 +412,14 @@ const geoFaqs = [
     gap: 14px;
   }
 
-  /* Slider */
+  /* Slider - Image only */
   .hero-slider {
     position: relative;
     background: #ffffff;
     border-radius: var(--card-radius);
-    padding: 18px;
+    padding: 14px;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-subtle);
   }
 
   .hero-slide {
@@ -352,7 +433,7 @@ const geoFaqs = [
 
   .hero-slide__image-wrap {
     position: relative;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 10;
     border-radius: 12px;
     overflow: hidden;
     background: var(--primary-50);
@@ -362,35 +443,6 @@ const geoFaqs = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  .hero-slide__badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--secondary);
-    color: #ffffff;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 0.78rem;
-    font-weight: 700;
-  }
-
-  .hero-slide__content {
-    padding: 16px 8px 8px;
-  }
-
-  .hero-slide__title {
-    font-size: 1.15rem;
-    color: var(--primary-deep);
-    margin: 0 0 6px;
-  }
-
-  .hero-slide__desc {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    margin: 0;
-    line-height: 1.5;
   }
 
   .slider-dots {
@@ -417,10 +469,16 @@ const geoFaqs = [
     border-radius: 10px;
   }
 
-  /* Legal Section */
+  /* =====================================================================
+     SECTION 2: VÌ SAO CHỌN CHÚNG TÔI (Agro-Export Knowledge Style)
+     ===================================================================== */
+  .why-choose-section {
+    background-color: var(--bg-main);
+  }
+
   .text-center {
     text-align: center;
-    max-width: 760px;
+    max-width: 820px;
     margin-inline: auto;
     margin-bottom: 48px;
   }
@@ -429,51 +487,116 @@ const geoFaqs = [
     display: inline-block;
   }
 
-  .legal-card {
+  .why-choose-grid {
+    align-items: stretch;
+  }
+
+  .why-card {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
     border-top: 4px solid var(--primary-light);
+    border-radius: var(--card-radius);
+    padding: 30px 26px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    box-shadow: var(--shadow-sm);
   }
 
-  .legal-badge {
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .why-card--highlight {
+    border-top-color: var(--secondary);
+    background: linear-gradient(180deg, #ffffff 0%, #fafcf7 100%);
+  }
+
+  .why-card__badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--primary-dark);
-    margin-bottom: 12px;
+    background: var(--primary-50);
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    align-self: flex-start;
   }
 
-  .legal-title {
-    font-size: 1.15rem;
+  .why-card--highlight .why-card__badge {
+    color: #b8500c;
+    background: #fff4ec;
+  }
+
+  .why-card__title {
+    font-size: 1.25rem;
     color: var(--primary-deep);
-    margin: 0 0 10px;
+    margin: 0 0 12px;
+    line-height: 1.4;
   }
 
-  .legal-desc {
-    font-size: 0.92rem;
+  .why-card__desc {
+    font-size: 0.93rem;
     color: var(--text-secondary);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-bottom: 20px;
+  }
+
+  .why-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     flex-grow: 1;
   }
 
-  .legal-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-dark);
+  .why-card__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    line-height: 1.5;
   }
 
-  .legal-link:hover {
+  .why-card__features i {
+    color: var(--primary-mid);
+    font-size: 15px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .why-card--highlight .why-card__features i {
     color: var(--secondary);
   }
 
-  /* Expert Section */
+  .why-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-subtle);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+  }
+
+  .why-card__link:hover {
+    color: var(--secondary);
+    transform: translateX(4px);
+  }
+
+  /* =====================================================================
+     SECTION 3: EXPERT
+     ===================================================================== */
   .expert-visual {
     position: relative;
   }
@@ -544,7 +667,24 @@ const geoFaqs = [
     margin-top: 2px;
   }
 
-  /* FAQ Section */
+  /* =====================================================================
+     SECTION 4: FAQ (SPLIT 30% - 70%)
+     ===================================================================== */
+  .faq-section {
+    background-color: var(--bg-main);
+  }
+
+  .faq-split-grid {
+    display: grid;
+    grid-template-columns: 32% 65%;
+    gap: 3%;
+    align-items: start;
+  }
+
+  .faq-col-left__title {
+    margin-bottom: 16px;
+  }
+
   .faq-highlight-box {
     display: flex;
     align-items: flex-start;
@@ -553,7 +693,7 @@ const geoFaqs = [
     border-left: 4px solid var(--secondary);
     padding: 16px 20px;
     border-radius: 8px;
-    margin-top: 16px;
+    margin-bottom: 24px;
   }
 
   .faq-highlight-box i {
@@ -564,9 +704,31 @@ const geoFaqs = [
 
   .faq-highlight-box p {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-style: italic;
     color: var(--primary-deep);
+    line-height: 1.6;
+  }
+
+  .core-benefits-card {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .core-benefits-card__title {
+    font-size: 1.15rem;
+    color: var(--primary-deep);
+    margin: 0 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .core-benefits-card__title i {
+    color: var(--secondary);
   }
 
   .benefit-list {
@@ -575,14 +737,15 @@ const geoFaqs = [
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
   }
 
   .benefit-list li {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .benefit-list i {
@@ -592,9 +755,27 @@ const geoFaqs = [
     margin-top: 2px;
   }
 
-  /* Connect Banner */
+  .benefit-list strong {
+    color: var(--primary-deep);
+  }
+
+  .faq-col-right :global(.faq-accordion-block) {
+    margin-block: 0;
+  }
+
+  /* =====================================================================
+     SECTION 6: CONNECT BANNER (Image + Google Form CTA)
+     ===================================================================== */
   .connect-grid {
     align-items: center;
+    gap: var(--grid-gap-lg);
+  }
+
+  .connect-title {
+    color: #ffffff;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .connect-quote {
@@ -618,6 +799,106 @@ const geoFaqs = [
   .connect-contact-details i {
     color: var(--primary-light);
     margin-right: 6px;
+  }
+
+  .action-card {
+    background: #ffffff;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .action-card__image-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .action-card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .action-card__overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .action-card__pill {
+    background: rgba(45, 94, 45, 0.9);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .action-card__body {
+    padding: 26px 24px;
+  }
+
+  .action-card__title {
+    font-size: 1.25rem;
+    color: var(--primary-deep);
+    margin: 0 0 10px;
+  }
+
+  .action-card__desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 20px;
+  }
+
+  .action-card__btn-wrap {
+    margin-bottom: 14px;
+  }
+
+  .action-card__btn {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    padding-block: 14px;
+  }
+
+  .action-card__trust {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .action-card__trust i {
+    color: var(--primary-dark);
+  }
+
+  /* =====================================================================
+     RESPONSIVE BREAKPOINTS
+     ===================================================================== */
+  @media (max-width: 992px) {
+    .faq-split-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
   }
 </style>
 
@@ -668,4 +949,3 @@ const geoFaqs = [
   setupHeroSlider();
   document.addEventListener('astro:page-load', setupHeroSlider);
 </script>
-

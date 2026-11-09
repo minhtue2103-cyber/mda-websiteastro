@@ -2,304 +2,265 @@
 interface Props {
   title?: string;
   subtitle?: string;
-  extendedMode?: boolean;
+  googleFormUrl?: string;
 }
 
 const {
-  title = "Kết Nối Cùng Chuyên Gia XNK & AI MDA",
-  subtitle = "Điền thông tin bên dưới để nhận tư vấn lộ trình đào tạo thực chiến và giải đáp chứng từ hải quan trong vòng 24 giờ làm việc.",
-  extendedMode = false,
+  title = "Đăng Ký Tư Vấn & Nhận Lộ Trình Đào Tạo Thực Chiến",
+  subtitle = "Kết nối trực tiếp cùng Chuyên gia Ms Jen Phạm và Hội đồng Pháp lý MDA Hub để giải quyết triệt để các rào cản chứng từ, mã HS và quy chuẩn xuất khẩu nông sản.",
+  googleFormUrl = "https://forms.google.com/", // Thay bằng link Google Form của bạn
 } = Astro.props;
 ---
 
-<div class="contact-form-wrapper" id="contact-form-block">
-  <div class="form-header">
-    <h3 class="form-title">{title}</h3>
-    <p class="form-subtitle">{subtitle}</p>
-  </div>
-
-  <form class="mda-form" id="mdaLeadForm" novalidate>
-    <div class="form-group">
-      <label for="contact-name">Họ và tên <span class="required">*</span></label>
-      <input type="text" id="contact-name" name="name" required placeholder="Ví dụ: Nguyễn Văn An" />
-      <span class="field-error" id="nameError"></span>
-    </div>
-
-    <div class="form-row">
-      <div class="form-group">
-        <label for="contact-phone">Số điện thoại / Zalo <span class="required">*</span></label>
-        <input
-          type="tel"
-          id="contact-phone"
-          name="phone"
-          required
-          placeholder="Ví dụ: 0904 123 456"
-          pattern="^(0|84)(3|5|7|8|9)[0-9]{8}$"
+<div class="contact-cta-card" id="contact-form-block">
+  <div class="contact-cta-grid">
+    <!-- Visual / Image Side -->
+    <div class="contact-visual">
+      <div class="visual-inner">
+        <img
+          src="/media/avatar-jen-pham.svg"
+          alt="Ms Jen Phạm - Chuyên gia Chiến lược XNK MDA Hub"
+          class="expert-avatar"
+          width="120"
+          height="120"
+          loading="lazy"
         />
-        <span class="field-error" id="phoneError"></span>
+        <div class="visual-text">
+          <span class="expert-name">Ms Jen Phạm</span>
+          <span class="expert-title">Đồng Sáng Lập &amp; Chuyên Gia XNK MDA Hub</span>
+        </div>
+        <div class="trust-pills">
+          <span class="trust-pill"><i class="bi bi-shield-check"></i> Đào tạo 1-1</span>
+          <span class="trust-pill"><i class="bi bi-cpu"></i> Ứng dụng Local AI</span>
+          <span class="trust-pill"><i class="bi bi-check2-circle"></i> Chứng từ thực tế</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content & Action Side -->
+    <div class="contact-content">
+      <span class="badge badge--accent">Đăng Ký Nhanh Qua Biểu Mẫu</span>
+      <h3 class="contact-title">{title}</h3>
+      <p class="contact-desc">{subtitle}</p>
+
+      <div class="action-box">
+        <a
+          href={googleFormUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--secondary btn-form-cta"
+        >
+          <i class="bi bi-ui-checks"></i>
+          <span>Mở Biểu Mẫu Đăng Ký Tư Vấn (Google Form)</span>
+          <i class="bi bi-box-arrow-up-right external-icon"></i>
+        </a>
+        <span class="form-hint">* Biểu mẫu mở trong tab mới. Thời gian phản hồi trong vòng 24 giờ làm việc.</span>
       </div>
 
-      <div class="form-group">
-        <label for="contact-email">Email liên hệ <span class="required">*</span></label>
-        <input type="email" id="contact-email" name="email" required placeholder="an.nguyen@company.com" />
-        <span class="field-error" id="emailError"></span>
+      <div class="quick-contact-row">
+        <div class="quick-item">
+          <i class="bi bi-telephone-outbound-fill"></i>
+          <div>
+            <span class="quick-label">Hotline / Zalo trực tiếp:</span>
+            <a href="tel:0904622122" class="quick-val">0904.622.122 (Mr. Tuệ Phạm)</a>
+          </div>
+        </div>
+
+        <div class="quick-item">
+          <i class="bi bi-envelope-check-fill"></i>
+          <div>
+            <span class="quick-label">Email chuyên môn:</span>
+            <a href="mailto:tue.pham@mekongdeltaagri.com" class="quick-val">tue.pham@mekongdeltaagri.com</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="contact-company">Tên Doanh nghiệp / Ngành hàng Nông sản</label>
-      <input type="text" id="contact-company" name="company" placeholder="Ví dụ: Công ty Nông sản Xanh (Trái cây sấy/đông lạnh)" />
-    </div>
-
-    <div class="form-group">
-      <label for="contact-service">Chương trình đào tạo &amp; Tư vấn quan tâm <span class="required">*</span></label>
-      <select id="contact-service" name="service" required>
-        <option value="" disabled selected>-- Chọn chương trình cần hỗ trợ --</option>
-        <option value="dao-tao-xnk-1-1">Đào tạo XNK Thực chiến 1-1</option>
-        <option value="dao-tao-chuyen-sau-doanh-nghiep">Đào tạo Chuyên sâu Doanh nghiệp (In-house)</option>
-        <option value="ung-dung-ai-xnk">Ứng dụng AI cho Doanh nghiệp XNK</option>
-        <option value="ai-marketing">AI Marketing cho Ngành Nông sản &amp; Xuất khẩu</option>
-        <option value="tu-van-chung-tu-hs">Tư vấn Chứng từ, Mã HS &amp; Tuân thủ FDA/BICON/SPS</option>
-      </select>
-      <span class="field-error" id="serviceError"></span>
-    </div>
-
-    {extendedMode && (
-      <div class="form-group">
-        <label for="contact-timeslot">Khung giờ trải nghiệm học thử mong muốn</label>
-        <select id="contact-timeslot" name="timeslot">
-          <option value="morning">Buổi sáng (09:00 - 11:30 | Thứ 2 - Thứ 6)</option>
-          <option value="afternoon">Buổi chiều (14:00 - 16:30 | Thứ 2 - Thứ 6)</option>
-          <option value="weekend">Cuối tuần (Sáng Thứ 7)</option>
-          <option value="online-flexible">Linh hoạt Online qua Google Meet / Zoom</option>
-        </select>
-      </div>
-    )}
-
-    <div class="form-group">
-      <label for="contact-message">Nội dung vướng mắc hoặc nhu cầu tư vấn cụ thể</label>
-      <textarea
-        id="contact-message"
-        name="message"
-        rows="4"
-        placeholder="Chia sẻ về lô hàng dự kiến xuất khẩu, thị trường mục tiêu (Úc, Mỹ, Canada...), hoặc bài toán chứng từ/mã HS doanh nghiệp đang gặp phải..."
-      ></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-submit" id="submitBtn">
-      <i class="bi bi-send-fill"></i>
-      {extendedMode ? "Đăng Ký Học Thử Miễn Phí" : "Gửi Yêu Cầu Tư Vấn Ngay"}
-    </button>
-
-    <div class="form-feedback" id="formFeedback" role="alert" style="display: none;"></div>
-  </form>
+  </div>
 </div>
 
 <style>
-  .contact-form-wrapper {
+  .contact-cta-card {
     background: #ffffff;
     border-radius: var(--card-radius);
-    padding: 32px;
+    padding: 36px 40px;
     box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-subtle);
   }
 
-  .form-title {
-    font-size: 1.45rem;
-    color: var(--primary-deep);
-    margin-bottom: 8px;
+  @media (max-width: 768px) {
+    .contact-cta-card {
+      padding: 24px;
+    }
   }
 
-  .form-subtitle {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-    line-height: 1.5;
+  .contact-cta-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 36px;
+    align-items: center;
   }
 
-  .mda-form {
+  @media (max-width: 860px) {
+    .contact-cta-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 24px;
+    }
+  }
+
+  /* Visual side */
+  .visual-inner {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    background: var(--primary-50);
+    padding: 28px 20px;
+    border-radius: 16px;
+    border: 1px dashed var(--primary-light);
   }
 
-  .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+  .expert-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 12px;
   }
 
-  @media (max-width: 600px) {
-    .form-row {
-      grid-template-columns: 1fr;
-    }
-    .contact-form-wrapper {
-      padding: 20px;
-    }
+  .visual-text {
+    text-align: center;
+    margin-bottom: 14px;
   }
 
-  .form-group {
+  .expert-name {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+  }
+
+  .expert-title {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 4px;
+    line-height: 1.35;
+  }
+
+  .trust-pills {
     display: flex;
     flex-direction: column;
     gap: 6px;
-  }
-
-  label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .required {
-    color: #e53e3e;
-  }
-
-  input, select, textarea {
     width: 100%;
-    padding: 12px 14px;
-    font-family: inherit;
+  }
+
+  .trust-pill {
+    background: #ffffff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* Content side */
+  .contact-title {
+    font-size: 1.45rem;
+    color: var(--primary-deep);
+    margin: 8px 0 10px;
+  }
+
+  .contact-desc {
     font-size: 0.95rem;
-    border: 1px solid var(--border-subtle);
-    border-radius: 8px;
-    background-color: #fafdf8;
-    color: var(--text-primary);
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 24px;
   }
 
-  input:focus, select:focus, textarea:focus {
-    outline: none;
-    border-color: var(--primary-light);
-    background-color: #ffffff;
-    box-shadow: 0 0 0 3px rgba(141, 196, 53, 0.2);
+  .action-box {
+    margin-bottom: 24px;
   }
 
-  .field-error {
-    font-size: 0.82rem;
-    color: #e53e3e;
-    min-height: 16px;
-  }
-
-  .btn-submit {
-    background-color: var(--secondary);
-    color: #ffffff;
-    padding: 15px 30px;
+  .btn-form-cta {
+    padding: 16px 28px;
     font-size: 1.05rem;
     font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(255, 144, 70, 0.4);
     transition: all var(--transition-base);
-    box-shadow: 0 4px 14px rgba(255, 144, 70, 0.35);
-    margin-top: 8px;
   }
 
-  .btn-submit:hover {
-    background-color: var(--secondary-hover);
+  .btn-form-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 144, 70, 0.45);
+    box-shadow: 0 6px 22px rgba(255, 144, 70, 0.5);
   }
 
-  .form-feedback {
-    margin-top: 16px;
-    padding: 14px 18px;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    text-align: center;
+  .external-icon {
+    font-size: 0.85em;
+    opacity: 0.85;
   }
 
-  .form-feedback--success {
-    background-color: #f0fff4;
-    color: #276749;
-    border: 1px solid #c6f6d5;
+  .form-hint {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    font-style: italic;
   }
 
-  .form-feedback--error {
-    background-color: #fff5f5;
-    color: #9b2c2c;
-    border: 1px solid #fed7d7;
+  /* Quick contact */
+  .quick-contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  @media (max-width: 860px) {
+    .quick-contact-row {
+      justify-content: center;
+    }
+  }
+
+  .quick-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+  }
+
+  .quick-item i {
+    font-size: 22px;
+    color: var(--primary-dark);
+  }
+
+  .quick-label {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+  }
+
+  .quick-val {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+  }
+
+  .quick-val:hover {
+    color: var(--secondary);
   }
 </style>
-
-<script>
-  function setupContactForm() {
-    const form = document.getElementById('mdaLeadForm') as HTMLFormElement | null;
-    const feedback = document.getElementById('formFeedback') as HTMLDivElement | null;
-    const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement | null;
-
-    if (!form || !feedback || !submitBtn) return;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const name = (document.getElementById('contact-name') as HTMLInputElement).value.trim();
-      const phone = (document.getElementById('contact-phone') as HTMLInputElement).value.trim();
-      const email = (document.getElementById('contact-email') as HTMLInputElement).value.trim();
-      const service = (document.getElementById('contact-service') as HTMLSelectElement).value;
-
-      let hasError = false;
-
-      // Simple validation
-      if (!name) {
-        showError('nameError', 'Vui lòng nhập họ và tên của bạn.');
-        hasError = true;
-      } else {
-        clearError('nameError');
-      }
-
-      const phoneRegex = /^(0|84)(3|5|7|8|9)[0-9]{8}$/;
-      if (!phone || !phoneRegex.test(phone.replace(/\s+/g, ''))) {
-        showError('phoneError', 'Vui lòng nhập số điện thoại hợp lệ tại Việt Nam (10 chữ số).');
-        hasError = true;
-      } else {
-        clearError('phoneError');
-      }
-
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!email || !emailRegex.test(email)) {
-        showError('emailError', 'Vui lòng nhập địa chỉ email hợp lệ.');
-        hasError = true;
-      } else {
-        clearError('emailError');
-      }
-
-      if (!service) {
-        showError('serviceError', 'Vui lòng chọn chương trình bạn đang quan tâm.');
-        hasError = true;
-      } else {
-        clearError('serviceError');
-      }
-
-      if (hasError) return;
-
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Đang gửi thông tin...';
-
-      // Simulation / Fallback for Static Host
-      setTimeout(() => {
-        feedback.style.display = 'block';
-        feedback.className = 'form-feedback form-feedback--success';
-        feedback.innerHTML = `
-          <strong>Đăng ký thành công!</strong><br />
-          Cảm ơn anh/chị <strong>${name}</strong>. Chuyên gia tư vấn của MDA Hub sẽ chủ động liên hệ qua SĐT/Zalo <strong>${phone}</strong> trong vòng 24h.
-        `;
-        form.reset();
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = '<i class="bi bi-check2-circle"></i> Đã Gửi Thành Công';
-      }, 700);
-    });
-
-    function showError(elementId: string, message: string) {
-      const el = document.getElementById(elementId);
-      if (el) el.innerText = message;
-    }
-
-    function clearError(elementId: string) {
-      const el = document.getElementById(elementId);
-      if (el) el.innerText = '';
-    }
-  }
-
-  // Setup on page load
-  setupContactForm();
-  document.addEventListener('astro:page-load', setupContactForm);
-</script>
-

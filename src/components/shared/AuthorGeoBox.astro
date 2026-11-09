@@ -4,7 +4,7 @@ interface Props {
   extended?: boolean;
 }
 
-const { role = 'tue-pham', extended = false } = Astro.props;
+const { role = 'jen-pham', extended = false } = Astro.props;
 
 interface AuthorProfile {
   name: string;
@@ -18,11 +18,11 @@ interface AuthorProfile {
 
 const profiles: Record<string, AuthorProfile> = {
   'jen-pham': {
-    name: 'Mrs Jen Phạm',
-    tag: 'Đồng Sáng Lập & Chuyên Gia Huấn Luyện 1-1',
-    jobTitle: 'Chuyên gia Chiến lược XNK & Ứng dụng AI Nông sản | Đồng sáng lập MDA Hub',
+    name: 'Ms Jen Phạm',
+    tag: 'Chuyên Gia Huấn Luyện Thực Chiến 1-1 & Doanh Nghiệp',
+    jobTitle: 'Chuyên gia Chiến lược XNK & Đào tạo Thực chiến | Đồng sáng lập MDA Hub',
     avatar: '/media/avatar-jen-pham.svg',
-    bio: 'Với nhiều năm trực tiếp điều hành xuất khẩu nông sản chế biến sâu (trái cây sấy thăng hoa, nông sản đặc sản ĐBSCL) sang các thị trường khắt khe như Hoa Kỳ, Úc, Canada và EU. Trực tiếp mổ xẻ chứng từ sống (Invoice, Packing List, B/L, L/C MT700, FDA/BICON) và đào tạo nhân sự XNK làm chủ năng lực Quản lý ngoại lệ (Exception Management).',
+    bio: 'Với nhiều năm trực tiếp điều hành và xúc tiến xuất khẩu nông sản chế biến sâu (trái cây sấy thăng hoa, nông sản đặc sản ĐBSCL) sang các thị trường khắt khe như Hoa Kỳ, Úc, Canada và EU. Trực tiếp mổ xẻ chứng từ sống (Invoice, Packing List, B/L, L/C MT700, kiểm dịch SPS/FDA/BICON) và đào tạo đội ngũ nhân sự làm chủ năng lực Quản lý ngoại lệ (Exception Management).',
     zalo: '0904.622.122',
     email: 'tue.pham@mekongdeltaagri.com',
   },
@@ -46,7 +46,7 @@ const profiles: Record<string, AuthorProfile> = {
   },
 };
 
-const currentAuthor = profiles[role] || profiles['tue-pham'];
+const currentAuthor = profiles[role] || profiles['jen-pham'];
 ---
 
 <aside class={`author-geo-box ${extended ? 'author-geo-box--extended' : ''}`} itemscope itemtype="https://schema.org/Person">
