@@ -1,0 +1,670 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
+import TestimonialSection from '../components/shared/TestimonialSection.astro';
+import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
+import FaqAccordion from '../components/ui/FaqAccordion.astro';
+
+const heroSlides = [
+  {
+    image: '/media/hero-slide-1.svg',
+    title: 'Sự thật về Xuất khẩu Trái cây Việt Nam',
+    desc: 'Truy xuất nguồn gốc minh bạch & Thu mua an toàn từ vùng nguyên liệu ĐBSCL.',
+    tag: 'Thực Chiến Chuỗi Cung Ứng',
+  },
+  {
+    image: '/media/hero-slide-2.svg',
+    title: 'Tuân thủ & Xác thực bằng AI',
+    desc: 'Đáp ứng tiêu chuẩn khắt khe của FDA (Hoa Kỳ), BICON (Úc) và SPS quốc tế.',
+    tag: 'Tiêu Chuẩn Toàn Cầu',
+  },
+  {
+    image: '/media/hero-slide-3.svg',
+    title: 'AI Marketing cho Ngành Nông sản',
+    desc: 'Định vị thương hiệu nông sản Việt trên bản đồ chuỗi cung ứng toàn cầu.',
+    tag: 'Tối Ưu Hóa GEO',
+  },
+  {
+    image: '/media/hero-slide-4.svg',
+    title: 'Mã HS & Tuân thủ Thương mại XNK',
+    desc: 'Giải mã chuẩn xác 85/2026/TT-BTC, 42/2026/TT-BCT và 110/2026/TT-BTC.',
+    tag: 'Cơ Sở Pháp Lý',
+  },
+];
+
+const geoFaqs = [
+  {
+    question: "Làm thế nào AI biến doanh nghiệp địa phương thành đối thủ toàn cầu?",
+    answer: "AI giúp tự động hóa quá trình đối soát chứng từ, dịch thuật hồ sơ kỹ thuật theo chuẩn FDA/BICON trong vài phút, đồng thời phân tích dữ liệu hải quan thế giới để doanh nghiệp nhỏ nắm bắt thị hiếu người mua quốc tế ngang ngửa các tập đoàn lớn."
+  },
+  {
+    question: "Bạn đang kể câu chuyện chung chung hay đang 'Story Answering' đúng nhu cầu người mua quốc tế?",
+    answer: "Người mua hàng B2B không tìm kiếm các bài viết quảng cáo mơ hồ. Họ cần câu trả lời trực diện: Thông số kỹ thuật, tỷ lệ độ ẩm, chứng nhận kiểm dịch, mã số vùng trồng và quy trình đóng gói. 'Story Answering' là phương pháp biên soạn dữ liệu kỹ thuật có cấu trúc giúp khách hàng và các công cụ AI tìm thấy bạn ngay lập tức."
+  },
+  {
+    question: "Hiện diện số của bạn đã đủ chuẩn 'GEO-friendly' để các công cụ AI trích dẫn như một nguồn cung uy tín?",
+    answer: "Hiện diện số chuẩn GEO (Generative Engine Optimization) đòi hỏi cấu trúc dữ liệu JSON-LD Schema đa tầng, định dạng BLUF tóm tắt ngắn gọn và tệp llms.txt. Khi đáp ứng các tiêu chuẩn này, ChatGPT, Perplexity và Gemini sẽ trích dẫn doanh nghiệp của bạn như một đơn vị xuất khẩu nông sản uy tín hàng đầu từ Việt Nam."
+  }
+];
+---
+
+<BaseLayout
+  title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Nông sản"
+  description="Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI & AI Marketing chuyên sâu cho doanh nghiệp XNK."
+>
+  <!-- SECTION 1: HERO & WELCOME TO MDA AGRO KNOWLEDGE HUB -->
+  <section class="section section--soft hero-section">
+    <div class="container">
+      <div class="grid-2 hero-grid">
+        <!-- Left Column: Chào Mừng & Định Vị -->
+        <div class="hero-left">
+          <span class="badge">Cộng đồng TP.HCM về Chứng từ &amp; AI XNK</span>
+          <h1 class="section-title hero-title">
+            Chào mừng đến với Trung tâm Tri thức Nông sản &amp; XNK MDA
+          </h1>
+          <p class="lead hero-lead">
+            <strong>MDA Hub</strong> là hệ sinh thái tri thức và chứng từ thương mại toàn diện dành cho ngành nông sản Việt Nam. Chúng tôi đơn giản hóa các rào cản pháp lý xuyên biên giới thông qua tư vấn tuân thủ chi tiết (<strong>FDA, BICON, SPS</strong>) chuyên biệt cho xuất khẩu trái cây nhiệt đới và nông sản chế biến; kết hợp đào tạo thực chiến giúp doanh nghiệp tự chủ chuỗi cung ứng toàn cầu.
+          </p>
+          <div class="hero-cta-group">
+            <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary">
+              <i class="bi bi-stars"></i> Đăng Ký Thử Khóa Học
+            </a>
+            <a href="/dich-vu/" class="btn btn--outline">
+              <i class="bi bi-arrow-right-circle"></i> Khám Phá Dịch Vụ
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Slider 4 Trụ Cột Cốt Lõi -->
+        <div class="hero-right">
+          <div class="hero-slider" id="heroSlider">
+            <div class="hero-slides-wrapper" id="heroSlidesTrack">
+              {heroSlides.map((slide, index) => (
+                <div class={`hero-slide ${index === 0 ? 'active' : ''}`} data-index={index}>
+                  <div class="hero-slide__image-wrap">
+                    <img src={slide.image} alt={slide.title} width="600" height="340" />
+                    <span class="hero-slide__badge">{slide.tag}</span>
+                  </div>
+                  <div class="hero-slide__content">
+                    <h3 class="hero-slide__title">{slide.title}</h3>
+                    <p class="hero-slide__desc">{slide.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots" id="sliderDots">
+              {heroSlides.map((_, i) => (
+                <button
+                  type="button"
+                  class={`dot-btn ${i === 0 ? 'active' : ''}`}
+                  data-slide={i}
+                  aria-label={`Chuyển đến slide ${i + 1}`}
+                ></button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: THƯ VIỆN TRI THỨC & ĐIỂM NÓNG PHÁP LÝ XNK -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="badge">Pháp Lý &amp; Hải Quan</span>
+        <h2 class="section-title">Tri Thức Xuất Khẩu Nông Sản &amp; Cập Nhật Pháp Lý Hải Quan</h2>
+        <p class="lead">
+          Tuyển chọn, biên soạn và giải mã các quy định phức tạp thành hướng dẫn thực thi dễ hiểu nhất cho doanh nghiệp xuất khẩu.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <!-- Thẻ Pháp Lý 1 -->
+        <div class="card card--tint legal-card">
+          <div class="legal-badge">
+            <i class="bi bi-file-earmark-check-fill"></i> 85/2026/TT-BTC
+          </div>
+          <h3 class="legal-title">Quy Định Mới Về Chứng Từ Thuế XNK &amp; Phân Loại Mã HS</h3>
+          <p class="legal-desc">
+            Hướng dẫn phân định rõ ràng giữa nông sản tươi và nông sản sấy thăng hoa, phòng ngừa rủi ro bị truy thu thuế sau thông quan.
+          </p>
+          <a href="/blog/ma-hs-va-tuan-thu-thuong-mai-xnk/" class="legal-link">
+            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Thẻ Pháp Lý 2 -->
+        <div class="card card--tint legal-card">
+          <div class="legal-badge">
+            <i class="bi bi-shield-check"></i> 42/2026/TT-BCT
+          </div>
+          <h3 class="legal-title">Quy Tắc Xuất Xứ (C/O) &amp; Ưu Đãi Thuế Quan Hiệp Định FTA</h3>
+          <p class="legal-desc">
+            Nắm vững cơ chế tự chứng nhận xuất xứ số hóa và cách khai báo hàm lượng giá trị khu vực (RVC) để hưởng thuế 0% vào CPTPP và EVFTA.
+          </p>
+          <a href="/tin-tuc/tin-tuc-1-thong-tu-hai-quan-2026/" class="legal-link">
+            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Thẻ Pháp Lý 3 -->
+        <div class="card card--tint legal-card">
+          <div class="legal-badge">
+            <i class="bi bi-motherboard"></i> 110/2026/TT-BTC
+          </div>
+          <h3 class="legal-title">Thủ Tục Hải Quan Điện Tử &amp; Kiểm Tra Chuyên Ngành Nông Sản</h3>
+          <p class="legal-desc">
+            Quy trình liên thông dữ liệu Một cửa Quốc gia (NSW) và tra cứu trực tuyến giấy kiểm dịch thực vật quốc tế (Phytosanitary).
+          </p>
+          <a href="/blog/su-that-xuat-khau-trai-cay-viet-nam/" class="legal-link">
+            Tìm hiểu chi tiết <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: CHUYÊN GIA ĐÀO TẠO XNK & AI MARKETING -->
+  <section class="section section--soft">
+    <div class="container">
+      <div class="grid-2 expert-grid">
+        <!-- Cột Trái: Ảnh Đội ngũ & Floating Badge -->
+        <div class="expert-visual">
+          <div class="expert-image-box">
+            <img src="/media/hero-slide-3.svg" alt="Đội ngũ Chuyên gia Đào tạo XNK & AI Marketing MDA" width="600" height="420" />
+            <div class="floating-badge">
+              <i class="bi bi-shield-fill-check"></i>
+              <div>
+                <strong>Đối Tác Tin Cậy</strong>
+                <span>Thị trường Úc, Canada, Mỹ, EU</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột Phải: Nội Dung & Dịch Vụ Đào Tạo -->
+        <div class="expert-content">
+          <span class="badge">Đội Ngũ Huấn Luyện Thực Chiến</span>
+          <h2 class="section-title">Chuyên Gia Đào Tạo XNK &amp; Chiến Lược AI Marketing Nông Sản</h2>
+          <p class="lead">
+            Đội ngũ MDA đồng hành từ ý tưởng mới đến mở rộng doanh nghiệp xuất khẩu qua 4 chương trình đào tạo mũi nhọn:
+          </p>
+
+          <ul class="program-list">
+            <li>
+              <div class="program-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <div>
+                <strong>Đào Tạo XNK Thực Chiến 1-1:</strong> Huấn luyện cầm tay chỉ việc trên bộ chứng từ thật của chính doanh nghiệp bạn.
+              </div>
+            </li>
+            <li>
+              <div class="program-icon"><i class="bi bi-buildings-fill"></i></div>
+              <div>
+                <strong>Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house):</strong> Chuẩn hóa quy trình xuất khẩu cho toàn bộ phòng ban kinh doanh &amp; xuất nhập khẩu.
+              </div>
+            </li>
+            <li>
+              <div class="program-icon"><i class="bi bi-cpu-fill"></i></div>
+              <div>
+                <strong>Ứng Dụng AI Cho Doanh Nghiệp XNK:</strong> Tự động hóa rà soát hợp đồng ngoại thương và đối soát chứng từ trong 60 giây.
+              </div>
+            </li>
+            <li>
+              <div class="program-icon"><i class="bi bi-globe-americas"></i></div>
+              <div>
+                <strong>AI Marketing Nông Sản Quốc Tế:</strong> Chiến lược Story Answering &amp; tối ưu GEO giúp thương hiệu được AI toàn cầu trích dẫn.
+              </div>
+            </li>
+          </ul>
+
+          <div class="expert-cta">
+            <a href="/dich-vu/" class="btn btn--primary">
+              Nhận Tư Vấn Dịch Vụ Đào Tạo <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: HỎI ĐÁP CHUYÊN SÂU & LỢI ÍCH HỢP TÁC -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="grid-2 faq-section-grid">
+        <!-- Cột Trái: Câu hỏi trọng tâm & Lợi ích cốt lõi -->
+        <div class="faq-left">
+          <span class="badge">Giải Đáp Thực Chiến</span>
+          <h2 class="section-title">Giải Đáp Thực Chiến Xuất Khẩu Nông Sản (Q&amp;A)</h2>
+          <div class="faq-highlight-box">
+            <i class="bi bi-question-diamond-fill"></i>
+            <p>
+              "Việc áp sai Mã HS có đang khiến nông sản cao cấp của bạn trở nên <strong>'vô hình'</strong> trước cơ quan hải quan và nhà mua hàng quốc tế?"
+            </p>
+          </div>
+
+          <h3 style="font-size: 1.15rem; margin: 24px 0 16px; color: var(--primary-deep);">
+            4 Lợi Ích Cốt Lõi Khi Hợp Tác Cùng MDA Hub:
+          </h3>
+          <ul class="benefit-list">
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Hoàn thiện bộ chứng từ &amp; đạt chuẩn kiểm dịch quốc tế (FDA, BICON, SPS).</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Xác định đúng thị trường mục tiêu và thị hiếu nhà mua hàng B2B.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Tận dụng tối đa các hiệp định FTA để tối ưu thuế quan và chi phí logistics.</span>
+            </li>
+            <li>
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Biến thách thức pháp lý thành lợi thế cạnh tranh dài hạn trên nền tảng AI.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Cột Phải: 3 Accordion GEO-Friendly -->
+        <div class="faq-right">
+          <FaqAccordion items={geoFaqs} title="3 Câu Hỏi Chiến Lược Thời Đại AI" renderSchema={true} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SHARED ELEMENTS — GALLERY NỘI DUNG ĐÀO TẠO MẪU & TESTIMONIALS -->
+  <TrainingGalleryPdf />
+  <TestimonialSection />
+
+  <!-- SECTION 6: KẾT NỐI VỚI CHÚNG TÔI (Full-Width Banner) -->
+  <section class="section section--gradient connect-section">
+    <div class="container">
+      <div class="grid-2 connect-grid">
+        <div class="connect-info">
+          <span class="badge badge--accent">Đồng Hành Cùng Bạn</span>
+          <h2 style="color: #ffffff; border-bottom: 2px solid var(--primary-light); padding-bottom: 16px; margin-bottom: 20px;">
+            Kết Nối Cùng Chuyên Gia XNK &amp; AI MDA
+          </h2>
+          <blockquote class="connect-quote">
+            "Xuất khẩu không chỉ là đưa hàng ra thế giới — đó là hành trình chiến lược từ thủ tục pháp lý minh bạch đến thấu hiểu sâu sắc thị trường Úc, Canada và Hoa Kỳ."
+          </blockquote>
+
+          <div class="connect-contact-details">
+            <p><i class="bi bi-geo-alt-fill"></i> <strong>Địa chỉ:</strong> Tầng 1, 53/104 Trần Khánh Dư, P. Tân Định, Quận 1, TP.HCM</p>
+            <p><i class="bi bi-telephone-fill"></i> <strong>Hotline:</strong> 0904.622.122 (Mr. Tuệ Phạm)</p>
+            <p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> tue.pham@mekongdeltaagri.com</p>
+          </div>
+        </div>
+
+        <div class="connect-form-side">
+          <ContactForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .hero-section {
+    padding-block: var(--section-py-desktop);
+  }
+
+  .hero-grid {
+    align-items: center;
+  }
+
+  .hero-title {
+    margin-bottom: 20px;
+  }
+
+  .hero-lead {
+    margin-bottom: 28px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  /* Slider */
+  .hero-slider {
+    position: relative;
+    background: #ffffff;
+    border-radius: var(--card-radius);
+    padding: 18px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .hero-slide {
+    display: none;
+    flex-direction: column;
+  }
+
+  .hero-slide.active {
+    display: flex;
+  }
+
+  .hero-slide__image-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--primary-50);
+  }
+
+  .hero-slide__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-slide__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--secondary);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .hero-slide__content {
+    padding: 16px 8px 8px;
+  }
+
+  .hero-slide__title {
+    font-size: 1.15rem;
+    color: var(--primary-deep);
+    margin: 0 0 6px;
+  }
+
+  .hero-slide__desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .slider-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .dot-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border-subtle);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .dot-btn.active {
+    background: var(--secondary);
+    width: 24px;
+    border-radius: 10px;
+  }
+
+  /* Legal Section */
+  .text-center {
+    text-align: center;
+    max-width: 760px;
+    margin-inline: auto;
+    margin-bottom: 48px;
+  }
+
+  .text-center .section-title {
+    display: inline-block;
+  }
+
+  .legal-card {
+    border-top: 4px solid var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .legal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+  }
+
+  .legal-title {
+    font-size: 1.15rem;
+    color: var(--primary-deep);
+    margin: 0 0 10px;
+  }
+
+  .legal-desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .legal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+
+  .legal-link:hover {
+    color: var(--secondary);
+  }
+
+  /* Expert Section */
+  .expert-visual {
+    position: relative;
+  }
+
+  .expert-image-box {
+    position: relative;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .floating-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .floating-badge i {
+    font-size: 28px;
+    color: var(--primary-mid);
+  }
+
+  .floating-badge strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--primary-deep);
+  }
+
+  .floating-badge span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+
+  .program-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .program-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .program-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--primary-50);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* FAQ Section */
+  .faq-highlight-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--primary-50);
+    border-left: 4px solid var(--secondary);
+    padding: 16px 20px;
+    border-radius: 8px;
+    margin-top: 16px;
+  }
+
+  .faq-highlight-box i {
+    font-size: 24px;
+    color: var(--secondary);
+    flex-shrink: 0;
+  }
+
+  .faq-highlight-box p {
+    margin: 0;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--primary-deep);
+  }
+
+  .benefit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .benefit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.95rem;
+  }
+
+  .benefit-list i {
+    color: var(--primary-mid);
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* Connect Banner */
+  .connect-grid {
+    align-items: center;
+  }
+
+  .connect-quote {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #ffffff;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    border-left: 3px solid var(--secondary);
+    padding-left: 16px;
+  }
+
+  .connect-contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: #e5f6c8;
+  }
+
+  .connect-contact-details i {
+    color: var(--primary-light);
+    margin-right: 6px;
+  }
+</style>
+
+<script>
+  function setupHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.dot-btn');
+    if (!slides.length || !dots.length) return;
+
+    let currentIndex = 0;
+    let timer: number;
+
+    function goToSlide(index: number) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      const next = (currentIndex + 1) % slides.length;
+      goToSlide(next);
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const slideIndex = parseInt(dot.getAttribute('data-slide') || '0', 10);
+        goToSlide(slideIndex);
+        resetTimer();
+      });
+    });
+
+    function startTimer() {
+      timer = window.setInterval(nextSlide, 5000);
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      startTimer();
+    }
+
+    startTimer();
+  }
+
+  setupHeroSlider();
+  document.addEventListener('astro:page-load', setupHeroSlider);
+</script>

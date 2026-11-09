@@ -1,0 +1,338 @@
+---
+import SocialLinks from '../shared/SocialLinks.astro';
+---
+
+<div id="mda-drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+<aside id="mda-drawer" class="drawer" aria-label="Menu điều hướng chính" aria-hidden="true">
+  <div class="drawer__header">
+    <div class="drawer__logo">
+      <img src="/media/logoMDAgri500x500.svg" alt="Mekong Delta Agri Logo" width="48" height="48" />
+      <div>
+        <span class="drawer__brand-title">MDA HUB</span>
+        <span class="drawer__brand-sub">Mekong Delta Agri</span>
+      </div>
+    </div>
+    <button id="close-drawer-btn" class="drawer__close" aria-label="Đóng menu">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <nav class="drawer__nav">
+    <ul class="drawer__menu">
+      <li class="menu-item">
+        <a href="/" class="menu-link"><i class="bi bi-house-door"></i> Trang Chủ</a>
+      </li>
+      <li class="menu-item">
+        <a href="/gioi-thieu/" class="menu-link"><i class="bi bi-info-circle"></i> Giới Thiệu</a>
+      </li>
+      <li class="menu-item has-children">
+        <div class="menu-link-group">
+          <a href="/dich-vu/" class="menu-link"><i class="bi bi-briefcase"></i> Dịch Vụ Đào Tạo &amp; Tư Vấn</a>
+          <button class="toggle-sub" aria-label="Mở rộng mục dịch vụ">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+        </div>
+        <ul class="sub-menu">
+          <li>
+            <a href="/dich-vu/dao-tao-xnk-1-1/">
+              <i class="bi bi-person-check"></i> Đào tạo XNK Thực chiến 1-1
+            </a>
+          </li>
+          <li class="has-nested">
+            <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">
+              <i class="bi bi-buildings"></i> Đào tạo Chuyên sâu Doanh nghiệp
+            </a>
+            <ul class="nested-sub-menu">
+              <li>
+                <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">
+                  <i class="bi bi-cpu"></i> Ứng dụng AI cho DN XNK
+                </a>
+              </li>
+              <li>
+                <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">
+                  <i class="bi bi-globe-americas"></i> AI Marketing Nông sản Quốc tế
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <a href="/tin-tuc/" class="menu-link"><i class="bi bi-newspaper"></i> Tin Tức &amp; Hải Quan</a>
+      </li>
+      <li class="menu-item">
+        <a href="/blog/" class="menu-link"><i class="bi bi-journal-bookmark"></i> Blog Tri Thức XNK &amp; AI</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="drawer__cta">
+    <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary btn-full">
+      <i class="bi bi-stars"></i> Đăng Ký Thử Khóa Học
+    </a>
+  </div>
+
+  <div class="drawer__footer">
+    <span class="drawer__social-title">Kết nối cùng chuyên gia MDA:</span>
+    <SocialLinks variant="drawer" />
+    <div class="drawer__contact-info">
+      <p><i class="bi bi-telephone-fill"></i> Hotline: 0904.622.122 (Mr. Tuệ)</p>
+      <p><i class="bi bi-geo-alt-fill"></i> Tầng 1, 53/104 Trần Khánh Dư, Q.1, TP.HCM</p>
+    </div>
+  </div>
+</aside>
+
+<style>
+  /* Backdrop */
+  .drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .drawer-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Drawer Container */
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(420px, 88vw);
+    background-color: #ffffff;
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -8px 0 24px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+  }
+
+  .drawer.active {
+    transform: translateX(0);
+  }
+
+  .drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    background-color: var(--bg-secondary);
+  }
+
+  .drawer__logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .drawer__brand-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--primary-deep);
+  }
+
+  .drawer__brand-sub {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+  }
+
+  .drawer__close {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    color: var(--text-primary);
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast);
+  }
+
+  .drawer__close:hover {
+    background-color: var(--border-subtle);
+    color: var(--primary-dark);
+  }
+
+  .drawer__nav {
+    padding: 20px 24px;
+    flex-grow: 1;
+  }
+
+  .drawer__menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .menu-link-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .menu-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding: 10px 12px;
+    border-radius: 8px;
+    flex-grow: 1;
+    transition: all var(--transition-fast);
+  }
+
+  .menu-link:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+  }
+
+  .menu-link i {
+    color: var(--primary-dark);
+  }
+
+  .toggle-sub {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  .sub-menu {
+    list-style: none;
+    padding-left: 20px;
+    margin: 8px 0 12px;
+    border-left: 2px solid var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .sub-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    padding: 6px 10px;
+    border-radius: 6px;
+  }
+
+  .sub-menu a:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+  }
+
+  .nested-sub-menu {
+    list-style: none;
+    padding-left: 16px;
+    margin: 4px 0 8px;
+    border-left: 1px dashed var(--primary-mid);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nested-sub-menu a {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+  }
+
+  .drawer__cta {
+    padding: 0 24px 20px;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+
+  .drawer__footer {
+    padding: 20px 24px;
+    background-color: #fafcf8;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .drawer__social-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .drawer__contact-info {
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .drawer__contact-info p {
+    margin: 4px 0;
+  }
+</style>
+
+<script>
+  function setupDrawer() {
+    const openBtn = document.getElementById('open-drawer-btn');
+    const closeBtn = document.getElementById('close-drawer-btn');
+    const drawer = document.getElementById('mda-drawer');
+    const backdrop = document.getElementById('mda-drawer-backdrop');
+
+    if (!drawer || !backdrop) return;
+
+    function openDrawer() {
+      drawer.classList.add('active');
+      backdrop.classList.add('active');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('active');
+      backdrop.classList.remove('active');
+      drawer.setAttribute('aria-hidden', 'true');
+      backdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('active')) {
+        closeDrawer();
+      }
+    });
+  }
+
+  setupDrawer();
+  document.addEventListener('astro:page-load', setupDrawer);
+</script>

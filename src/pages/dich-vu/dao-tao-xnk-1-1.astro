@@ -1,0 +1,143 @@
+---
+import InsidePageLayout from '../../layouts/InsidePageLayout.astro';
+import FaqAccordion from '../../components/ui/FaqAccordion.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo XNK 1-1', url: '/dich-vu/dao-tao-xnk-1-1/' },
+];
+
+const subNavigation = [
+  { name: 'Tổng quan dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo 1-1', url: '/dich-vu/dao-tao-xnk-1-1/', active: true },
+  { name: 'Đào tạo Doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'Ứng dụng AI XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/' },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
+];
+
+const bluf = "Chương trình Đào tạo XNK Thực chiến 1-1 do Chuyên gia Tuệ Phạm trực tiếp huấn luyện kèm riêng cho từng học viên. Khóa học tập trung giải quyết bài toán xử lý trọn vẹn bộ chứng từ thương mại (Invoice, Packing List, B/L, C/O, Phytosanitary), tra cứu mã HS và đàm phán hợp đồng xuất khẩu nông sản đi các thị trường Úc, Canada, Mỹ trong 6 - 8 tuần.";
+
+const courseSummary = {
+  format: "Kèm 1-1 Online hoặc Trực tiếp tại TP.HCM",
+  duration: "8 tuần (16 buổi chuyên sâu + Hỗ trợ trọn đời)",
+  instructor: "Tuệ Phạm (Mr. Tuệ) — Sáng lập MDA Hub",
+};
+
+const faqs = [
+  {
+    question: "Tôi chưa có kinh nghiệm về ngoại thương có tham gia học 1-1 được không?",
+    answer: "Hoàn toàn được. Lộ trình 1-1 được may đo riêng dựa trên xuất phát điểm của bạn, bắt đầu từ kiến thức nền tảng về Incoterms, đàm phán hợp đồng đến thực hành chuyên sâu trên từng tờ khai hải quan cụ thể."
+  },
+  {
+    question: "Lịch học có linh hoạt cho người đang đi làm không?",
+    answer: "Có. Vì là hình thức kèm 1-1 nên học viên được chủ động sắp xếp thời gian biểu phù hợp (buổi tối hoặc cuối tuần), và có thể linh hoạt chuyển đổi giữa học trực tiếp và học online qua Google Meet."
+  },
+  {
+    question: "Sau khóa học tôi có được hỗ trợ khi có lô hàng thực tế phát sinh không?",
+    answer: "MDA Hub cam kết bảo hành chuyên môn: Chuyên gia Tuệ Phạm sẽ tiếp tục cố vấn và kiểm tra chéo bộ chứng từ cho lô hàng đầu tiên của bạn sau khi kết thúc khóa học."
+  }
+];
+---
+
+<InsidePageLayout
+  title="Đào Tạo XNK Thực Chiến 1-1 Cùng Chuyên Gia | MDA Hub"
+  description="Khóa đào tạo xuất nhập khẩu nông sản 1-1 cầm tay chỉ việc trên bộ chứng từ thật. Làm chủ nghiệp vụ hải quan, mã HS, C/O và kiểm dịch thực vật sau 8 tuần."
+  badge="Chương Trình Huấn Luyện Cá Nhân Hóa"
+  heroTitle="Đào Tạo Xuất Nhập Khẩu Thực Chiến 1-1 Cầm Tay Chỉ Việc"
+  lead="Chương trình kèm riêng 1 thầy - 1 trò do Chuyên gia Tuệ Phạm trực tiếp hướng dẫn, đưa bạn từ người mới bắt đầu đến năng lực tự chủ xử lý độc lập trọn gói các lô hàng nông sản xuất khẩu."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+  courseSummary={courseSummary}
+>
+  <section>
+    <h2>1. Đối Tượng Phù Hợp Tham Gia Khóa Học 1-1</h2>
+    <ul>
+      <li><strong>Chủ cơ sở sản xuất, trang trại, xưởng chế biến nông sản:</strong> Muốn tự chủ xuất khẩu trực tiếp thay vì phụ thuộc hoàn toàn vào các đơn vị trung gian thương mại.</li>
+      <li><strong>Nhân viên kinh doanh (Sales), thu mua nội địa:</strong> Muốn chuyển sang mảng Xuất Nhập Khẩu nông sản để gia tăng thu nhập và cơ hội thăng tiến.</li>
+      <li><strong>Chuyên viên XNK mới vào nghề:</strong> Cần củng cố nghiệp vụ vững vàng để không bị sai sót khi xử lý chứng từ hải quan, tránh rủi ro bị phạt hoặc giam giữ hàng tại cảng đích.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. Khung Chương Trình Huấn Luyện Chi Tiết (8 Module Thực Chiến)</h2>
+    <div style="display: flex; flex-direction: column; gap: 16px; margin-block: 24px;">
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 1: Tổng quan Thị trường &amp; Incoterms 2020 trong Nông sản
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Phân tích các điều kiện giao hàng phổ biến (FOB cảng Cát Lái/Hải Phòng, CIF cảng Melbourne/Los Angeles, CFR). Cách phân chia rủi ro hư hỏng hàng hóa và chi phí vận tải biển.
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 2: Đàm Phán &amp; Soạn Thảo Hợp Đồng Ngoại Thương (Sales Contract)
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Thiết lập các điều khoản bảo vệ người bán: Quy cách chất lượng (Specs), dung sai khối lượng, phương thức thanh toán an toàn (L/C không hủy ngang, T/T đặt cọc) và điều khoản bất khả kháng.
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 3: Giải Mã Phân Loại Mã HS &amp; Tính Thuế Nông Sản
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Thực hành tra cứu biểu thuế XNK theo Thông tư 85/2026/TT-BTC. Phân biệt chính xác giữa Chương 08 (trái cây tươi), Chương 11 (bột) và Chương 20 (chế biến, sấy thăng hoa).
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 4: Kiểm Soát Bộ Chứng Từ Thương Mại (Commercial Invoice, Packing List)
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Cách lập và rà soát số liệu trọng lượng tịnh (Net Weight), tổng trọng lượng (Gross Weight), quy cách đóng thùng, pallet và tính toán thể tích khối (CBM).
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 5: Chứng Nhận Xuất Xứ Hàng Hóa (C/O) &amp; Tối Ưu Ưu Đãi FTA
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Hướng dẫn hồ sơ cấp C/O mẫu B, mẫu D, mẫu EUR.1, mẫu CPTPP qua hệ thống EcoSys của Bộ Công Thương. Khai báo tiêu chí xuất xứ WO (xuất xứ thuần túy nông nghiệp) và RVC.
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 6: Thủ Tục Kiểm Dịch Thực Vật (Phytosanitary) &amp; Tiêu Chuẩn Nước Nhập Khẩu
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Đăng ký kiểm dịch tại Chi cục Bảo vệ thực vật vùng II. Quy trình kiểm tra dư lượng, xử lý chiếu xạ, hơi nước nóng và khai báo trực tuyến trên hệ thống BICON (Úc) và Prior Notice FDA (Mỹ).
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 7: Booking Tàu, Vận Đơn Đường Biển (B/L) &amp; Bảo Hiểm Hàng Hóa
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Kỹ năng làm việc với Forwarder và Hãng tàu, cài đặt nhiệt độ container lạnh (-18°C hay +2°C đến +5°C), kiểm tra bản nháp Master Bill / House Bill và lập hồ sơ bảo hiểm loại A.
+        </p>
+      </div>
+
+      <div class="card card--tint" style="padding: 18px 24px;">
+        <h3 style="font-size: 1.1rem; color: var(--primary-deep); margin-bottom: 6px;">
+          Module 8: Thực Hành Khai Tờ Khai Hải Quan Điện Tử (VNACCS/VCIS) &amp; Ứng Dụng AI
+        </h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Truyền tờ khai hải quan thử nghiệm và sử dụng các câu lệnh AI chuyên sâu để rà soát lỗi logic toàn bộ bộ hồ sơ chỉ trong 60 giây.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Khóa Học 1-1" />
+  </section>
+</InsidePageLayout>

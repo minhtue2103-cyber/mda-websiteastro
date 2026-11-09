@@ -1,0 +1,483 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CategoryBadge from '../components/ui/CategoryBadge.astro';
+import FeaturePhoto from '../components/ui/FeaturePhoto.astro';
+import FaqAccordion from '../components/ui/FaqAccordion.astro';
+import SourcesList from '../components/ui/SourcesList.astro';
+import AuthorGeoBox from '../components/shared/AuthorGeoBox.astro';
+import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
+import TestimonialSection from '../components/shared/TestimonialSection.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
+import SocialLinks from '../components/shared/SocialLinks.astro';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface SourceItem {
+  title: string;
+  url: string;
+}
+
+interface Props {
+  type: 'news' | 'blog';
+  title: string;
+  description: string;
+  publishDate: string;
+  updatedDate?: string;
+  category?: string;
+  author?: string;
+  readingTime?: string;
+  headlinePhoto: string;
+  headlinePhotoAlt: string;
+  headlinePhotoCaption?: string;
+  breadcrumbs: BreadcrumbItem[];
+  tags?: string[];
+  faqSchema?: FaqItem[];
+  sources?: SourceItem[];
+}
+
+const {
+  type,
+  title,
+  description,
+  publishDate,
+  updatedDate,
+  category,
+  author = "Tuệ Phạm (Mr. Tuệ)",
+  readingTime = "6 phút đọc",
+  headlinePhoto,
+  headlinePhotoAlt,
+  headlinePhotoCaption,
+  breadcrumbs,
+  tags = [],
+  faqSchema = [],
+  sources = [],
+} = Astro.props;
+
+const formattedDate = new Date(publishDate).toLocaleDateString('vi-VN', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// JSON-LD Article Schema
+const articleSchemaType = type === 'news' ? 'NewsArticle' : 'TechArticle';
+const schemaObj = {
+  "@context": "https://schema.org",
+  "@type": articleSchemaType,
+  "headline": title,
+  "description": description,
+  "image": new URL(headlinePhoto, Astro.site || 'https://mekongdeltaagri.com').href,
+  "datePublished": publishDate,
+  "dateModified": updatedDate || publishDate,
+  "author": {
+    "@type": "Person",
+    "name": author,
+    "url": "https://mekongdeltaagri.com/gioi-thieu/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MD AGRI TRADING CO., LTD",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mekongdeltaagri.com/media/logoMDAgri500x500.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": new URL(Astro.url.pathname, Astro.site || 'https://mekongdeltaagri.com').href
+  }
+};
+---
+
+<BaseLayout
+  title={`${title} | MDA Hub`}
+  description={description}
+  ogImage={headlinePhoto}
+  schema={schemaObj}
+>
+  <article class="article-wrapper">
+    <!-- Article Header -->
+    <header class="article-hero section--soft">
+      <div class="container">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          {breadcrumbs.map((b, i) => (
+            <>
+              {i > 0 && <span class="breadcrumb__separator">/</span>}
+              {i === breadcrumbs.length - 1 ? (
+                <span class="breadcrumb__current" aria-current="page">{b.name}</span>
+              ) : (
+                <a href={b.url}>{b.name}</a>
+              )}
+            </>
+          ))}
+        </nav>
+
+        <div class="article-hero__content">
+          {type === 'blog' && category && (
+            <div class="article-hero__category">
+              <CategoryBadge category={category} size="md" />
+            </div>
+          )}
+
+          <h1 class="article-header__title">{title}</h1>
+
+          <div class="article-meta-row">
+            <span class="meta-item">
+              <i class="bi bi-calendar3"></i> Ngày đăng: {formattedDate}
+            </span>
+            <span class="meta-separator">•</span>
+            <span class="meta-item">
+              <i class="bi bi-person-fill"></i> {author}
+            </span>
+            {readingTime && (
+              <>
+                <span class="meta-separator">•</span>
+                <span class="meta-item">
+                  <i class="bi bi-clock"></i> {readingTime}
+                </span>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="section section--white">
+      <div class="container">
+        <div class="article-layout">
+          <!-- Main Content Column -->
+          <div class="article-main">
+            <!-- Headline Photo (FeaturePhoto) -->
+            <FeaturePhoto
+              src={headlinePhoto}
+              alt={headlinePhotoAlt}
+              caption={headlinePhotoCaption}
+              priority={true}
+            />
+
+            <!-- Prose Content -->
+            <div class="prose article-prose">
+              <slot />
+            </div>
+
+            <!-- Tags -->
+            {tags.length > 0 && (
+              <div class="article-tags">
+                <span class="tags-label"><i class="bi bi-tags-fill"></i> Từ khóa:</span>
+                {tags.map((tag) => (
+                  <span class="tag-pill">#{tag}</span>
+                ))}
+              </div>
+            )}
+
+            <!-- FAQ Accordion (Blog) -->
+            {faqSchema.length > 0 && (
+              <FaqAccordion
+                items={faqSchema}
+                title="Hỏi Đáp Thực Chiến Cùng Chuyên Gia MDA (Q&A)"
+                renderSchema={true}
+              />
+            )}
+
+            <!-- Sources List -->
+            {sources.length > 0 && <SourcesList sources={sources} />}
+
+            <!-- Social Share & Connect -->
+            <div class="article-share-block">
+              <span class="share-title">Chia sẻ cẩm nang này:</span>
+              <SocialLinks variant="header" />
+            </div>
+
+            <!-- E-E-A-T Author Box -->
+            <AuthorGeoBox />
+          </div>
+
+          <!-- Sticky Sidebar (TOC & CTA) -->
+          <aside class="article-sidebar">
+            <div class="sticky-toc-inner">
+              <div class="sidebar-box toc-box">
+                <h4 class="sidebar-title">
+                  <i class="bi bi-list-nested"></i> Nội Dung Bài Viết
+                </h4>
+                <nav id="article-toc" class="toc-nav" aria-label="Mục lục bài viết">
+                  <p class="toc-loading-hint">Đang tạo mục lục...</p>
+                </nav>
+              </div>
+
+              <div class="sidebar-box cta-promo-box">
+                <span class="promo-badge">Đào Tạo Thực Chiến</span>
+                <h4 class="promo-title">Tư Vấn Nghiệp Vụ XNK &amp; AI Cùng Mr. Tuệ</h4>
+                <p class="promo-desc">
+                  Tháo gỡ ngay các vướng mắc về mã HS, rào cản FDA/BICON và quy trình kiểm dịch thực vật.
+                </p>
+                <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary btn-full">
+                  <i class="bi bi-stars"></i> Đăng Ký Học Thử
+                </a>
+              </div>
+
+              <div class="sidebar-box download-promo-box">
+                <h4 class="promo-title">Tài Liệu Đào Tạo Mẫu</h4>
+                <p class="promo-desc">
+                  Tải ngay file PDF tổng hợp biểu mẫu kiểm tra chứng từ thương mại 12 bước.
+                </p>
+                <a
+                  href="/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf"
+                  download="mda-tai-lieu-dao-tao-mau-xnk-ai.pdf"
+                  class="btn btn--outline btn-full"
+                >
+                  <i class="bi bi-file-earmark-arrow-down"></i> Tải PDF Mẫu
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shared Elements for Blog / News -->
+    {type === 'blog' && <TrainingGalleryPdf />}
+    {type === 'blog' && <TestimonialSection />}
+
+    <section class="section section--soft">
+      <div class="container" style="max-width: 820px;">
+        <ContactForm
+          title="Kết Nối Cùng Ban Biên Tập &amp; Chuyên Gia MDA"
+          subtitle="Gửi câu hỏi hoặc yêu cầu tư vấn chuyên sâu về hồ sơ xuất nhập khẩu của bạn."
+        />
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .article-hero {
+    padding-block: 40px 50px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .article-hero__content {
+    max-width: 860px;
+  }
+
+  .article-hero__category {
+    margin-bottom: 14px;
+  }
+
+  .article-header__title {
+    margin: 0 0 16px;
+  }
+
+  .article-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-separator {
+    color: var(--border-subtle);
+  }
+
+  /* 2-Col Layout */
+  .article-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (max-width: 992px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .article-main {
+    max-width: var(--prose-max);
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-block: 28px;
+    padding: 16px 0;
+    border-block: 1px dashed var(--border-subtle);
+  }
+
+  .tags-label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+  }
+
+  .tag-pill {
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .article-share-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 20px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    margin-block: 28px;
+  }
+
+  .share-title {
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--primary-deep);
+  }
+
+  /* Sidebar */
+  .article-sidebar {
+    position: relative;
+  }
+
+  .sticky-toc-inner {
+    position: sticky;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar-box {
+    background: var(--bg-secondary);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .sidebar-title {
+    font-size: 1.05rem;
+    color: var(--primary-deep);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+  }
+
+  .toc-nav {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .toc-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .toc-nav a {
+    color: var(--text-secondary);
+  }
+
+  .toc-nav a:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+
+  .toc-loading-hint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .promo-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: var(--primary-100);
+    color: var(--primary-deep);
+    padding: 3px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .promo-title {
+    font-size: 1.05rem;
+    color: var(--primary-deep);
+    margin: 0 0 8px;
+  }
+
+  .promo-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin: 0 0 16px;
+    line-height: 1.5;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+</style>
+
+<script>
+  function buildTOC() {
+    const prose = document.querySelector('.article-prose');
+    const tocNav = document.getElementById('article-toc');
+    if (!prose || !tocNav) return;
+
+    const headings = prose.querySelectorAll('h2, h3');
+    if (!headings.length) {
+      tocNav.innerHTML = '<p class="toc-loading-hint">Bài viết ngắn gọn, không cần mục lục.</p>';
+      return;
+    }
+
+    const ul = document.createElement('ul');
+    headings.forEach((h, index) => {
+      const id = h.id || `heading-${index}`;
+      h.id = id;
+
+      const li = document.createElement('li');
+      li.style.paddingLeft = h.tagName.toLowerCase() === 'h3' ? '14px' : '0';
+
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.innerText = h.textContent || '';
+      li.appendChild(a);
+      ul.appendChild(li);
+    });
+
+    tocNav.innerHTML = '';
+    tocNav.appendChild(ul);
+  }
+
+  buildTOC();
+  document.addEventListener('astro:page-load', buildTOC);
+</script>

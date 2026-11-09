@@ -1,0 +1,307 @@
+---
+import SocialLinks from '../shared/SocialLinks.astro';
+---
+
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <!-- Brand Logo -->
+    <a href="/" class="site-logo" aria-label="Mekong Delta Agri Trang Chủ">
+      <img
+        src="/media/logoMDAgri500x500.svg"
+        alt="Mekong Delta Agri Logo"
+        width="46"
+        height="46"
+        class="site-logo__img"
+      />
+      <div class="site-logo__text">
+        <span class="site-logo__title">MEKONG DELTA AGRI</span>
+        <span class="site-logo__sub">MDA Agro Knowledge Hub</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Thanh điều hướng chính">
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Trang Chủ</a></li>
+        <li><a href="/gioi-thieu/" class="nav-link">Giới Thiệu</a></li>
+        <li class="has-dropdown">
+          <a href="/dich-vu/" class="nav-link">
+            Dịch Vụ <i class="bi bi-chevron-down nav-arrow"></i>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="/dich-vu/dao-tao-xnk-1-1/">
+                <i class="bi bi-person-check-fill"></i> Đào tạo XNK 1-1
+              </a>
+            </li>
+            <li>
+              <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">
+                <i class="bi bi-buildings-fill"></i> Đào tạo Chuyên sâu Doanh nghiệp
+              </a>
+            </li>
+            <li>
+              <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">
+                <i class="bi bi-cpu-fill"></i> Ứng dụng AI cho DN XNK
+              </a>
+            </li>
+            <li>
+              <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">
+                <i class="bi bi-globe-americas"></i> AI Marketing Nông sản
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="/tin-tuc/" class="nav-link">Tin Tức</a></li>
+        <li><a href="/blog/" class="nav-link">Blog Tri Thức</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <div class="header-socials">
+        <SocialLinks variant="header" />
+      </div>
+
+      <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary header-cta">
+        <i class="bi bi-stars"></i> Học Thử
+      </a>
+
+      <!-- Off-Canvas Toggle Button -->
+      <button
+        id="open-drawer-btn"
+        class="drawer-toggle-btn"
+        aria-label="Mở menu đa cấp"
+      >
+        <i class="bi bi-list"></i>
+        <span class="drawer-toggle-text">MENU</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: box-shadow var(--transition-fast), background-color var(--transition-fast);
+  }
+
+  .site-header.scrolled {
+    box-shadow: var(--shadow-sm);
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(8px);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    gap: 16px;
+  }
+
+  /* Logo */
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .site-logo__img {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  .site-logo__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-logo__title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: var(--primary-deep);
+    line-height: 1.15;
+    letter-spacing: 0.5px;
+  }
+
+  .site-logo__sub {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--secondary);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* Desktop Nav */
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 1080px) {
+    .desktop-nav {
+      display: none;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--primary-dark);
+    background-color: var(--primary-50);
+  }
+
+  .nav-arrow {
+    font-size: 11px;
+    transition: transform var(--transition-fast);
+  }
+
+  /* Dropdown Menu */
+  .has-dropdown {
+    position: relative;
+  }
+
+  .has-dropdown:hover .nav-arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: var(--shadow-md);
+    border-radius: 12px;
+    padding: 10px 0;
+    list-style: none;
+    min-width: 280px;
+    margin-top: 6px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+  }
+
+  .dropdown-menu i {
+    color: var(--primary-dark);
+    font-size: 15px;
+  }
+
+  /* Actions */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  @media (max-width: 1200px) {
+    .header-socials {
+      display: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .header-cta {
+      display: none;
+    }
+  }
+
+  .header-cta {
+    padding: 9px 18px;
+    font-size: 0.9rem;
+  }
+
+  /* Drawer Toggle */
+  .drawer-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--primary-50);
+    border: 1px solid var(--primary-light);
+    color: var(--primary-deep);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .drawer-toggle-btn:hover {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    border-color: var(--primary-dark);
+  }
+
+  .drawer-toggle-btn i {
+    font-size: 18px;
+  }
+</style>
+
+<script>
+  function setupHeaderScroll() {
+    const header = document.getElementById('site-header');
+    if (!header) return;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+
+  setupHeaderScroll();
+  document.addEventListener('astro:page-load', setupHeaderScroll);
+</script>

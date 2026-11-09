@@ -1,0 +1,118 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+  renderSchema?: boolean;
+}
+
+const { items, title = "Câu Hỏi Thường Gặp (FAQ)", renderSchema = false } = Astro.props;
+
+const faqSchemaData = renderSchema
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: items.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    }
+  : null;
+---
+
+<div class="faq-accordion-block">
+  {title && <h3 class="faq-section__title">{title}</h3>}
+
+  <div class="faq-list">
+    {items.map((item, index) => (
+      <details class="faq-item" open={index === 0}>
+        <summary class="faq-question">
+          <span class="faq-q-text">{item.question}</span>
+          <i class="bi bi-chevron-down faq-icon"></i>
+        </summary>
+        <div class="faq-answer">
+          <p>{item.answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  {faqSchemaData && (
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchemaData)} />
+  )}
+</div>
+
+<style>
+  .faq-accordion-block {
+    margin-block: 32px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .faq-item {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all var(--transition-fast);
+  }
+
+  .faq-item[open] {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .faq-question {
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    font-size: 16px;
+    color: var(--primary-dark);
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding: 0 20px 20px;
+    color: var(--text-secondary);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    border-top: 1px dashed var(--border-subtle);
+    padding-top: 16px;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>

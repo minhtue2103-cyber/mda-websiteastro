@@ -1,0 +1,109 @@
+---
+import InsidePageLayout from '../../../../layouts/InsidePageLayout.astro';
+import FaqAccordion from '../../../../components/ui/FaqAccordion.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
+];
+
+const subNavigation = [
+  { name: 'Tổng quan dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo 1-1', url: '/dich-vu/dao-tao-xnk-1-1/' },
+  { name: 'Đào tạo Doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'Ứng dụng AI XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/' },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/', active: true },
+];
+
+const bluf = "Chương trình AI Marketing Nông Sản Quốc Tế tiên phong đào tạo chiến lược Story Answering và tối ưu hóa công cụ tạo sinh (GEO - Generative Engine Optimization). Giúp doanh nghiệp nông sản Việt Nam định vị thương hiệu kỹ thuật số chuẩn mực, để các hệ thống AI toàn cầu (ChatGPT, Perplexity, Gemini) chủ động đề xuất và trích dẫn sản phẩm của bạn tới các nhà nhập khẩu quốc tế.";
+
+const courseSummary = {
+  format: "Huấn luyện In-house chiến lược và thực hành triển khai tài sản số",
+  duration: "6 tuần (Bao gồm kiểm toán hiện diện số và tối ưu GEO)",
+  instructor: "Ban Công nghệ AI & GEO Marketing MDA Hub",
+};
+
+const faqs = [
+  {
+    question: "Doanh nghiệp đã chạy quảng cáo B2B trên Alibaba/Google rồi thì có cần học GEO không?",
+    answer: "Rất cần. Quảng cáo trả phí (PPC) chỉ mang lại lượt nhấp khi bạn còn trả tiền. Tối ưu GEO giúp website của bạn trở thành nguồn dữ liệu gốc uy tín mà các cỗ máy AI trích dẫn tự nhiên và miễn phí trọn đời cho các câu hỏi chuyên môn của người mua hàng."
+  },
+  {
+    question: "GEO có yêu cầu phải viết lại toàn bộ website không?",
+    answer: "Không. MDA Hub sẽ hướng dẫn doanh nghiệp bổ sung khối câu trả lời trực diện BLUF, chuẩn hóa cấu trúc dữ liệu JSON-LD Schema và tích hợp tệp llms.txt để các AI Crawlers dễ dàng tiếp nhận dữ liệu."
+  }
+];
+---
+
+<InsidePageLayout
+  title="AI Marketing & Tối Ưu Hóa GEO Nông Sản Quốc Tế | MDA Hub"
+  description="Khóa đào tạo chiến lược Story Answering và Generative Engine Optimization (GEO) dành riêng cho doanh nghiệp xuất khẩu nông sản B2B Việt Nam."
+  badge="Tiếp Thị Xuất Khẩu Kỷ Nguyên AI"
+  heroTitle="AI Marketing Nông Sản & Chiến Lược GEO Quốc Tế"
+  lead="Chuyển dịch từ tiếp thị truyền thống sang kỷ nguyên Agentic Web: Định vị hồ sơ năng lực nông sản Việt để các công cụ AI toàn cầu trực tiếp giới thiệu đến nhà mua hàng quốc tế."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+  courseSummary={courseSummary}
+>
+  <section>
+    <h2>1. Cuộc Cách Mạng Tìm Kiếm Nhà Cung Cấp Của Người Mua B2B</h2>
+    <p>
+      Hiện nay, các giám đốc mua hàng (Purchasing Managers) tại Bắc Mỹ, Châu Âu và Úc ngày càng ít sử dụng công cụ tìm kiếm truyền thống để lọc hàng triệu kết quả chung chung. Họ chuyển sang sử dụng các mô hình AI tạo sinh như ChatGPT Search, Perplexity và Gemini với những câu hỏi phức tạp mang tính kỹ thuật cao:
+    </p>
+    <blockquote style="font-size: 1.05rem; color: var(--primary-deep); font-weight: 600;">
+      "Gợi ý 3 nhà xuất khẩu sầu riêng sấy thăng hoa uy tín tại miền Nam Việt Nam có chứng nhận FDA, tiêu chuẩn BRC và khả năng cung cấp mẫu thử nghiệm trong 7 ngày?"
+    </blockquote>
+    <p>
+      Nếu nội dung website của doanh nghiệp chỉ có lời văn hoa mỹ mà thiếu thông số kỹ thuật có cấu trúc, cỗ máy AI sẽ hoàn toàn bỏ qua doanh nghiệp của bạn.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Bốn Trụ Cột Chiến Lược Được Chuyển Giao Trong Khóa Học</h2>
+    <div class="grid-2" style="margin-block: 24px;">
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-chat-quote-fill"></i> 1. Chiến Lược "Story Answering"</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Biến các câu hỏi kỹ thuật thường gặp của nhà nhập khẩu (về kiểm dịch, mã HS, quy trình chiếu xạ, giới hạn MRLs) thành các bài phân tích chuyên gia có cấu trúc trả lời trực diện.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-code-slash"></i> 2. Dữ Liệu Có Cấu Trúc Schema.org Đa Tầng</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Khai báo chuẩn xác các thực thể thực (Entities): Định danh pháp nhân, chứng chỉ quốc tế (FDA, BICON), tiêu chuẩn an toàn thực phẩm để bot tìm kiếm hiểu rõ năng lực doanh nghiệp.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-filetype-txt"></i> 3. Thiết Lập Hồ Sơ Chuẩn llms.txt &amp; ARD</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Triển khai giao thức Agentic Resource Discovery (ARD) và tệp <code>/llms.txt</code>, biến website thành "sách giáo khoa số" sẵn sàng cho các AI Agent đọc hiểu.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-envelope-paper-heart-fill"></i> 4. Tự Động Hóa Chăm Sóc Khách Hàng B2B</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Ứng dụng AI tạo mẫu thư chào hàng quốc tế (Cold Email B2B), kịch bản phản hồi Inquiry theo văn phong đàm phán thương mại bản xứ chuẩn xác.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Kết Quả Đầu Ra Cho Doanh Nghiệp</h2>
+    <ul>
+      <li>Xây dựng được hệ thống nội dung số chuẩn GEO được tối ưu hóa toàn diện.</li>
+      <li>Tăng tỷ lệ chuyển đổi thư hỏi hàng (Inquiry) B2B chất lượng cao từ thị trường Âu - Mỹ - Úc.</li>
+      <li>Giảm thiểu ngân sách tiếp thị thương mại điện tử phụ thuộc vào các sàn trung gian.</li>
+    </ul>
+  </section>
+
+  <section>
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về AI Marketing Nông Sản" />
+  </section>
+</InsidePageLayout>

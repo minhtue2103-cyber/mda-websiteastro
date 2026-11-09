@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#428442;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2D5E2D;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8DC435;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34C435;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="500" rx="40" fill="url(#grad1)"/>
+  <!-- Leaf and Agri emblem -->
+  <path d="M 250 80 C 180 120 150 200 170 270 C 190 340 250 360 250 360 C 250 360 310 340 330 270 C 350 200 320 120 250 80 Z" fill="url(#leafGrad)"/>
+  <path d="M 250 120 Q 250 240 210 290" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <circle cx="330" cy="150" r="32" fill="#FF9046"/>
+  <!-- Text -->
+  <text x="250" y="415" font-family="'Merriweather', serif" font-weight="900" font-size="44" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">MDA HUB</text>
+  <text x="250" y="455" font-family="'Source Serif 4', sans-serif" font-weight="600" font-size="20" fill="#E5F6C8" text-anchor="middle" letter-spacing="4">MEKONG DELTA AGRI</text>
+</svg>

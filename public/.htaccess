@@ -1,0 +1,52 @@
+# =====================================================================
+# MEKONG DELTA AGRI (ASTRO SSG) - .HTACCESS CHO HOSTING TRUYỀN THỐNG
+# =====================================================================
+RewriteEngine On
+RewriteBase /
+
+# 1. Ép buộc HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Redirect 301 các URL WordPress tiếng Anh cũ sang Sitemap Tiếng Việt mới
+Redirect 301 /our-story/ /gioi-thieu/
+Redirect 301 /our-story /gioi-thieu/
+Redirect 301 /services-products/import-export-consultant/ /dich-vu/
+Redirect 301 /services-products/import-export-consultant /dich-vu/
+Redirect 301 /argo-export/ /blog/
+Redirect 301 /community/grow-with-us/ /gioi-thieu/
+
+# 3. Cấu hình MIME Types & CORS cho Agentic Web (llms.txt & ARD .well-known)
+<IfModule mod_mime.c>
+  AddType application/json .json
+  AddType text/plain .txt
+  AddCharset UTF-8 .txt .json .html .xml
+</IfModule>
+
+<IfModule mod_headers.c>
+  <FilesMatch "^(ai-catalog\.json|ard\.json|llms\.txt|sitemap\.xml)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set X-Robots-Tag "index, follow"
+  </FilesMatch>
+</IfModule>
+
+# 4. Xử lý Clean Directory URLs cho Astro Static Build
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*?)/?$ $1/index.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# 5. Nén Gzip/Brotli & Cache tĩnh tăng tốc Core Web Vitals trên Hosting cũ
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

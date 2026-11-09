@@ -1,0 +1,309 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Thư Viện Nội Dung Đào Tạo Mẫu & Tài Liệu Thực Chiến MDA",
+  subtitle = "Trải nghiệm trước khung chương trình đào tạo chuyên sâu và tải tài liệu tổng hợp biểu mẫu nghiệp vụ độc quyền từ MDA Hub.",
+} = Astro.props;
+
+const modules = [
+  {
+    code: "Module 01",
+    tag: "Đào tạo XNK 1-1",
+    title: "Bộ Checklist 12 Bước Kiểm Tra Chứng Từ Thương Mại",
+    desc: "Quy trình kiểm soát rủi ro cho Invoice, Packing List, B/L, C/O và Phytosanitary chống tồn đọng và phạt chậm tại cảng đến.",
+    icon: "bi-card-checklist",
+  },
+  {
+    code: "Module 02",
+    tag: "Pháp Lý & Hải Quan",
+    title: "Cẩm Nang Phân Loại Mã HS Nông Sản & Tối Ưu Thuế FTA",
+    desc: "Giải mã Thông tư 85/2026/TT-BTC & 42/2026/TT-BCT, phân định trái cây tươi và nông sản sấy thăng hoa.",
+    icon: "bi-file-earmark-ruled",
+  },
+  {
+    code: "Module 03",
+    tag: "Tiêu Chuẩn Toàn Cầu",
+    title: "Thực Hành Đăng Ký FDA, Tra Cứu BICON & Chuẩn SPS",
+    desc: "Hướng dẫn từng bước tra cứu điều kiện nhập khẩu của Bộ Nông nghiệp Úc và thủ tục khai báo Prior Notice của FDA Mỹ.",
+    icon: "bi-globe2",
+  },
+  {
+    code: "Module 04",
+    tag: "Ứng Dụng AI XNK",
+    title: "Bộ 25 Prompts AI Rà Soát Hợp Đồng & Chứng Từ Ngoại Thương",
+    desc: "Bộ câu lệnh thực chiến giúp chuyên viên XNK rà soát mâu thuẫn điều khoản Incoterms và phát hiện sai số chỉ trong vài giây.",
+    icon: "bi-cpu-fill",
+  },
+  {
+    code: "Module 05",
+    tag: "AI Marketing & GEO",
+    title: "Khung Chiến Lược Story Answering & Hiện Diện Số Chuẩn GEO",
+    desc: "Xây dựng nội dung kỹ thuật để các công cụ AI (ChatGPT, Perplexity) chủ động trích dẫn doanh nghiệp với người mua quốc tế.",
+    icon: "bi-graph-up-arrow",
+  },
+  {
+    code: "Module 06",
+    tag: "Case Study Thực Tế",
+    title: "Hồ Sơ Xuất Khẩu Trái Cây & Nông Sản Sấy Sang Úc, Canada",
+    desc: "Bóc tách trọn vẹn bộ hồ sơ thực tế của một lô hàng mẫu thành công từ vùng trồng ĐBSCL đến bàn ăn người tiêu dùng quốc tế.",
+    icon: "bi-folder-check",
+  },
+];
+
+const pdfUrl = "/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf";
+---
+
+<section class="section section--white training-gallery-section" id="tai-lieu-dao-tao">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge">Nội Dung Đào Tạo Mẫu</span>
+      <h2 class="section-title shared-block__title">{title}</h2>
+      <p class="lead">{subtitle}</p>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      {modules.map((m) => (
+        <div class="gallery-card">
+          <div class="gallery-card__top">
+            <span class="module-code">{m.code}</span>
+            <span class="module-tag">{m.tag}</span>
+          </div>
+          <div class="gallery-card__icon">
+            <i class={`bi ${m.icon}`}></i>
+          </div>
+          <h3 class="gallery-card__title">{m.title}</h3>
+          <p class="gallery-card__desc">{m.desc}</p>
+          <div class="gallery-card__action">
+            <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="link-view">
+              <i class="bi bi-file-earmark-pdf"></i> Xem tóm tắt trong tài liệu tổng hợp &rarr;
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Unified PDF Download Banner -->
+    <div class="pdf-download-banner">
+      <div class="pdf-banner-content">
+        <div class="pdf-icon-wrapper">
+          <i class="bi bi-file-earmark-pdf-fill"></i>
+        </div>
+        <div class="pdf-info">
+          <h3 class="pdf-title">Tải Trọn Bộ Tài Liệu Đào Tạo Mẫu &amp; Biểu Mẫu Chứng Từ XNK (1 File PDF)</h3>
+          <p class="pdf-desc">
+            File PDF tổng hợp khung chương trình 6 Module chuyên sâu, sơ đồ quy trình kiểm tra chứng từ 12 bước và danh mục tra cứu nhanh mã HS nông sản nhiệt đới.
+          </p>
+        </div>
+      </div>
+
+      <div class="pdf-actions">
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn btn--outline-light">
+          <i class="bi bi-eye-fill"></i> Xem Trực Tiếp
+        </a>
+        <a href={pdfUrl} download="mda-tai-lieu-dao-tao-mau-xnk-ai.pdf" class="btn btn--secondary">
+          <i class="bi bi-file-earmark-arrow-down-fill"></i> Tải Trọn Bộ (.PDF)
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .text-center {
+    text-align: center;
+    max-width: 780px;
+    margin-inline: auto;
+    margin-bottom: 48px;
+  }
+
+  .text-center .section-title {
+    display: inline-block;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  @media (max-width: 992px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .gallery-card {
+    background: var(--bg-secondary);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    border-top: 4px solid var(--primary-light);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .gallery-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    background: #ffffff;
+  }
+
+  .gallery-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .module-code {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--secondary);
+    letter-spacing: 0.5px;
+  }
+
+  .module-tag {
+    font-size: 0.78rem;
+    background: #ffffff;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: var(--primary-dark);
+    font-weight: 600;
+  }
+
+  .gallery-card__icon {
+    font-size: 32px;
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+  }
+
+  .gallery-card__title {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+
+  .gallery-card__desc {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+
+  .link-view {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .link-view:hover {
+    color: var(--secondary);
+  }
+
+  /* PDF Download Banner */
+  .pdf-download-banner {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
+    border-radius: var(--card-radius);
+    padding: 36px 40px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 860px) {
+    .pdf-download-banner {
+      flex-direction: column;
+      text-align: center;
+      padding: 28px 20px;
+    }
+  }
+
+  .pdf-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  @media (max-width: 860px) {
+    .pdf-banner-content {
+      flex-direction: column;
+    }
+  }
+
+  .pdf-icon-wrapper {
+    font-size: 54px;
+    color: #ffffff;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.15);
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .pdf-title {
+    font-size: 1.35rem;
+    color: #ffffff;
+    margin: 0 0 8px;
+  }
+
+  .pdf-desc {
+    margin: 0;
+    font-size: 0.96rem;
+    color: var(--primary-100);
+    line-height: 1.55;
+    max-width: 600px;
+  }
+
+  .pdf-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 500px) {
+    .pdf-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+    .pdf-actions .btn {
+      width: 100%;
+    }
+  }
+
+  .btn--outline-light {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+  }
+
+  .btn--outline-light:hover {
+    background: #ffffff;
+    color: var(--primary-dark);
+  }
+</style>

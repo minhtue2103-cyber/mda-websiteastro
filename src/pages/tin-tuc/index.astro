@@ -1,0 +1,184 @@
+---
+import { getCollection } from 'astro:content';
+import ParentListingLayout from '../../layouts/ParentListingLayout.astro';
+import NewsCard from '../../components/ui/NewsCard.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Tin tức', url: '/tin-tuc/' },
+];
+
+const allNews = await getCollection('news');
+const sortedNews = allNews.sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const featuredNews = sortedNews.find((item) => item.data.featured) || sortedNews[0];
+const otherNews = sortedNews.filter((item) => item.slug !== featuredNews?.slug);
+---
+
+<ParentListingLayout
+  title="Tin Tức Xuất Nhập Khẩu Nông Sản & Hoạt Động Hải Quan 2026 | MDA Hub"
+  description="Cập nhật nhanh nhất các thông tư mới của Bộ Tài chính, Bộ Công Thương, cảnh báo kiểm dịch thực vật và các sự kiện đào tạo thực chiến tại Mekong Delta Agri."
+  badge="Bản Tin Thời Sự & Pháp Lý"
+  heroTitle="Tin Tức Xuất Nhập Khẩu & Hoạt Động MDA Hub"
+  lead="Tổng hợp các diễn biến mới nhất về chính sách hải quan, quy tắc xuất xứ FTA và hoạt động kết nối giao thương nông sản Việt Nam."
+  breadcrumbs={breadcrumbs}
+  enableCategoryFilter={false}
+>
+  <!-- Featured News Block -->
+  {featuredNews && (
+    <div class="featured-news-wrapper">
+      <div class="featured-news-card card">
+        <div class="featured-news__thumb">
+          <a href={`/tin-tuc/${featuredNews.slug}/`}>
+            <img
+              src={featuredNews.data.headlinePhoto}
+              alt={featuredNews.data.headlinePhotoAlt}
+              width="650"
+              height="365"
+            />
+          </a>
+          <span class="featured-badge">Tin Tiêu Điểm</span>
+        </div>
+
+        <div class="featured-news__body">
+          <time datetime={featuredNews.data.publishDate} class="featured-news__date">
+            <i class="bi bi-calendar3"></i>{" "}
+            {new Date(featuredNews.data.publishDate).toLocaleDateString('vi-VN', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+
+          <h2 class="featured-news__title">
+            <a href={`/tin-tuc/${featuredNews.slug}/`}>{featuredNews.data.title}</a>
+          </h2>
+
+          <p class="featured-news__excerpt">{featuredNews.data.description}</p>
+
+          <a href={`/tin-tuc/${featuredNews.slug}/`} class="btn btn--primary">
+            Đọc toàn bộ bản tin <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <!-- News Listing Grid (3 Cols) -->
+  <div class="news-listing-header">
+    <h3 class="section-title">Các Bản Tin Đáng Chú Ý Khác</h3>
+  </div>
+
+  <div class="grid-3 news-grid">
+    {sortedNews.map((news) => (
+      <NewsCard
+        title={news.data.title}
+        description={news.data.description}
+        publishDate={news.data.publishDate}
+        headlinePhoto={news.data.headlinePhoto}
+        headlinePhotoAlt={news.data.headlinePhotoAlt}
+        slug={news.slug}
+      />
+    ))}
+  </div>
+</ParentListingLayout>
+
+<style>
+  .featured-news-wrapper {
+    margin-bottom: 56px;
+  }
+
+  .featured-news-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 36px;
+    padding: 0;
+    overflow: hidden;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+  }
+
+  @media (max-width: 860px) {
+    .featured-news-card {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .featured-news__thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--primary-50);
+  }
+
+  .featured-news__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+  }
+
+  .featured-news-card:hover .featured-news__thumb img {
+    transform: scale(1.03);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--secondary);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 12px;
+  }
+
+  .featured-news__body {
+    padding: 24px 32px 24px 0;
+  }
+
+  @media (max-width: 860px) {
+    .featured-news__body {
+      padding: 0 24px 24px;
+    }
+  }
+
+  .featured-news__date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .featured-news__title {
+    font-size: 1.55rem;
+    line-height: 1.35;
+    margin: 0 0 16px;
+  }
+
+  .featured-news__title a {
+    color: var(--primary-deep);
+  }
+
+  .featured-news__title a:hover {
+    color: var(--primary-light);
+  }
+
+  .featured-news__excerpt {
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .news-listing-header {
+    margin-bottom: 32px;
+  }
+</style>

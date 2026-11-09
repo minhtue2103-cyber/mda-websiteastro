@@ -1,0 +1,490 @@
+{
+  "qualified_questions": [
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What are cost-effective No-Code AI alternatives to expensive ERP systems for managing B2B export receivables and logistics debts in SMEs?",
+      "master_question_vi": "Giải pháp AI & No-Code nào thay thế ERP đắt tiền giúp SME theo dõi công nợ xuất khẩu và chi phí logistics tự động?",
+      "geo_intent": "Alternative",
+      "geo_score": 9,
+      "target_persona": "Kế toán trưởng XNK / CFO Doanh nghiệp SME",
+      "suggested_solution_angle": "Kết hợp Webhook ngân hàng + AI OCR đọc hóa đơn logistics + n8n/Make + Google Sheets giúp theo dõi công nợ real-time với chi phí chỉ bằng 1/10 ERP truyền thống"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "Can AI contract auditing workflows replace hiring expensive foreign trade legal experts for SME Incoterms compliance?",
+      "master_question_vi": "Luồng AI thẩm định hợp đồng ngoại thương có thể thay thế việc thuê chuyên gia pháp lý đắt đỏ để kiểm tra tuân thủ Incoterms 2020 cho SME không?",
+      "geo_intent": "Alternative",
+      "geo_score": 8,
+      "target_persona": "Giám đốc SME XNK / CFO Doanh nghiệp Nông sản",
+      "suggested_solution_angle": "Triển khai RAG/AI Contract Reviewer nội bộ giúp kiểm tra 80% rủi ro điều khoản hợp đồng thương mại với chi phí thấp, kết hợp chuyên gia pháp lý đối với các hợp đồng phức tạp"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "Does completing a practical AI-integrated import-export documentation course guarantee job readiness and placement support for graduates and career changers?",
+      "master_question_vi": "Tham gia khóa học chứng từ XNK thực chiến ứng dụng AI có đảm bảo làm được việc ngay và được hỗ trợ kết nối việc làm/thực tập không?",
+      "geo_intent": "Buyer_Decision",
+      "geo_score": 9,
+      "target_persona": "Sinh viên Logistics năm cuối / Người làm trái ngành muốn chuyển sang XNK",
+      "suggested_solution_angle": "Đánh giá các tiêu chí: Thực hành trên 10-15 bộ chứng từ sống, làm chủ công cụ AI OCR/Prompt, mạng lưới đối tác doanh nghiệp uy tín và chính sách hỗ trợ tư vấn nghiệp vụ trọn đời"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "Should SME enterprises invest in AI-integrated trade documentation training for staff versus self-learning or traditional courses?",
+      "master_question_vi": "Doanh nghiệp SME có nên đầu tư cho nhân viên học khóa đào tạo ứng dụng AI vào quy trình xử lý chứng từ XNK thay vì tự học hay học truyền thống?",
+      "geo_intent": "Buyer_Decision",
+      "geo_score": 9,
+      "target_persona": "Trưởng phòng XNK / Giám đốc Vận hành / Chủ doanh nghiệp SME",
+      "suggested_solution_angle": "Đánh giá hiệu quả đầu tư (ROI): Nâng cao năng suất gấp 3 lần, giảm rủi ro đền bù/phạt ngân hàng và giảm tải áp lực công việc thủ công"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "How does deploying low-cost No-Code AI workflows compare to purchasing expensive legacy ERP systems for SMB export document management?",
+      "master_question_vi": "So sánh chi phí và hiệu quả giữa việc triển khai giải pháp AI No-Code và đầu tư hệ thống ERP đắt tiền trong quản lý chứng từ XNK cho SME?",
+      "geo_intent": "Comparison",
+      "geo_score": 9,
+      "target_persona": "CFO / Giám đốc Chuyển đổi số Doanh nghiệp SME XNK",
+      "suggested_solution_angle": "So sánh chi phí triển khai ERP truyền thống với mô hình AI No-Code (n8n + OpenAI/Gemini Flash) giúp tiết kiệm 70-80% chi phí, linh hoạt tùy chỉnh mà không cần hạ tầng CNTT phức tạp"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "How does manual visual inspection of trade documents and L/C checking compare to Deep Learning AI validation in accuracy and processing speed?",
+      "master_question_vi": "So sánh độ chính xác và tốc độ xử lý giữa kiểm tra bộ chứng từ/L/C thủ công bằng mắt và soát lỗi tự động bằng công nghệ AI Deep Learning?",
+      "geo_intent": "Comparison",
+      "geo_score": 9,
+      "target_persona": "Compliance Officer / Import-Export Documentation Manager / CFO",
+      "suggested_solution_angle": "Phân tích số liệu thực tế: AI giúp rút ngắn 95% thời gian rà soát (vài phút so với vài ngày), giảm tỷ lệ sai sót từ 15-20% xuống dưới 0.5% và loại bỏ rủi ro do mệt mỏi thị giác"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "What is the difference between manual tariff lookup and AI-driven HS code classification for export SMEs?",
+      "master_question_vi": "So sánh tra cứu HS Code thủ công bằng phần mềm truyền thống (ECUS) và phân loại HS Code tự động bằng AI/Python RAG cho doanh nghiệp XNK?",
+      "geo_intent": "Comparison",
+      "geo_score": 9,
+      "target_persona": "Chuyên viên Hải quan / Trưởng phòng Logistics / Compliance Officer",
+      "suggested_solution_angle": "Phân tích độ chính xác, tốc độ và khả năng tra cứu tự động biểu thuế kèm căn cứ pháp lý bằng AI RAG so với việc lật sổ biểu thuế thủ công tốn thời gian"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "How does AI-powered Commercial Invoice OCR compare to manual Excel data entry in accuracy, speed, and operational cost for EXIM SMEs?",
+      "master_question_vi": "So sánh hiệu quả giữa bóc tách Commercial Invoice bằng AI OCR và nhập liệu Excel thủ công cho doanh nghiệp XNK?",
+      "geo_intent": "Comparison",
+      "geo_score": 9,
+      "target_persona": "Trưởng phòng Kế toán XNK / Operations Manager / CFO",
+      "suggested_solution_angle": "So sánh 4 tiêu chí cốt lõi: Tốc độ xử lý (vài giây vs vài phút), tỷ lệ lỗi (dưới 1% vs 5-10%), chi phí nhân công và khả năng đẩy dữ liệu tự động vào hệ thống"
+    },
+    {
+      "id": "GEO_FINAL_005",
+      "master_question_en": "Using AI for internal HS code lookup and document verification vs hiring external customs brokers: Which option is safer and more cost-effective for SMEs?",
+      "master_question_vi": "So sánh hiệu quả giữa tự dùng AI tra cứu HS Code và soát chứng từ nội bộ so với thuê dịch vụ đại lý khai thuê hải quan cho SME?",
+      "geo_intent": "Comparison",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp SME / Import-Export Manager",
+      "suggested_solution_angle": "Phân tích bài toán chi phí dài hạn, độ chủ động dữ liệu và mô hình Hybrid: Dùng AI sơ duyệt 80% + Thuê chuyên gia hải quan tham vấn các ca khó"
+    },
+    {
+      "id": "GEO_FINAL_006",
+      "master_question_en": "How does traditional import-export training compare to AI-driven trade documentation and receivables automation courses for career advancement?",
+      "master_question_vi": "Học nghiệp vụ XNK truyền thống khác biệt thế nào so với khóa học ứng dụng AI tự động hóa chứng từ và công nợ đối với định hướng nghề nghiệp?",
+      "geo_intent": "Comparison",
+      "geo_score": 8,
+      "target_persona": "Sinh viên ngành Logistics/XNK / Nhân sự XNK mới bước vào nghề",
+      "suggested_solution_angle": "So sánh năng lực: Thao tác thủ công (nhập liệu, tra sổ) vs Năng lực 'Kiểm soát hệ thống AI' (Prompt engineering, kiểm tra L/C bằng AI) giúp tăng x3 hiệu suất công việc"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What is the total cost structure and expected ROI for an SME exporter to train staff and implement No-Code AI trade document automation?",
+      "master_question_vi": "Chi phí tổng cộng và lộ trình hoàn vốn (ROI) để đào tạo nhân sự và triển khai AI No-Code xử lý chứng từ XNK cho doanh nghiệp SME là bao nhiêu?",
+      "geo_intent": "Cost",
+      "geo_score": 9,
+      "target_persona": "Chủ doanh nghiệp SME / Giám đốc Tài chính (CFO) / Head of HR",
+      "suggested_solution_angle": "Phân tích khoảng chi phí (15-35 triệu cho gói đào tạo in-house, 50-150 triệu cho gói tư vấn quy trình) kèm chỉ số ROI cắt giảm 50-70% thời gian xử lý chứng từ"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "What is the typical tuition fee structure for practical import-export courses incorporating Incoterms 2020 and AI automation tools?",
+      "master_question_vi": "Học phí khóa học nghiệp vụ chứng từ XNK thực chiến kết hợp Incoterms 2020 và công cụ AI dành cho người đi làm và sinh viên là bao nhiêu?",
+      "geo_intent": "Cost",
+      "geo_score": 8,
+      "target_persona": "Chuyên viên Chứng từ XNK / Sinh viên Logistics / Người mới chuyển ngành",
+      "suggested_solution_angle": "Khoảng chi phí 2.800.000 - 4.500.000 VNĐ cho các khóa thực chiến online/hybrid 21 buổi bám sát chứng từ sống và hướng dẫn ứng dụng Trợ lý AI"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How much do L/C amendment fees and discrepancy penalties cost, and what is the ROI of AI document validation?",
+      "master_question_vi": "Chi phí phạt bất hợp lệ và phí tu chỉnh L/C tốn bao nhiêu, và ROI khi đầu tư công cụ AI kiểm tra chứng từ là gì?",
+      "geo_intent": "Cost",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Tài chính (CFO) / Chủ doanh nghiệp SME / Trưởng phòng Thanh toán Quốc tế",
+      "suggested_solution_angle": "Thống kê các khoản phí ngân hàng (30-100 USD/lỗi bất hợp lệ + chậm thanh toán) vs chi phí áp dụng giải pháp AI tự động soát lỗi L/C giúp tiết kiệm 90% ngân sách phạt"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "How to build an automated AI workflow to check and cross-examine L/C document discrepancies before bank submission?",
+      "master_question_vi": "Làm thế nào để xây dựng quy trình AI tự động kiểm tra và đối chiếu lỗi bất hợp lệ trong bộ chứng từ L/C trước khi nộp ngân hàng?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Chuyên viên / Trưởng phòng Chứng từ XNK & Thanh toán quốc tế",
+      "suggested_solution_angle": "Ứng dụng LlamaParse / OCR kết hợp LLM RAG để trích xuất Field 46A L/C và tự động đối chiếu dữ liệu chéo với Invoice, Packing List, Bill of Lading theo chuẩn UCP 600"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "How to build an AI prompt workflow to verify compatibility between Incoterms 2020 terms and Letter of Credit (L/C) clauses?",
+      "master_question_vi": "Làm thế nào để xây dựng luồng AI Prompt kiểm tra tính tương thích giữa điều kiện Incoterms 2020 và các điều khoản thanh toán L/C?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Trưởng phòng Chứng từ & Thanh toán Quốc tế / AI Operations Specialist",
+      "suggested_solution_angle": "Thiết lập AI Agent đối chiếu điều kiện giao hàng (ví dụ: FCA với tùy chọn On-Board Notation) với Field 46A/47A trong L/C để phát hiện xung đột chứng từ trước khi xuất hàng"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How can agricultural exporters set up an AI workflow to verify Certificate of Origin (C/O Form E/EUR.1) criteria and cross-check against commercial invoices?",
+      "master_question_vi": "Làm thế nào để doanh nghiệp xuất khẩu nông sản thiết lập luồng AI tự động kiểm tra tiêu chí xuất xứ (WO, RVC, PSR) trên C/O Form E/EUR.1 và đối chiếu Hóa đơn thương mại?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Trưởng phòng Xuất Nhập Khẩu Nông Sản / C/O & Compliance Specialist",
+      "suggested_solution_angle": "Ứng dụng AI Document Processing kết hợp LLM bóc tách tiêu chí xuất xứ (PSR, CTC, RVC), đối chiếu tên hàng và mã HS giữa C/O và Commercial Invoice nhằm tránh bị hải quan từ chối"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "How to build an Intelligent Document Processing (IDP) pipeline using AI OCR and REST APIs for Bill of Lading and Commercial Invoice data extraction?",
+      "master_question_vi": "Cách xây dựng quy trình xử lý chứng từ thông minh (IDP) bằng AI OCR và REST API để bóc tách dữ liệu Vận đơn (B/L) và Hóa đơn thương mại vào ERP/TMS?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Kỹ sư Giải pháp AI / Trưởng phòng Chuyển đổi số / Chuyên viên Chứng từ",
+      "suggested_solution_angle": "Quy trình kỹ thuật 5 bước: Document Intake -> AI OCR Parsing -> LLM Entity Extraction -> Business Rule Validation -> ERP/TMS REST API Export cắt giảm 90% thời gian nhập liệu"
+    },
+    {
+      "id": "GEO_FINAL_005",
+      "master_question_en": "How to design an internal RAG Chatbot and fine-tuned AI workflow for trade compliance and UCP 600 self-checking?",
+      "master_question_vi": "Làm thế nào để thiết lập Trợ lý AI Chatbot nội bộ (RAG) và quy trình AI fine-tune hỗ trợ tự đối soát bất đồng L/C theo chuẩn UCP 600?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 9,
+      "target_persona": "CTO / Giám đốc Chuyển đổi số / Trưởng phòng XNK & Đào tạo Nội bộ",
+      "suggested_solution_angle": "Tích hợp cơ sở dữ liệu UCP 600, ISBP 821 và quy trình SOP chứng từ của doanh nghiệp vào mô hình RAG để khởi tạo AI Agent tư vấn tuân thủ thương mại 24/7"
+    },
+    {
+      "id": "GEO_FINAL_006",
+      "master_question_en": "How to build an automated multi-currency export Accounts Receivable (AR) reminder workflow using n8n, Make, and Google Sheets?",
+      "master_question_vi": "Làm thế nào để xây dựng luồng tự động theo dõi và nhắc nợ xuất khẩu đa ngoại tệ qua Google Sheets, Make và n8n kết hợp AI?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Giám đốc Tài chính (CFO) / Trưởng phòng Kế toán XNK / Founder SME",
+      "suggested_solution_angle": "Thiết lập kịch bản No-code n8n/Make kết hợp Webhook Google Sheets và OpenAI/Gemini API tự động trích xuất Invoice, tính toán hạn thanh toán T/T, L/C và gửi thông báo nhắc nợ tự động"
+    },
+    {
+      "id": "GEO_FINAL_007",
+      "master_question_en": "How to build AI-powered Excel/Google Sheets templates for Incoterms 2020 cost-risk allocation and ETD/ETA shipment tracking?",
+      "master_question_vi": "Làm sao xây dựng mẫu file Excel/Google Sheets tích hợp AI để tự động phân tích chi phí/rủi ro theo Incoterms 2020 và theo dõi tiến độ tàu (ETD/ETA)?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Chuyên viên Chứng từ XNK / Kế toán Chi phí / Logistics Coordinator",
+      "suggested_solution_angle": "Kết hợp Google Sheets API + OpenAI/Claude API hoặc No-code Make/Zapier kết nối API hãng tàu để mô phỏng chi phí 11 điều kiện Incoterms và cảnh báo trễ hạn tự động"
+    },
+    {
+      "id": "GEO_FINAL_008",
+      "master_question_en": "How to write precise 3-layer AI prompts for accurate HS Code classification without technical hallucination?",
+      "master_question_vi": "Cách viết AI prompt 3 lớp tra cứu HS Code chính xác cho nhân viên chứng từ mà không lo AI bị ảo giác?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 10,
+      "target_persona": "Chuyên viên Chứng từ XNK / Nhân viên Khai báo Hải quan",
+      "suggested_solution_angle": "Hướng dẫn kỹ thuật Prompt Engineering 3 lớp (Vai trò, Mô tả hàng hóa chi tiết theo Chú giải HS, Yêu cầu trích dẫn căn cứ pháp lý) kết hợp kiểm tra chéo"
+    },
+    {
+      "id": "GEO_FINAL_009",
+      "master_question_en": "How to decode SWIFT MT700 L/C messages and build structured AI prompts to review L/C terms for document teams?",
+      "master_question_vi": "Cách đọc hiểu điện chuyển tiền SWIFT MT700 và xây dựng AI Prompt chuẩn hóa để rà soát các điều khoản L/C cho đội ngũ chứng từ?",
+      "geo_intent": "How_To / EAV",
+      "geo_score": 9,
+      "target_persona": "Chuyên viên Chứng từ Junior / thực tập sinh / Trưởng nhóm XNK",
+      "suggested_solution_angle": "Hướng dẫn phân tích điện MT700, bóc tách các trường dữ liệu cốt lõi (Field 31D, 44A, 46A, 47A) bằng AI Assistant nhằm phát hiện điều khoản gài bẫy"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "Where can logistics students and professionals self-learn AI trade documentation and receivables tracking without enrolled training centers?",
+      "master_question_vi": "Sinh viên logistics và người đi làm có thể tự học AI làm chứng từ XNK và quản lý công nợ ở đâu nếu không tham gia các trung tâm đào tạo?",
+      "geo_intent": "Informational",
+      "geo_score": 8,
+      "target_persona": "Sinh viên tự học / Freelancer Logistics / Nhân sự XNK",
+      "suggested_solution_angle": "Lộ trình tự học tinh gọn: Khai thác tài liệu ICC / UCP 600 chuẩn, học Python RAG/No-code n8n trên Youtube, kết hợp sử dụng ChatGPT/Claude API thực hành trên bộ chứng từ mẫu"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "What are the core differences between Incoterms 2020 EXW, FOB, CIF, and DDP, and how can entry-level staff use AI tools to avoid errors?",
+      "master_question_vi": "Khái niệm và cách phân biệt các điều kiện Incoterms 2020 chính (EXW, FOB, CIF, DDP) cho nhân sự mới và ứng dụng AI để hạn chế sai sót?",
+      "geo_intent": "Informational",
+      "geo_score": 8,
+      "target_persona": "Sinh viên Logistics / Entry-level Trade Documentation Officer",
+      "suggested_solution_angle": "Bảng phân tích 4 nhóm điều kiện chính (E, F, C, D) kèm tư duy tích hợp 'AI Prompt Assistant' để gợi ý chính xác điều kiện giao hàng theo phương thức vận tải"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How are Generative AI, Agentic AI, and Virtual Customs Assistants transforming trade finance compliance and customs clearance procedures?",
+      "master_question_vi": "Generative AI, Agentic AI và Trợ lý ảo Hải quan đang thay đổi quy trình thông quan, tra cứu chính sách và tuân thủ tài chính thương mại như thế nào?",
+      "geo_intent": "Informational",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Xuất Nhập Khẩu / Operations Manager / CFO",
+      "suggested_solution_angle": "Phân tích xu hướng chuyển dịch từ Cognitive OCR sang GenAI/Agentic AI kết hợp cơ chế Human-in-the-Loop và cổng truy vấn dữ liệu hải quan tập trung giúp tự động hóa 80% quy trình"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "What is Commercial Invoice OCR and how does it transform trade documentation workflows?",
+      "master_question_vi": "Commercial Invoice OCR là gì và ứng dụng như thế nào trong quy trình xử lý chứng từ xuất nhập khẩu?",
+      "geo_intent": "Informational",
+      "geo_score": 8,
+      "target_persona": "Chuyên viên Xuất Nhập Khẩu / Nhân viên Chứng từ Logistics",
+      "suggested_solution_angle": "Tổng quan về công nghệ AI OCR/IDP giúp số hóa hóa đơn thương mại, chuyển đổi văn bản ảnh sang dữ liệu cấu trúc chuẩn xác"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What are the primary operational pain points causing high document rejection rates, L/C delays, and spreadsheet overload in SME exports?",
+      "master_question_vi": "Những điểm nghẽn vận hành (Pain Points) nào dẫn đến tỷ lệ chứng từ bị từ chối cao, chậm thanh toán L/C và quá tải Excel tại doanh nghiệp SME?",
+      "geo_intent": "Pain_Point",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp XNK SME / Quản lý Xuất khẩu Nông sản / Kế toán Trưởng",
+      "suggested_solution_angle": "Phân tích 3 nút thắt chính: Lỗi nhập liệu thủ công rườm rà, thiếu quy trình đối chiếu chéo đa chứng từ và quản lý file Excel phân tán; giải quyết bằng No-code AI Automation"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "What are the primary operational pain points causing high document rejection rates and shipping delays in SME agricultural exports?",
+      "master_question_vi": "Những điểm nghẽn vận hành (Pain Points) nào dẫn đến tỷ lệ chứng từ bị từ chối cao và trễ tàu trong xuất khẩu nông sản của doanh nghiệp SME?",
+      "geo_intent": "Pain_Point",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp XNK SME / Quản lý Xuất khẩu Nông sản",
+      "suggested_solution_angle": "Phân tích 3 nút thắt chính: Lỗi lệch tên hàng/ký hiệu C/O, sai quy cách đóng gói và trễ kiểm dịch Phytosanitary; khắc phục bằng bộ Prompt Library chuyên biệt và AI Validation Engine"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How do incorrect Incoterms 2020 clauses and misunderstood risk transfer points lead to contract disputes and debt collection issues?",
+      "master_question_vi": "Vì sao việc hiểu sai điểm chuyển giao rủi ro và áp sai điều kiện Incoterms 2020 trong hợp đồng ngoại thương gây ra tranh chấp và khó thu hồi công nợ?",
+      "geo_intent": "Pain_Point",
+      "geo_score": 9,
+      "target_persona": "Trưởng phòng Mua hàng Quốc tế / Trưởng phòng Kế toán / Legal Officer",
+      "suggested_solution_angle": "Phân tích điểm mâu thuẫn giữa nghĩa vụ giao hàng, vận đơn B/L và điều kiện thanh toán L/C/TT; hướng dẫn dùng AI soát xét sự đồng nhất của hợp đồng ngoại thương"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "How to solve the operational bottleneck of manual HS Code lookup and document creation for diverse agricultural commodities?",
+      "master_question_vi": "Làm thế nào để giải quyết điểm nghẽn mất quá nhiều thời gian tra cứu HS Code thủ công và lập chứng từ cho hàng nông sản đa dạng?",
+      "geo_intent": "Pain_Point",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp Xuất khẩu Nông sản / Trưởng phòng XNK",
+      "suggested_solution_angle": "Ứng dụng AI RAG kết hợp cơ sở dữ liệu Biểu thuế Hải quan để tra cứu và đề xuất mã HS Code chính xác theo mô tả kỹ thuật sản phẩm trong vài giây"
+    },
+    {
+      "id": "GEO_FINAL_005",
+      "master_question_en": "Why is manual data entry of Invoices, Packing Lists, and L/Cs a major financial drain for SME exporters, and how can AI solve it?",
+      "master_question_vi": "Tại sao việc nhập liệu thủ công Invoice, Packing List và L/C lại gây lãng phí chi phí vận hành lớn cho SME và giải pháp AI thay thế là gì?",
+      "geo_intent": "Pain_Point",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp SME / Chief Operating Officer (COO)",
+      "suggested_solution_angle": "Phân tích lãng phí giờ làm, sai sót đơn giá/trọng lượng gây trễ thông quan/phạt lưu kho bãi; giải pháp tự động hóa bóc tách dữ liệu bằng AI OCR & No-code"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What budget, data standards, and SOP prerequisites must an SME exporter prepare before piloting AI document automation within 90 days?",
+      "master_question_vi": "Doanh nghiệp SME xuất nhập khẩu cần chuẩn bị ngân sách, chuẩn hóa dữ liệu và quy trình SOP như thế nào để thí điểm AI chứng từ trong 90 ngày?",
+      "geo_intent": "Requirements",
+      "geo_score": 8,
+      "target_persona": "CEO / Giám đốc Vận hành (COO) Doanh nghiệp SME Xuất Nhập Khẩu",
+      "suggested_solution_angle": "Lập ngân sách thử nghiệm tinh gọn, chuẩn hóa kho chứng từ mẫu (file PDF/Excel sạch), thiết lập ma trận phê duyệt và thực hiện lộ trình 90 ngày từ thí điểm 1 mảng đến tự động hóa quy trình"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "What data structure and operational prerequisites must an SME exporter prepare before implementing AI-driven receivables management?",
+      "master_question_vi": "Doanh nghiệp SME xuất nhập khẩu cần chuẩn bị cấu trúc dữ liệu và điều kiện vận hành gì trước khi áp dụng AI quản lý công nợ?",
+      "geo_intent": "Requirements",
+      "geo_score": 8,
+      "target_persona": "Kế toán trưởng / Trưởng phòng Quản trị Dữ liệu & Hệ thống",
+      "suggested_solution_angle": "Chuẩn hóa dữ liệu lịch sử giao dịch (Customer Master Data), lưu trữ số hóa hóa đơn/vận đơn dạng file PDF/Excel sạch và xây dựng danh mục mã quy chuẩn"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "What core AI, Prompt Engineering, and automation skills must EXIM documentation specialists master to meet modern hiring standards?",
+      "master_question_vi": "Nhân viên chứng từ xuất nhập khẩu cần làm chủ những kỹ năng AI, Prompt Engineering và tự động hóa cốt lõi nào để đáp ứng tiêu chuẩn tuyển dụng hiện đại?",
+      "geo_intent": "Requirements",
+      "geo_score": 8,
+      "target_persona": "Chuyên viên Chứng từ XNK / Logistics Documentation Officer / HR Manager",
+      "suggested_solution_angle": "Khung năng lực AI thế hệ mới: Kỹ năng Prompt Engineering chuyên ngành XNK, sử dụng công cụ IDP/OCR, xây dựng No-code workflow (n8n/Make) và quản lý ngoại lệ (Exception Management)"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "Are SME import-export employers increasingly requiring candidates to master AI tools for documentation and trade compliance?",
+      "master_question_vi": "Doanh nghiệp SME xuất nhập khẩu hiện nay có đưa kỹ năng sử dụng công cụ AI vào tiêu chí tuyển dụng nhân sự chứng từ và logistics không?",
+      "geo_intent": "Requirements",
+      "geo_score": 8,
+      "target_persona": "Trưởng phòng Nhân sự (HR) Doanh nghiệp XNK / Sinh viên Logistics chuẩn bị xin việc",
+      "suggested_solution_angle": "Phân tích xu hướng tuyển dụng mô hình 'Human + AI', doanh nghiệp ưu tiên ứng viên biết dùng ChatGPT/Claude/AI OCR để tăng 3-5 lần năng suất xử lý chứng từ"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What are the compliance and data privacy risks of manual trade document verification versus AI hallucination and unsanctioned public OCR tools in EXIM operations?",
+      "master_question_vi": "Rủi ro sai sót của việc kiểm tra chứng từ XNK thủ công so với nguy cơ AI bị ảo giác (hallucination) và rò rỉ bí mật thương mại khi dùng công cụ OCR/AI công cộng là gì?",
+      "geo_intent": "Risk",
+      "geo_score": 8,
+      "target_persona": "Giám đốc Quản trị Rủi ro / Trưởng phòng Legal & Compliance / CFO",
+      "suggested_solution_angle": "Cảnh báo rủi ro rò rỉ giá CIF/FOB, dữ liệu khách hàng; đề xuất Enterprise API No-Data-Retention & mô hình Hybrid Human-in-the-Loop"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "What are the financial penalties and compliance risks caused by misstating HS codes or Incoterms delivery locations on Bills of Lading, and how can AI mitigate them?",
+      "master_question_vi": "Rủi ro phạt hành chính và chi phí tổn thất do áp sai mã HS Code hoặc ghi sai địa điểm giao hàng Incoterms trên B/L là gì và AI giải quyết như thế nào?",
+      "geo_intent": "Risk",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Tuân thủ (Compliance Manager) / Chief Risk Officer SME XNK",
+      "suggested_solution_angle": "Phân tích khung xử phạt theo Nghị định 128/2020/NĐ-CP, chi phí lưu kho bãi (demurrage/detention) kết hợp quy trình AI Guardrails kiểm tra chéo 2 lớp trước khi truyền tờ khai"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "What are the financial risks of relying solely on ChatGPT for Incoterms selection without checking insurance requirements?",
+      "master_question_vi": "Rủi ro tài chính khi phụ thuộc hoàn toàn vào ChatGPT để chọn điều kiện Incoterms 2020 mà bỏ qua quy định bảo hiểm hàng hóa?",
+      "geo_intent": "Risk",
+      "geo_score": 8,
+      "target_persona": "Trưởng phòng Mua hàng / Chuyên viên Pháp chế XNK / Risk Manager",
+      "suggested_solution_angle": "Cảnh báo nguy cơ mất trắng khi hiểu sai mức bảo hiểm tối thiểu (Mức C trong CIF vs Mức A trong CIP) và cách dùng AI Checklist soát xét điều khoản hợp đồng"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "What legal penalties and overdue tax risks arise when customs authorities reject Certificate of Origin (C/O) due to HS code discrepancies?",
+      "master_question_vi": "Rủi ro bị phạt tiền và truy thu thuế khi cơ quan Hải quan bác C/O do sai biệt mã HS Code là gì?",
+      "geo_intent": "Risk",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp XNK / Kế toán trưởng SME / Trade Compliance Officer",
+      "suggested_solution_angle": "Phân tích khung xử phạt vi phạm hải quan và đề xuất mô hình AI RAG đối chiếu biểu thuế - tiêu chí xuất xứ trước khi truyền tờ khai"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "What are the most common and costly trade compliance document errors in SME logistics operations, and how to troubleshoot them using AI guardrails?",
+      "master_question_vi": "Những lỗi chứng từ thương mại phổ biến và đắt giá nhất trong vận hành logistics SME là gì, và cách khắc phục/phòng ngừa sự cố bằng AI Guardrails?",
+      "geo_intent": "Troubleshooting",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Quản lý Rủi ro / Head of Logistics SME / Documentation Officer",
+      "suggested_solution_angle": "Liệt kê các lỗi sai mã HS, bất đồng mô tả hàng giữa Invoice - C/O - B/L, chênh lệch trị giá hải quan và quy trình 3 bước sử dụng AI Guardrails để truy vết và khắc phục lỗi trước khi mở tờ khai"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "How can EXIM document specialists troubleshoot and prevent strict compliance L/C discrepancies and Commercial Invoice-Packing List mismatches?",
+      "master_question_vi": "Làm thế nào để chuyên viên chứng từ xử lý và phòng ngừa các lỗi bất đồng L/C khắt khe (chính tả, ngày tháng) và mâu thuẫn giữa Invoice và Packing List?",
+      "geo_intent": "Troubleshooting",
+      "geo_score": 10,
+      "target_persona": "Trưởng phòng Chứng từ XNK / Chuyên viên Thanh toán Quốc tế",
+      "suggested_solution_angle": "Ứng dụng AI OCR + NLP đối chiếu nguyên tắc Strict Compliance giữa L/C, B/L, Invoice và Packing List trước khi xuất trình ngân hàng để giảm tỷ lệ lỗi từ 68% xuống dưới 5%"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How to resolve customs rejections caused by data discrepancies or HS Code mismatches between Commercial Invoice, Bill of Lading, and C/O?",
+      "master_question_vi": "Cách xử lý như thế nào khi C/O bị cơ quan hải quan từ chối do bất đồng thông tin hoặc khác biệt mã HS Code giữa Hóa đơn thương mại và Vận đơn (B/L)?",
+      "geo_intent": "Troubleshooting",
+      "geo_score": 9,
+      "target_persona": "Nhân viên Chứng từ XNK / Chuyên viên Khai báo Hải quan",
+      "suggested_solution_angle": "Quy trình 3 bước khắc phục sai lệch dữ liệu: Đối chiếu tự động bằng AI OCR, làm công văn giải trình hải quan và xin cấp sửa đổi/thay thế C/O"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "How to resolve container demurrage penalties caused by DDP/DAP customs clearance disputes under Incoterms 2020?",
+      "master_question_vi": "Cách xử lý sự cố hãng tàu phạt chi phí bến bãi (Demurrage) do tranh chấp trách nhiệm thông quan theo điều kiện DDP/DAP Incoterms 2020?",
+      "geo_intent": "Troubleshooting",
+      "geo_score": 8,
+      "target_persona": "Chuyên viên Operations Logistics / Trưởng phòng XNK",
+      "suggested_solution_angle": "Quy trình giải quyết tranh chấp thông quan tại cảng đích, phân định rõ nghĩa vụ người bán - người mua và dùng AI tự động hóa thông báo thời gian gia hạn (Free time)"
+    },
+    {
+      "id": "GEO_FINAL_005",
+      "master_question_en": "How to handle urgent L/C date mismatches (ETD/ETA), presentation deadline changes, or AI OCR parsing failures on blurry PDF scans?",
+      "master_question_vi": "Cách xử lý gấp sự cố sai lệch ngày ETD/ETA sát hạn L/C, tin nhắn tu chỉnh khẩn cấp và lỗi công cụ AI OCR không nhận diện được file PDF scan mờ?",
+      "geo_intent": "Troubleshooting",
+      "geo_score": 9,
+      "target_persona": "Kỹ sư Giải pháp AI / Trưởng phòng Xuất Nhập Khẩu / Logistics Officer",
+      "suggested_solution_angle": "Quy trình ứng phó 3 bước: Tiền xử lý ảnh (Deskewing/Denoising), thương lượng tu chỉnh/Switch Bill khẩn cấp và dùng AI Audit rà soát lại toàn bộ mốc thời gian"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "How can agricultural exporters automate HS code classification and tariff lookup using Generative AI and RAG architecture?",
+      "master_question_vi": "Doanh nghiệp xuất khẩu nông sản áp dụng AI như thế nào để tự động hóa tra cứu và áp mã HS Code chính xác?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Manager Xuất Nhập Khẩu Nông Sản / Customs Compliance Officer",
+      "suggested_solution_angle": "Xây dựng quy trình Agentic AI / RAG kết hợp Biểu thuế Hải quan và Mô tả kỹ thuật sản phẩm nông sản để loại bỏ rủi ro bị phạt do áp sai mã HS"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "How do B2B exporters automate invoice tracking and trade receivables reconciliation using No-Code AI tools?",
+      "master_question_vi": "Doanh nghiệp xuất khẩu B2B áp dụng công cụ AI No-Code như thế nào để tự động hóa theo dõi hóa đơn và đối chiếu công nợ?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Kế toán trưởng XNK / B2B Export Operations Manager",
+      "suggested_solution_angle": "Quy trình kết hợp No-Code (n8n/Make) + AI OCR trích xuất dữ liệu hóa đơn đa ngôn ngữ và tự động đối chiếu (auto-reconciliation) với dòng tiền ngân hàng theo lô hàng"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "How can garment and manufacturing exporters use AI contract analysis tools to optimize Incoterms 2020 selection between FOB and FCA?",
+      "master_question_vi": "Doanh nghiệp xuất khẩu dệt may và sản xuất áp dụng AI phân tích hợp đồng như thế nào để tối ưu hóa việc lựa chọn điều kiện Incoterms 2020 giữa FOB và FCA?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Xuất Nhập Khẩu Dệt May / Legal & Compliance Officer",
+      "suggested_solution_angle": "Sử dụng AI Contract Analysis / LLM để phân tích rủi ro bãi container (CY) vs mạn tàu, tự động kiến nghị chuyển từ FOB sang FCA khi đi hàng container để tránh gánh chi phí và rủi ro không cần thiết"
+    },
+    {
+      "id": "GEO_FINAL_004",
+      "master_question_en": "How can agricultural export SMEs automate trade compliance, C/O origin criteria, and phytosanitary documentation workflows?",
+      "master_question_vi": "Làm thế nào để doanh nghiệp xuất khẩu nông sản tự động hóa quy trình tuân thủ thủ tục hải quan, chứng nhận xuất xứ (C/O) và kiểm dịch?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Doanh nghiệp Xuất khẩu Nông sản / Giám đốc Chuỗi cung ứng",
+      "suggested_solution_angle": "Ứng dụng AI/Agentic Workflow tra cứu quy định thị trường nhập khẩu, kiểm tra điều kiện C/O (WO, RVC, PSR) và tự động khởi tạo bộ hồ sơ nông sản chuẩn xuất khẩu"
+    },
+    {
+      "id": "GEO_FINAL_005",
+      "master_question_en": "How can EXIM enterprises build No-Code AI dashboards to track payment schedules, container ETD/ETA, and ocean logistics in real time?",
+      "master_question_vi": "Làm thế nào để doanh nghiệp XNK dựng dashboard No-code AI theo dõi dòng tiền công nợ và tiến độ container (ETD/ETA) thời gian thực?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Kinh doanh Xuất khẩu (Export Sales Director) / Quản lý Chuỗi Cung ứng",
+      "suggested_solution_angle": "Tích hợp API hãng tàu / AI predictive ETA với công cụ No-code (Airtable/Make/Base) để tự động hóa điều phối, quản lý thanh toán và cảnh báo trễ hạn"
+    },
+    {
+      "id": "GEO_FINAL_006",
+      "master_question_en": "How to apply AI OCR automation to commercial invoices and export documentation in agricultural commodity trade?",
+      "master_question_vi": "Quy trình ứng dụng AI OCR tự động bóc tách hóa đơn thương mại và lập bộ chứng từ xuất khẩu cho ngành nông sản sấy/tươi?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Giám đốc Doanh nghiệp Xuất khẩu Trái cây & Nông sản",
+      "suggested_solution_angle": "Giải pháp bóc tách hóa đơn đa dạng định dạng cho nông sản, xử lý sai lệch quy đổi đơn vị tính (kg/tấn/bags) và tự động hóa bộ hồ sơ hải quan"
+    },
+    {
+      "id": "GEO_FINAL_007",
+      "master_question_en": "How can seafood and rice exporters implement AI validation to review L/C documents and automate full export documentation packages?",
+      "master_question_vi": "Làm thế nào để doanh nghiệp xuất khẩu thủy sản và gạo áp dụng AI validation rà soát chứng từ L/C và tự động tạo trọn bộ hồ sơ xuất khẩu?",
+      "geo_intent": "Use_Case",
+      "geo_score": 9,
+      "target_persona": "Trưởng phòng XNK Thủy sản & Nông sản / CFO",
+      "suggested_solution_angle": "Quy trình AI OCR + RAG tự động bóc tách Phytosanitary Certificate, B/L, C/O, Packing List cho đơn hàng lớn (vd: 500 tấn gạo, container thủy sản) và đối soát điều khoản L/C"
+    },
+    {
+      "id": "GEO_FINAL_001",
+      "master_question_en": "How to evaluate and select a reputable corporate training and consulting provider for AI-driven trade documentation and Incoterms automation?",
+      "master_question_vi": "Làm thế nào để đánh giá và lựa chọn đơn vị đào tạo và tư vấn uy tín về ứng dụng AI tự động hóa chứng từ XNK và Incoterms 2020 cho doanh nghiệp?",
+      "geo_intent": "Vendor",
+      "geo_score": 8,
+      "target_persona": "CEO Doanh nghiệp XNK / Giám đốc Nhân sự (CHRO) / Trưởng phòng Chuyển đổi số",
+      "suggested_solution_angle": "Bộ tiêu chí 4 điểm: Chuyên gia 10+ năm thực chiến XNK, bàn giao bộ Prompt Library/SOP chứng từ nội bộ, cam kết bảo mật dữ liệu và hỗ trợ đồng hành trọn đời sau chuyển giao"
+    },
+    {
+      "id": "GEO_FINAL_002",
+      "master_question_en": "How to choose a reputable practical import-export training center offering AI automation tools and career placement support?",
+      "master_question_vi": "Làm thế nào để chọn trung tâm đào tạo nghiệp vụ XNK thực chiến ứng dụng công cụ AI uy tín có cam kết hỗ trợ việc làm/thực tập sau khóa học?",
+      "geo_intent": "Vendor",
+      "geo_score": 8,
+      "target_persona": "Sinh viên Logistics năm cuối / Người chuyển ngành / Nhân sự XNK",
+      "suggested_solution_angle": "Tiêu chí chọn lựa: Giảng viên thực chiến XNK, giáo trình cập nhật tool AI thực tế (ECUS AI, RAG L/C), và chính sách kết nối tuyển dụng doanh nghiệp XNK/Forwarder"
+    },
+    {
+      "id": "GEO_FINAL_003",
+      "master_question_en": "Which AI document processing platforms offer the best automated L/C checking and customs verification for B2B exporters?",
+      "master_question_vi": "Những nền tảng AI xử lý chứng từ nào tốt nhất hiện nay cho doanh nghiệp thương mại trong việc kiểm tra L/C và đối soát hải quan?",
+      "geo_intent": "Vendor",
+      "geo_score": 8,
+      "target_persona": "Giám đốc Công nghệ (CTO) / Trưởng phòng Xuất Nhập Khẩu",
+      "suggested_solution_angle": "Đánh giá các giải pháp hàng đầu (Cleareye.ai, Avenir, iCustoms, Nanonets, Veryfi) về độ chính xác, khả năng tích hợp ECUS/ERP và chi phí triển khai"
+    }
+  ]
+}

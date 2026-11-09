@@ -1,0 +1,191 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = "Đánh Giá Thực Tế Từ Học Viên & Đối Tác Doanh Nghiệp",
+  subtitle = "Hơn 150+ cá nhân và doanh nghiệp xuất khẩu nông sản đã tự chủ nghiệp vụ chứng từ và tiếp cận thị trường quốc tế cùng MDA Hub.",
+} = Astro.props;
+
+const testimonials = [
+  {
+    quote:
+      "Trước khi làm việc với MDA Hub, chúng tôi mất rất nhiều thời gian xử lý hồ sơ BICON khi xuất hàng sang Úc và thường xuyên lúng túng khi tra cứu mã HS cho dòng sản phẩm sấy thăng hoa. Khóa đào tạo In-house của Mr. Tuệ đã giúp đội ngũ XNK của công ty làm chủ hoàn toàn quy trình chứng từ và ứng dụng AI để kiểm tra chéo hồ sơ chỉ trong 15 phút.",
+    author: "Anh Nguyễn Hoàng Nam",
+    title: "Giám đốc Điều hành",
+    company: "Doanh nghiệp Chế biến & Xuất khẩu Nông sản Tiền Giang",
+    location: "Tiền Giang",
+    rating: 5,
+  },
+  {
+    quote:
+      "Mình chuyển từ mảng thu mua nội địa sang làm XNK nông sản nên rất sợ sai sót chứng từ C/O và kiểm dịch thực vật. Nhờ lộ trình kèm 1-1 cầm tay chỉ việc trên bộ chứng từ thật tại MDA, chỉ sau 6 tuần mình đã tự tin xử lý trọn vẹn lô hàng đầu tiên đi Canada.",
+    author: "Chị Trần Minh Thư",
+    title: "Chuyên viên Xuất Nhập Khẩu Nông sản",
+    company: "Học viên Khóa Đào tạo XNK 1-1 Thực chiến",
+    location: "TP. Hồ Chí Minh",
+    rating: 5,
+  },
+  {
+    quote:
+      "Chiến lược 'Story Answering' và tối ưu hóa nội dung chuẩn GEO mà đội ngũ AI Marketing của MDA triển khai đã giúp website nông sản của chúng tôi được các công cụ AI quốc tế trích dẫn khi nhà nhập khẩu tìm kiếm nguồn cung đạt chuẩn FDA tại Việt Nam. Lượng thư hỏi hàng (Inquiry) B2B chất lượng tăng rõ rệt.",
+    author: "Chị Lê Thảo Vy",
+    title: "Trưởng phòng Phát triển Thị trường Quốc tế",
+    company: "Công ty Xuất khẩu Thực phẩm Xanh",
+    location: "Bến Tre",
+    rating: 5,
+  },
+];
+---
+
+<section class="section section--soft testimonials-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <span class="badge">Bảo Chứng Từ Thực Tế</span>
+      <h2 class="section-title">{title}</h2>
+      <p class="lead">{subtitle}</p>
+    </div>
+
+    <div class="grid-3 testimonials-grid">
+      {testimonials.map((item) => (
+        <div class="card testimonial-card">
+          <div class="card-top">
+            <div class="quote-icon">
+              <i class="bi bi-quote"></i>
+            </div>
+            <div class="rating-stars" aria-label={`Đánh giá ${item.rating} trên 5 sao`}>
+              {Array.from({ length: item.rating }).map(() => (
+                <i class="bi bi-star-fill"></i>
+              ))}
+            </div>
+          </div>
+
+          <p class="quote-text">"{item.quote}"</p>
+
+          <div class="testimonial-author">
+            <div class="author-avatar-ph">
+              {item.author.charAt(item.author.lastIndexOf(' ') + 1)}
+            </div>
+            <div class="author-details">
+              <h4 class="author-name">{item.author}</h4>
+              <p class="author-role">{item.title} — {item.company}</p>
+              <span class="author-loc"><i class="bi bi-geo-alt-fill"></i> {item.location}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-section {
+    position: relative;
+  }
+
+  .text-center {
+    text-align: center;
+    max-width: 760px;
+    margin-inline: auto;
+    margin-bottom: 48px;
+  }
+
+  .text-center .section-title {
+    display: inline-block;
+  }
+
+  .testimonials-grid {
+    align-items: stretch;
+  }
+
+  .testimonial-card {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    padding: var(--card-padding);
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .quote-icon {
+    font-size: 38px;
+    color: var(--primary-light);
+    line-height: 1;
+  }
+
+  .rating-stars {
+    color: var(--secondary);
+    font-size: 14px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .quote-text {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin: 0 0 24px;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .author-avatar-ph {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--primary-deep);
+  }
+
+  .author-role {
+    margin: 2px 0 0;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  .author-loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.78rem;
+    color: var(--primary-dark);
+    margin-top: 4px;
+  }
+</style>

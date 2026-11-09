@@ -1,0 +1,109 @@
+---
+import InsidePageLayout from '../../../../layouts/InsidePageLayout.astro';
+import FaqAccordion from '../../../../components/ui/FaqAccordion.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'Ứng dụng AI cho DN XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/' },
+];
+
+const subNavigation = [
+  { name: 'Tổng quan dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo 1-1', url: '/dich-vu/dao-tao-xnk-1-1/' },
+  { name: 'Đào tạo Doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'Ứng dụng AI XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/', active: true },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
+];
+
+const bluf = "Chương trình huấn luyện Ứng Dụng AI Cho Doanh Nghiệp XNK chuyển giao trực tiếp bộ giải pháp tự động hóa quản trị chứng từ, đối soát hợp đồng ngoại thương và tra cứu quy định hải quan thế giới. Giúp doanh nghiệp cắt giảm 70% thời gian xử lý giấy tờ và loại trừ 99% lỗi sai sót thủ công trong hồ sơ xuất nhập khẩu.";
+
+const courseSummary = {
+  format: "Huấn luyện In-house thực hành trên máy tính và dữ liệu công ty",
+  duration: "4 - 6 tuần (Gồm bộ 50+ Prompt AI chuyên dụng)",
+  instructor: "Ban Công nghệ AI & Ban Pháp lý Hải quan MDA Hub",
+};
+
+const faqs = [
+  {
+    question: "Doanh nghiệp không có đội ngũ lập trình viên thì có ứng dụng AI được không?",
+    answer: "Hoàn toàn được. Chương trình tập trung vào Prompt Engineering và khai thác các mô hình LLMs sẵn có (ChatGPT Enterprise, Claude, Perplexity) thông qua giao diện trực quan, không đòi hỏi kỹ năng lập trình phức tạp."
+  },
+  {
+    question: "Dữ liệu hợp đồng và giá bán của công ty có bị rò rỉ khi dùng AI không?",
+    answer: "MDA Hub hướng dẫn doanh nghiệp cấu hình môi trường bảo mật dữ liệu riêng (Enterprise Privacy Mode / Zero Data Retention), đảm bảo thông tin nội bộ của công ty không bị sử dụng để huấn luyện mô hình công cộng."
+  }
+];
+---
+
+<InsidePageLayout
+  title="Ứng Dụng AI Cho Doanh Nghiệp XNK Nông Sản | MDA Hub"
+  description="Khóa đào tạo tự động hóa nghiệp vụ chứng từ hải quan, đối soát hợp đồng ngoại thương và tra cứu quy chuẩn kỹ thuật FDA/BICON bằng trí tuệ nhân tạo AI."
+  badge="Chuyển Đổi Số Nông Nghiệp"
+  heroTitle="Ứng Dụng AI Cho Doanh Nghiệp Xuất Nhập Khẩu Nông Sản"
+  lead="Làm chủ các công cụ AI thế hệ mới để tự động hóa quy trình rà soát chứng từ, thẩm định biểu thuế và kiểm soát rủi ro pháp lý xuyên biên giới."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+  courseSummary={courseSummary}
+>
+  <section>
+    <h2>1. Bài Toán Thực Trạng Của Phòng Chứng Từ XNK</h2>
+    <p>
+      Trong một lô hàng xuất khẩu trái cây hoặc nông sản chế biến, nhân sự XNK phải kiểm tra chéo hàng chục trường thông tin giữa Commercial Invoice, Packing List, Bill of Lading, Phytosanitary Certificate và Certificate of Origin. Một lỗi sai chính tả trong tên khoa học của quả hay một số liệu trọng lượng tịnh không khớp cũng có thể dẫn tới hậu quả hàng bị giữ tại cảng đích với chi phí phát sinh hàng nghìn USD.
+    </p>
+    <p>
+      Ứng dụng AI giúp giải phóng nhân sự khỏi các thao tác thủ công lặp đi lặp lại, đồng thời tạo ra một hệ thống phòng thủ kiểm tra hai lớp (Dual-Check) chuẩn xác tuyệt đối.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Bốn Khối Ứng Dụng AI Chuyển Giao Trong Khóa Học</h2>
+    <div class="grid-2" style="margin-block: 24px;">
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-file-earmark-diff-fill"></i> 1. Tự Động Đối Soát Chứng Từ Chéo</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Dạy AI trích xuất và đối chiếu dữ liệu giữa Invoice, Packing List và Bill of Lading: Tự động phát hiện sai lệch về số lượng kiện, trọng lượng, số seal, số container trong vòng dưới 60 giây.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-shield-lock-fill"></i> 2. Rà Soát Điều Khoản Hợp Đồng &amp; Incoterms</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Phân tích các lỗ hổng pháp lý trong Sales Contract tiếng Anh: Cảnh báo điều khoản thanh toán bất lợi, rủi ro chuyển giao quyền sở hữu hàng hóa và mâu thuẫn trong điều kiện bồi thường.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-search"></i> 3. Trợ Lý AI Tra Cứu Quy Chuẩn Quốc Tế</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Thiết lập trợ lý AI nội bộ chuyên sâu về hệ thống BICON của Úc, cẩm nang FDA Mỹ và cơ sở dữ liệu SPS thế giới, giúp giải đáp điều kiện kiểm dịch của từng mặt hàng tức thì.
+        </p>
+      </div>
+
+      <div class="card card--tint">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-translate"></i> 4. Dịch Thuật Pháp Lý &amp; Soạn Thảo Hồ Sơ Kỹ Thuật</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
+          Dịch thuật chuẩn xác các báo cáo kiểm nghiệm chất lượng (COA), bảng thông số kỹ thuật (TDS) và hồ sơ cơ sở sản xuất sang tiếng Anh chuyên ngành hải quan quốc tế.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Bộ 50+ Prompt AI Chuyên Dụng Tặng Kèm Khóa Học</h2>
+    <p>
+      Doanh nghiệp tham gia chương trình được sở hữu trọn bộ thư viện câu lệnh AI thực chiến độc quyền của MDA Hub, được tối ưu riêng cho ngành nông sản Việt Nam:
+    </p>
+    <ul>
+      <li><strong>Nhóm Prompt Thẩm định:</strong> Đối soát bộ chứng từ xuất khẩu trái cây tươi và đông lạnh.</li>
+      <li><strong>Nhóm Prompt Tra cứu:</strong> Xác định ranh giới mã HS theo 6 quy tắc GIR và Thông tư 85/2026/TT-BTC.</li>
+      <li><strong>Nhóm Prompt Đàm phán:</strong> Phản hồi thư hỏi hàng (Inquiry) và thư đàm phán khiếu nại (Claim) của đối tác nước ngoài.</li>
+    </ul>
+  </section>
+
+  <section>
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Ứng Dụng AI XNK" />
+  </section>
+</InsidePageLayout>

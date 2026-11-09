@@ -1,0 +1,132 @@
+---
+import InsidePageLayout from '../../layouts/InsidePageLayout.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Dịch vụ', url: '/dich-vu/' },
+];
+
+const subNavigation = [
+  { name: 'Tổng quan dịch vụ', url: '/dich-vu/', active: true },
+  { name: 'Đào tạo 1-1', url: '/dich-vu/dao-tao-xnk-1-1/' },
+  { name: 'Đào tạo Doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+  { name: 'Ứng dụng AI XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/' },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
+];
+
+const bluf = "Hệ sinh thái đào tạo và tư vấn xuất nhập khẩu của MDA Hub được cấu trúc thành 2 nhánh chiến lược: (1) Đào tạo XNK 1-1 Thực chiến dành cho cá nhân và chủ doanh nghiệp cần kèm riêng trên bộ hồ sơ thực tế; (2) Đào tạo Chuyên sâu Doanh nghiệp (In-house) tập trung vào tự động hóa chứng từ hải quan bằng AI và xây dựng chiến lược AI Marketing B2B quốc tế theo chuẩn GEO.";
+---
+
+<InsidePageLayout
+  title="Dịch Vụ Đào Tạo XNK & Tư Vấn Pháp Lý Hải Quan | MDA Hub"
+  description="Hệ sinh thái đào tạo xuất nhập khẩu thực chiến 1-1, huấn luyện doanh nghiệp In-house và tư vấn tuân thủ pháp lý FDA/BICON/SPS kết hợp ứng dụng AI tiên tiến."
+  badge="Hệ Sinh Thái Đào Tạo & Tư Vấn"
+  heroTitle="Dịch Vụ Đào Tạo Thực Chiến & Tư Vấn Pháp Lý XNK Nông Sản"
+  lead="Cung cấp lộ trình huấn luyện thực chiến bài bản và dịch vụ tư vấn chuyên sâu, giúp cá nhân và doanh nghiệp làm chủ hoàn toàn quy trình xuất khẩu sang Úc, Mỹ, Canada và EU."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+>
+  <section>
+    <h2>1. Bức Tranh Tổng Thể 2 Nhánh Dịch Vụ Cốt Lõi</h2>
+    <p>
+      Khác biệt hoàn toàn với các khóa học lý thuyết viện hàn lâm, mọi chương trình tại **MDA Hub** đều được thiết kế dựa trên nguyên tắc <strong>"Cầm tay chỉ việc trên chứng từ thật"</strong>. Chúng tôi phân bổ dịch vụ thành hai trụ cột chính:
+    </p>
+
+    <div class="grid-2" style="margin-block: 28px;">
+      <!-- Trụ Cột 1 -->
+      <div class="card card--tint" style="border-top: 4px solid var(--primary-dark);">
+        <div style="font-size: 28px; color: var(--primary-dark); margin-bottom: 8px;">
+          <i class="bi bi-person-workspace"></i>
+        </div>
+        <h3 style="font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 10px;">
+          1. Đào Tạo XNK Thực Chiến 1-1
+        </h3>
+        <p style="font-size: 0.94rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+          Chương trình kèm riêng 1 thầy - 1 trò dành cho cá nhân, chuyên viên chứng từ hoặc chủ doanh nghiệp muốn làm chủ nhanh toàn bộ quy trình xuất nhập khẩu nông sản chỉ trong 6 - 8 tuần.
+        </p>
+        <ul style="font-size: 0.9rem; padding-left: 20px; margin-bottom: 20px;">
+          <li>Thực hành trực tiếp trên bộ Invoice, P/L, B/L thật.</li>
+          <li>Tra cứu biểu thuế và mã HS chính xác.</li>
+          <li>Xử lý trọn gói thủ tục hải quan và kiểm dịch.</li>
+        </ul>
+        <a href="/dich-vu/dao-tao-xnk-1-1/" class="btn btn--outline" style="align-self: flex-start;">
+          Chi tiết khóa 1-1 &rarr;
+        </a>
+      </div>
+
+      <!-- Trụ Cột 2 -->
+      <div class="card card--tint" style="border-top: 4px solid var(--secondary);">
+        <div style="font-size: 28px; color: var(--secondary); margin-bottom: 8px;">
+          <i class="bi bi-buildings"></i>
+        </div>
+        <h3 style="font-size: 1.25rem; color: var(--primary-deep); margin-bottom: 10px;">
+          2. Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house)
+        </h3>
+        <p style="font-size: 0.94rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+          Huấn luyện trực tiếp tại trụ sở doanh nghiệp, tùy biến giáo trình theo đúng mặt hàng nông sản (tươi, sấy, đông lạnh) và thị trường mục tiêu của công ty.
+        </p>
+        <ul style="font-size: 0.9rem; padding-left: 20px; margin-bottom: 20px;">
+          <li><strong>Ứng dụng AI XNK:</strong> Tự động rà soát hợp đồng và chứng từ.</li>
+          <li><strong>AI Marketing Quốc Tế:</strong> Tiếp cận khách hàng B2B chuẩn GEO.</li>
+          <li>Chuẩn hóa quy trình SOP cho cả phòng xuất nhập khẩu.</li>
+        </ul>
+        <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/" class="btn btn--secondary" style="align-self: flex-start;">
+          Khám phá đào tạo DN &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Bảng So Sánh Lộ Trình &amp; Cam Kết Đầu Ra</h2>
+    <div style="overflow-x: auto; margin-block: 20px;">
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.92rem; text-align: left;">
+        <thead>
+          <tr style="background-color: var(--primary-50); border-bottom: 2px solid var(--primary-light);">
+            <th style="padding: 14px 16px;">Tiêu Chí</th>
+            <th style="padding: 14px 16px;">Đào Tạo 1-1 Thực Chiến</th>
+            <th style="padding: 14px 16px;">Đào Tạo Doanh Nghiệp In-house</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 14px 16px; font-weight: 600;">Đối tượng phù hợp</td>
+            <td style="padding: 14px 16px;">Cá nhân, người mới chuyển ngành, chủ xưởng sản xuất</td>
+            <td style="padding: 14px 16px;">Ban giám đốc, đội ngũ phòng XNK &amp; Marketing B2B</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 14px 16px; font-weight: 600;">Thời lượng chương trình</td>
+            <td style="padding: 14px 16px;">6 - 8 tuần (Lịch học linh hoạt theo học viên)</td>
+            <td style="padding: 14px 16px;">4 - 12 tuần (Thiết kế theo module yêu cầu)</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 14px 16px; font-weight: 600;">Hồ sơ thực hành</td>
+            <td style="padding: 14px 16px;">Bộ chứng từ mẫu + Hồ sơ của học viên</td>
+            <td style="padding: 14px 16px;">100% hồ sơ, hợp đồng thật của doanh nghiệp</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle); background-color: #fafcf8;">
+            <td style="padding: 14px 16px; font-weight: 600;">Tích hợp công nghệ AI</td>
+            <td style="padding: 14px 16px;">Hướng dẫn ứng dụng AI tra cứu và soạn thảo hợp đồng</td>
+            <td style="padding: 14px 16px;">Thiết lập hệ thống AI Prompt &amp; Chiến lược GEO toàn diện</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 14px 16px; font-weight: 600;">Cam kết kết quả</td>
+            <td style="padding: 14px 16px;">Tự tin xử lý độc lập trọn vẹn 1 lô hàng xuất khẩu</td>
+            <td style="padding: 14px 16px;">Giảm 70% thời gian xử lý chứng từ, tăng đơn hỏi hàng B2B</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Quy Trình 4 Bước Đăng Ký &amp; Nhận Lộ Trình Tư Vấn</h2>
+    <ol style="padding-left: 20px; line-height: 1.8;">
+      <li><strong>Bước 1: Tiếp nhận nhu cầu:</strong> Bạn để lại thông tin và các bài toán khó khăn đang gặp phải qua form tư vấn hoặc Zalo <code>0904.622.122</code>.</li>
+      <li><strong>Bước 2: Phỏng vấn &amp; Đánh giá sơ bộ:</strong> Chuyên gia Tuệ Phạm trực tiếp trao đổi 30 phút để đánh giá hiện trạng nghiệp vụ và bộ chứng từ của bạn.</li>
+      <li><strong>Bước 3: Thiết kế giáo trình may đo:</strong> Đề xuất lộ trình đào tạo chi tiết và khung thời gian phù hợp nhất.</li>
+      <li><strong>Bước 4: Triển khai huấn luyện thực chiến:</strong> Đồng hành liên tục và hỗ trợ giải đáp nghiệp vụ phát sinh ngay cả sau khi kết thúc khóa học.</li>
+    </ol>
+  </section>
+</InsidePageLayout>

@@ -1,0 +1,95 @@
+---
+import InsidePageLayout from '../layouts/InsidePageLayout.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Giới thiệu', url: '/gioi-thieu/' },
+];
+
+const subNavigation = [
+  { name: 'Câu chuyện MDA', url: '#cau-chuyen', active: true },
+  { name: 'Sứ mệnh "True to Fruit"', url: '#su-menh' },
+  { name: 'Tầm nhìn AI Nông sản', url: '#tam-nhin' },
+  { name: 'Giá trị cốt lõi', url: '#gia-tri' },
+];
+
+const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam Trading) là trung tâm tri thức và tư vấn pháp lý xuất nhập khẩu nông sản kết hợp giải pháp AI thực chiến tại TP.HCM. Chúng tôi hỗ trợ doanh nghiệp nông nghiệp Việt Nam vượt qua rào cản kỹ thuật khắt khe (FDA, BICON, SPS) để xuất khẩu bền vững sang Úc, Canada và Hoa Kỳ.";
+---
+
+<InsidePageLayout
+  title="Giới Thiệu Về Mekong Delta Agri (MDA Hub) | Sứ Mệnh & Tầm Nhìn"
+  description="Khám phá hành trình hình thành của Mekong Delta Agri, sứ mệnh 'True to Fruit', triết lý đào tạo thực chiến và tầm nhìn tiên phong ứng dụng AI cho ngành nông sản xuất khẩu Việt Nam."
+  badge="Về Chúng Tôi"
+  heroTitle="Giới Thiệu Về Mekong Delta Agri (MDA Hub)"
+  lead="Được thành lập từ tâm huyết với nông sản Đồng bằng Sông Cửu Long, MDA Hub là cầu nối tri thức vững chắc đưa trái cây và thực phẩm chế biến Việt Nam chinh phục các tiêu chuẩn khắt khe toàn cầu."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+>
+  <section id="cau-chuyen">
+    <h2>1. Câu Chuyện Khởi Nguồn: Từ Nỗi Trăn Trở Của Người Làm Nông Nghiệp</h2>
+    <p>
+      Việt Nam may mắn sở hữu thổ nhưỡng trù phú bậc nhất thế giới tại Đồng bằng Sông Cửu Long, nơi cho ra đời những giống trái cây nhiệt đới thơm ngon đặc sắc như xoài cát Hòa Lộc, sầu riêng Ri6, bưởi da xanh và thanh long. Tuy nhiên, trong suốt nhiều năm qua, người nông dân và doanh nghiệp xuất khẩu luôn phải đối mặt với điệp khúc <em>"được mùa mất giá"</em> hoặc những cú sốc lớn khi container hàng bị giữ lại, trả về từ các cảng quốc tế vì không đáp ứng rào cản kỹ thuật kiểm dịch.
+    </p>
+    <p>
+      Chứng kiến những giọt mồ hôi của nhà nông và sự tổn thất nặng nề của doanh nghiệp xuất khẩu chỉ vì một sai sót nhỏ trong phân loại mã HS hay thiếu sót hồ sơ kiểm dịch thực vật, **Công ty TNHH Thương mại MD AGRI (Minh Tam Trading / MDA Hub)** đã được thành lập với mục tiêu trở thành điểm tựa tri thức pháp lý và công nghệ độc lập cho cộng đồng xuất khẩu nông sản Việt Nam.
+    </p>
+  </section>
+
+  <section id="su-menh">
+    <h2>2. Sứ Mệnh "True to Fruit" &amp; Minh Bạch Hóa Pháp Lý</h2>
+    <p>
+      Triết lý hoạt động cốt lõi của MDA Hub gói gọn trong phương châm <strong>"True to Fruit — Trọn Vẹn Giá Trị Nông Sản Việt"</strong>:
+    </p>
+    <ul>
+      <li>
+        <strong>Minh bạch hóa chuỗi cung ứng:</strong> Xóa bỏ tình trạng mù mờ thông tin chứng từ, giúp doanh nghiệp tự chủ hoàn toàn từ khâu đăng ký mã số vùng trồng (PUC), mã cơ sở đóng gói (PHC) đến tờ khai hải quan điện tử.
+      </li>
+      <li>
+        <strong>Đơn giản hóa rào cản pháp lý:</strong> Giải mã các quy định phức tạp của Bộ Nông nghiệp Úc (hệ thống BICON), Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA) và chuẩn mực SPS thành các hướng dẫn thực hành từng bước.
+      </li>
+      <li>
+        <strong>Chuyển giao tri thức thực chiến:</strong> Huấn luyện nhân sự xuất nhập khẩu theo phương pháp "cầm tay chỉ việc", trực tiếp trên chính bộ chứng từ và lô hàng thật của doanh nghiệp.
+      </li>
+    </ul>
+  </section>
+
+  <section id="tam-nhin">
+    <h2>3. Tầm Nhìn Tiên Phong AI Trong Ngành Nông Sản</h2>
+    <p>
+      Bước sang giai đoạn 2024 - 2030, MDA Hub định hướng trở thành trung tâm tri thức đầu tiên tại Việt Nam tích hợp trí tuệ nhân tạo (AI) và tối ưu hóa công cụ tạo sinh (GEO - Generative Engine Optimization) vào chuỗi giá trị nông sản:
+    </p>
+    <ul>
+      <li>
+        <strong>Tự động hóa kiểm soát chứng từ:</strong> Phát triển các mô hình AI chuyên dụng giúp đối soát chéo bộ chứng từ ngoại thương, phát hiện sai sót logic trước khi truyền tờ khai hải quan.
+      </li>
+      <li>
+        <strong>Định vị thương hiệu nông sản chuẩn GEO:</strong> Đưa thông tin sản phẩm và năng lực tuân thủ của doanh nghiệp Việt Nam vào kho tri thức của các công cụ AI toàn cầu (ChatGPT, Perplexity, Gemini), mở ra kênh tiếp cận người mua B2B quốc tế với chi phí tối ưu.
+      </li>
+    </ul>
+  </section>
+
+  <section id="gia-tri">
+    <h2>4. Hệ Giá Trị Cốt Lõi</h2>
+    <div class="grid-3" style="margin-top: 24px;">
+      <div class="card card--tint" style="border-top: 3px solid var(--primary-light);">
+        <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-shield-check"></i> Chính Xác</h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Mọi tư vấn và tài liệu đều dựa trên cơ sở pháp lý vững chắc từ các thông tư hải quan và tiêu chuẩn quốc tế đã kiểm chứng.
+        </p>
+      </div>
+      <div class="card card--tint" style="border-top: 3px solid var(--secondary);">
+        <h3 style="font-size: 1.15rem; color: var(--secondary);"><i class="bi bi-tools"></i> Thực Chiến</h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Nói không với lý thuyết suông; giải quyết trực diện các bài toán tồn đọng thực tế của từng lô hàng cụ thể.
+        </p>
+      </div>
+      <div class="card card--tint" style="border-top: 3px solid var(--primary-dark);">
+        <h3 style="font-size: 1.15rem; color: var(--primary-dark);"><i class="bi bi-tree-fill"></i> Bền Vững</h3>
+        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+          Đồng hành dài hạn cùng người nông dân và doanh nghiệp xây dựng chuỗi cung ứng minh bạch, đạt chuẩn xanh toàn cầu.
+        </p>
+      </div>
+    </div>
+  </section>
+</InsidePageLayout>

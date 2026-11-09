@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
+import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
+import AuthorGeoBox from '../components/shared/AuthorGeoBox.astro';
+import TestimonialSection from '../components/shared/TestimonialSection.astro';
+import FaqAccordion from '../components/ui/FaqAccordion.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Đăng ký thử khóa học', url: '/dang-ky-thu-khoa-hoc/' },
+];
+
+const trialFaqs = [
+  {
+    question: "Buổi học thử và đánh giá năng lực có mất phí không?",
+    answer: "Hoàn toàn miễn phí 100%. Đây là buổi làm việc chuyên môn 45 phút nhằm giúp bạn đánh giá trực tiếp hồ sơ xuất khẩu hiện tại và trải nghiệm phương pháp huấn luyện của MDA Hub trước khi đưa ra quyết định."
+  },
+  {
+    question: "Tôi cần chuẩn bị gì trước buổi làm việc thử nghiệm?",
+    answer: "Nếu doanh nghiệp đã có sản phẩm hoặc bộ chứng từ (hợp đồng, hóa đơn, tờ khai mẫu), hãy chuẩn bị sẵn để chuyên gia rà soát trực tiếp. Nếu bạn là người mới bắt đầu, bạn chỉ cần chuẩn bị các câu hỏi định hướng ngành hàng mong muốn."
+  },
+  {
+    question: "Buổi học thử diễn ra theo hình thức nào?",
+    answer: "Bạn có thể lựa chọn gặp gỡ trực tiếp tại văn phòng MDA Hub (Tầng 1, 53/104 Trần Khánh Dư, P. Tân Định, Quận 1, TP.HCM) hoặc trao đổi trực tuyến qua Google Meet / Zoom với màn hình chia sẻ trực quan."
+  }
+];
+
+const ctaSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Buổi Đánh Giá Năng Lực & Trải Nghiệm Học Thử XNK - AI Nông Sản",
+  "description": "Trải nghiệm miễn phí buổi tư vấn 1-1 đánh giá hồ sơ chứng từ, mã HS và ứng dụng AI trong xuất khẩu nông sản cùng Chuyên gia Tuệ Phạm.",
+  "provider": {
+    "@type": "Organization",
+    "name": "MD AGRI TRADING CO., LTD",
+    "sameAs": "https://mekongdeltaagri.com"
+  }
+};
+---
+
+<BaseLayout
+  title="Đăng Ký Học Thử & Đánh Giá Năng Lực XNK - AI Miễn Phí | MDA Hub"
+  description="Trải nghiệm buổi tư vấn 1-1 chuyên sâu cùng Chuyên gia Tuệ Phạm: Kiểm tra bộ chứng từ xuất khẩu, rà soát mã HS và demo ứng dụng AI phân tích thị trường nông sản quốc tế."
+  schema={ctaSchema}
+>
+  <!-- SECTION 1: CONVERSION HERO (2 CỘT) -->
+  <section class="section section--soft cta-hero-section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        {breadcrumbs.map((b, i) => (
+          <>
+            {i > 0 && <span class="breadcrumb__separator">/</span>}
+            {i === breadcrumbs.length - 1 ? (
+              <span class="breadcrumb__current" aria-current="page">{b.name}</span>
+            ) : (
+              <a href={b.url}>{b.name}</a>
+            )}
+          </>
+        ))}
+      </nav>
+
+      <div class="grid-2 cta-hero-grid">
+        <!-- Cột Trái: Giá trị nhận được -->
+        <div class="cta-hero-left">
+          <span class="badge badge--accent">Trải Nghiệm Thực Chiến Miễn Phí</span>
+          <h1 class="page-hero__title" style="margin-top: 8px;">
+            Đăng Ký Học Thử &amp; Đánh Giá Năng Lực XNK - AI Cùng Chuyên Gia MDA
+          </h1>
+          <p class="lead page-hero__lead">
+            Dành 45 phút trao đổi trực tiếp cùng Chuyên gia Tuệ Phạm để tháo gỡ ngay các vướng mắc về chứng từ và nhận lộ trình tối ưu hóa xuất khẩu cho sản phẩm nông sản của bạn.
+          </p>
+
+          <div class="values-list">
+            <h3 class="values-title">4 Giá Trị Nhận Được Ngay Trong Buổi Học Thử:</h3>
+            <div class="value-item">
+              <div class="value-icon"><i class="bi bi-file-earmark-check-fill"></i></div>
+              <div>
+                <strong>Rà soát &amp; Kiểm tra Bộ Chứng từ Hiện Tại:</strong>
+                <p>Thẩm định tính logic giữa Invoice, Packing List, C/O và cảnh báo các nguy cơ áp sai mã HS theo Thông tư 85/2026/TT-BTC.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon"><i class="bi bi-cpu-fill"></i></div>
+              <div>
+                <strong>Demo Công Cụ AI Phân Tích Thị Trường Xuất Khẩu:</strong>
+                <p>Trải nghiệm cách AI quét rào cản kiểm dịch BICON (Úc) và Prior Notice FDA (Mỹ) trong vòng 60 giây.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon"><i class="bi bi-compass-fill"></i></div>
+              <div>
+                <strong>Tư Vấn Lộ Trình Huấn Luyện May Đo:</strong>
+                <p>Xác định chính xác nên tham gia kèm 1-1 hay In-house cho toàn bộ doanh nghiệp để tối ưu chi phí và thời gian.</p>
+              </div>
+            </div>
+
+            <div class="value-item">
+              <div class="value-icon"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+              <div>
+                <strong>Nhận Trọn Bộ Tài Liệu Mẫu Độc Quyền (.PDF):</strong>
+                <p>Tặng kèm Checklist 12 bước kiểm tra chứng từ thương mại chống kẹt hàng tại cảng đến.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cột Phải: ContactForm Extended Mode -->
+        <div class="cta-hero-right">
+          <ContactForm
+            title="Đăng Ký Buổi Làm Việc Thử Nghiệm"
+            subtitle="Vui lòng để lại thông tin chính xác. Chúng tôi sẽ xác nhận lịch hẹn trong vòng 24 giờ."
+            extendedMode={true}
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: GALLERY TÀI LIỆU ĐÀO TẠO MẪU -->
+  <TrainingGalleryPdf />
+
+  <!-- SECTION 3: HỘI ĐỒNG CHUYÊN GIA ĐỒNG HÀNH -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="section-header text-center" style="max-width: 760px; margin-inline: auto; margin-bottom: 32px;">
+        <span class="badge">Đội Ngũ Giảng Dạy &amp; Cố Vấn</span>
+        <h2 class="section-title">Chuyên Gia Đồng Hành Trực Tiếp Cùng Bạn</h2>
+        <p class="lead">
+          Không qua trợ giảng hay nhân sự trung gian — mọi buổi tư vấn và đào tạo đều do các chuyên gia thực chiến trên 10 năm kinh nghiệm trực tiếp đảm trách.
+        </p>
+      </div>
+
+      <AuthorGeoBox extended={true} />
+    </div>
+  </section>
+
+  <!-- SECTION 4: TESTIMONIALS -->
+  <TestimonialSection />
+
+  <!-- SECTION 5: FAQ ACCORDION -->
+  <section class="section section--soft">
+    <div class="container" style="max-width: 820px;">
+      <FaqAccordion items={trialFaqs} title="Câu Hỏi Thường Gặp Về Buổi Trải Nghiệm Học Thử" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .cta-hero-section {
+    padding-block: 40px 60px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .cta-hero-grid {
+    align-items: start;
+    gap: 48px;
+  }
+
+  @media (max-width: 992px) {
+    .cta-hero-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  .values-list {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .values-title {
+    font-size: 1.15rem;
+    color: var(--primary-deep);
+    margin: 0 0 4px;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .value-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--primary-50);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .value-item strong {
+    font-size: 0.95rem;
+    color: var(--primary-deep);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .value-item p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+</style>

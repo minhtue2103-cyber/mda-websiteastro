@@ -1,0 +1,121 @@
+---
+import InsidePageLayout from '../../../layouts/InsidePageLayout.astro';
+import FaqAccordion from '../../../components/ui/FaqAccordion.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/' },
+];
+
+const subNavigation = [
+  { name: 'Tổng quan dịch vụ', url: '/dich-vu/' },
+  { name: 'Đào tạo 1-1', url: '/dich-vu/dao-tao-xnk-1-1/' },
+  { name: 'Đào tạo Doanh nghiệp', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/', active: true },
+  { name: 'Ứng dụng AI XNK', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/' },
+  { name: 'AI Marketing', url: '/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/' },
+];
+
+const bluf = "Chương trình Đào tạo Chuyên sâu Doanh nghiệp (In-house Training) của MDA Hub được thiết kế riêng theo đặc thù ngành hàng nông sản của từng công ty. Khóa huấn luyện giúp doanh nghiệp chuẩn hóa quy trình SOP phòng xuất nhập khẩu, tích hợp tự động hóa chứng từ hải quan bằng AI và đào tạo đội ngũ mở rộng thị trường B2B quốc tế.";
+
+const courseSummary = {
+  format: "In-house tại trụ sở Doanh nghiệp hoặc Hybrid (Online + Offline)",
+  duration: "4 - 12 tuần (Thiết kế may đo theo quy mô phòng ban)",
+  instructor: "Hội đồng Chuyên gia Pháp lý Hải quan & Công nghệ AI MDA",
+};
+
+const faqs = [
+  {
+    question: "Doanh nghiệp có thể yêu cầu đào tạo trên chính bộ hồ sơ xuất khẩu hiện tại không?",
+    answer: "Chắc chắn. Toàn bộ bài tập và case study trong chương trình In-house đều được xây dựng trực tiếp trên bộ chứng từ, hợp đồng và mã HS của doanh nghiệp nhằm giải quyết tức thì các khó khăn thực tế."
+  },
+  {
+    question: "Số lượng nhân sự tối ưu cho một lớp đào tạo In-house là bao nhiêu?",
+    answer: "Để đảm bảo tính tương tác cao và hiệu quả cầm tay chỉ việc, một lớp In-house tối ưu từ 5 đến 15 nhân sự thuộc các bộ phận XNK, Chứng từ, Mua hàng và Ban điều hành."
+  }
+];
+---
+
+<InsidePageLayout
+  title="Đào Tạo Chuyên Sâu Doanh Nghiệp (In-house) | MDA Hub"
+  description="Chương trình đào tạo In-house chuyên biệt cho doanh nghiệp xuất khẩu nông sản. Chuẩn hóa quy trình chứng từ, rào cản kỹ thuật FDA/BICON và tích hợp công nghệ AI."
+  badge="Huấn Luyện Doanh Nghiệp Chuyên Sâu"
+  heroTitle="Đào Tạo Chuyên Sâu Doanh Nghiệp Xuất Khẩu Nông Sản"
+  lead="Giải pháp nâng cao năng lực toàn diện cho phòng ban Xuất Nhập Khẩu & Phát triển thị trường quốc tế, chuyển hóa rào cản pháp lý thành lợi thế cạnh tranh dài hạn."
+  breadcrumbs={breadcrumbs}
+  subNavigation={subNavigation}
+  blufText={bluf}
+  courseSummary={courseSummary}
+>
+  <section>
+    <h2>1. Tại Sao Doanh Nghiệp Cần Khóa Đào Tạo In-house May Đo?</h2>
+    <p>
+      Mỗi doanh nghiệp nông sản có một chuỗi cung ứng và rào cản pháp lý riêng biệt: Công ty xuất khẩu thanh long tươi đối mặt với bài toán kiểm dịch và giữ chuỗi lạnh; doanh nghiệp sấy thăng hoa vướng mắc về mã HS và thuế suất; trong khi đơn vị chế biến xuất khẩu đi Mỹ phải tuân thủ nghiêm ngặt quy định kiểm định cơ sở sản xuất của FDA.
+    </p>
+    <p>
+      Khóa đào tạo đại trà không thể giải quyết được bài toán nội tại của doanh nghiệp. Chương trình In-house của MDA Hub được khảo sát và may đo 100% dựa trên thực trạng hồ sơ và chiến lược kinh doanh của từng doanh nghiệp.
+    </p>
+  </section>
+
+  <section>
+    <h2>2. Hai Hướng Đào Tạo Trọng Tâm</h2>
+    <div class="grid-2" style="margin-block: 24px;">
+      <div class="card card--tint" style="border-top: 4px solid #C25512;">
+        <h3 style="font-size: 1.2rem; color: #C25512; margin-bottom: 8px;">
+          <i class="bi bi-cpu-fill"></i> Hướng 1: Ứng Dụng AI Cho Doanh Nghiệp XNK
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+          Xây dựng hệ thống trợ lý AI nội bộ, tự động hóa kiểm tra tính nhất quán giữa các chứng từ ngoại thương, dịch thuật pháp lý và cảnh báo rủi ro hợp đồng.
+        </p>
+        <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/" class="btn btn--outline" style="align-self: flex-start;">
+          Xem chương trình AI XNK &rarr;
+        </a>
+      </div>
+
+      <div class="card card--tint" style="border-top: 4px solid var(--primary-dark);">
+        <h3 style="font-size: 1.2rem; color: var(--primary-deep); margin-bottom: 8px;">
+          <i class="bi bi-globe-americas"></i> Hướng 2: AI Marketing Nông Sản Quốc Tế
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px;">
+          Đào tạo đội ngũ Marketing &amp; Sales xuất khẩu làm chủ chiến lược Story Answering, tối ưu hóa công cụ tạo sinh (GEO) để thu hút khách hàng B2B toàn cầu.
+        </p>
+        <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/" class="btn btn--secondary" style="align-self: flex-start;">
+          Xem chương trình AI Marketing &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. Quy Trình Khảo Sát &amp; May Đo Giáo Trình In-house</h2>
+    <div class="grid-3" style="margin-block: 20px;">
+      <div class="card" style="padding: 20px; background: #fafcf8;">
+        <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-dark);">01</span>
+        <h4 style="margin: 8px 0; font-size: 1.05rem;">Khảo Sát &amp; Thẩm Định</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Rà soát bộ chứng từ, hợp đồng và năng lực nhân sự thực tế tại doanh nghiệp.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 20px; background: #fafcf8;">
+        <span style="font-size: 1.5rem; font-weight: 700; color: var(--secondary);">02</span>
+        <h4 style="margin: 8px 0; font-size: 1.05rem;">Thiết Kế Giáo Trình</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Xây dựng khung bài giảng và case study trực tiếp trên mặt hàng của công ty.
+        </p>
+      </div>
+
+      <div class="card" style="padding: 20px; background: #fafcf8;">
+        <span style="font-size: 1.5rem; font-weight: 700; color: var(--primary-deep);">03</span>
+        <h4 style="margin: 8px 0; font-size: 1.05rem;">Huấn Luyện &amp; Bàn Giao</h4>
+        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+          Đào tạo thực hành tại văn phòng doanh nghiệp kèm quy trình SOP và bộ Prompts AI.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <FaqAccordion items={faqs} title="Câu Hỏi Thường Gặp Về Đào Tạo Doanh Nghiệp" />
+  </section>
+</InsidePageLayout>

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import ParentListingLayout from '../../layouts/ParentListingLayout.astro';
+import BlogCard from '../../components/ui/BlogCard.astro';
+
+const breadcrumbs = [
+  { name: 'Trang chủ', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+];
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+---
+
+<ParentListingLayout
+  title="Blog Chuyên Sâu: Chứng Từ XNK, Tiêu Chuẩn Quốc Tế & Ứng Dụng AI | MDA Hub"
+  description="Cẩm nang nghiệp vụ xuất nhập khẩu nông sản thực chiến: Hướng dẫn tra cứu mã HS, tuân thủ FDA/BICON/SPS, đàm phán hợp đồng thương mại và chiến lược AI Marketing chuẩn GEO."
+  badge="Cẩm Nang Tri Thức Chuyên Sâu"
+  heroTitle="Blog Chuyên Sâu: Chứng Từ XNK, Tiêu Chuẩn Quốc Tế & Ứng Dụng AI"
+  lead="Tuyển tập các cẩm nang thực chiến, phân tích chuyên môn và hướng dẫn ứng dụng công nghệ AI được biên soạn bởi đội ngũ chuyên gia tại Mekong Delta Agri."
+  breadcrumbs={breadcrumbs}
+  enableCategoryFilter={true}
+>
+  <div class="grid-3 blog-grid">
+    {sortedPosts.map((post) => (
+      <BlogCard
+        title={post.data.title}
+        description={post.data.description}
+        publishDate={post.data.publishDate}
+        category={post.data.category}
+        headlinePhoto={post.data.headlinePhoto}
+        headlinePhotoAlt={post.data.headlinePhotoAlt}
+        readingTime={post.data.readingTime}
+        slug={post.slug}
+      />
+    ))}
+  </div>
+</ParentListingLayout>

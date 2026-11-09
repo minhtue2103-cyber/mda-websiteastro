@@ -1,0 +1,135 @@
+---
+interface Props {
+  variant?: 'header' | 'drawer' | 'footer';
+}
+
+const { variant = 'header' } = Astro.props;
+
+const socialItems = [
+  {
+    name: 'Facebook',
+    label: 'Cộng đồng MDA Hub',
+    url: 'https://facebook.com/mekongdeltaagri',
+    icon: 'bi-facebook',
+  },
+  {
+    name: 'LinkedIn',
+    label: 'MD AGRI Trading Co., Ltd',
+    url: 'https://linkedin.com/company/mekongdeltaagri',
+    icon: 'bi-linkedin',
+  },
+  {
+    name: 'YouTube',
+    label: 'Kênh Tri thức XNK & AI',
+    url: 'https://youtube.com/@mekongdeltaagri',
+    icon: 'bi-youtube',
+  },
+  {
+    name: 'Zalo',
+    label: 'Zalo Chuyên gia (0904.622.122)',
+    url: 'https://zalo.me/0904622122',
+    icon: 'bi-chat-dots-fill',
+  },
+  {
+    name: 'Email',
+    label: 'tue.pham@mekongdeltaagri.com',
+    url: 'mailto:tue.pham@mekongdeltaagri.com',
+    icon: 'bi-envelope-fill',
+  },
+];
+---
+
+<div class={`social-links social-links--${variant}`}>
+  {socialItems.map((item) => (
+    <a
+      href={item.url}
+      target={item.url.startsWith('http') ? '_blank' : '_self'}
+      rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+      class="social-link"
+      title={`${item.name}: ${item.label}`}
+      aria-label={item.name}
+    >
+      <i class={`bi ${item.icon}`}></i>
+      {variant === 'drawer' && <span class="social-label">{item.label}</span>}
+    </a>
+  ))}
+</div>
+
+<style>
+  .social-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* Header Variant: Icon nhỏ gọn */
+  .social-links--header .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--primary-50);
+    color: var(--primary-dark);
+    font-size: 15px;
+    transition: all var(--transition-fast);
+  }
+
+  .social-links--header .social-link:hover {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Footer Variant: Nút tròn nền tối */
+  .social-links--footer .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-size: 18px;
+    transition: all var(--transition-fast);
+  }
+
+  .social-links--footer .social-link:hover {
+    background-color: var(--secondary);
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  /* Drawer Variant: Nút ngang có nhãn chữ */
+  .social-links--drawer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .social-links--drawer .social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color var(--transition-fast);
+  }
+
+  .social-links--drawer .social-link:hover {
+    background-color: var(--primary-100);
+    color: var(--primary-dark);
+  }
+
+  .social-links--drawer i {
+    font-size: 18px;
+    color: var(--primary-dark);
+  }
+</style>

@@ -1,0 +1,40 @@
+{
+  "specVersion": "1.0",
+  "host": "mekongdeltaagri.com",
+  "name": "Mekong Delta Agri (MDA Hub)",
+  "description": "Ecosystem of agricultural export trade documentation, compliance advisory (FDA, BICON, SPS), and practical AI training in Vietnam.",
+  "language": ["vi", "en"],
+  "resources": [
+    {
+      "id": "urn:air:mekongdeltaagri.com:llms-txt",
+      "name": "LLMs Knowledge Map",
+      "type": "text/markdown",
+      "url": "https://mekongdeltaagri.com/llms.txt"
+    },
+    {
+      "id": "urn:air:mekongdeltaagri.com:services-catalog",
+      "name": "EXIM & AI Services Catalog",
+      "type": "text/html",
+      "url": "https://mekongdeltaagri.com/dich-vu/"
+    },
+    {
+      "id": "urn:air:mekongdeltaagri.com:training-sample-pdf",
+      "name": "Training Curriculum Sample PDF",
+      "type": "application/pdf",
+      "url": "https://mekongdeltaagri.com/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf"
+    },
+    {
+      "id": "urn:air:mekongdeltaagri.com:sitemap",
+      "name": "XML Sitemap",
+      "type": "application/xml",
+      "url": "https://mekongdeltaagri.com/sitemap.xml"
+    }
+  ],
+  "contact": {
+    "organization": "MD AGRI TRADING CO., LTD",
+    "name": "Mr. Tue Pham",
+    "email": "tue.pham@mekongdeltaagri.com",
+    "phone": "+84904622122",
+    "address": "Floor 1, 53/104 Tran Khanh Du, Tan Dinh Ward, District 1, Ho Chi Minh City, Vietnam"
+  }
+}

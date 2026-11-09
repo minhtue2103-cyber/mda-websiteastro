@@ -1,0 +1,121 @@
+---
+---
+
+<div id="mda-preloader" class="preloader">
+  <div class="preloader__inner">
+    <div class="preloader__spinner">
+      <div class="spinner-ring ring-1"></div>
+      <div class="spinner-ring ring-2"></div>
+      <div class="spinner-ring ring-3"></div>
+    </div>
+    <div class="preloader__text">
+      <span class="mda-brand-title">MEKONG DELTA AGRI</span>
+      <span class="mda-brand-sub">MDA Knowledge Hub</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+  }
+
+  .preloader.preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .preloader__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .preloader__spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+  }
+
+  .spinner-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid transparent;
+  }
+
+  .ring-1 {
+    border-top-color: var(--primary-light);
+    animation: spin 1s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+
+  .ring-2 {
+    inset: 6px;
+    border-right-color: var(--primary-dark);
+    animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite reverse;
+  }
+
+  .ring-3 {
+    inset: 12px;
+    border-bottom-color: var(--secondary);
+    animation: spin 1.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .preloader__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .mda-brand-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: var(--primary-deep);
+    letter-spacing: 1.5px;
+  }
+
+  .mda-brand-sub {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+</style>
+
+<script>
+  function dismissPreloader() {
+    const preloader = document.getElementById('mda-preloader');
+    if (preloader) {
+      preloader.classList.add('preloader--hidden');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    dismissPreloader();
+  } else {
+    window.addEventListener('load', dismissPreloader);
+    // Timeout safeguard
+    setTimeout(dismissPreloader, 1800);
+  }
+</script>

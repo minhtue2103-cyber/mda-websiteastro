@@ -1,0 +1,217 @@
+---
+interface Props {
+  extended?: boolean;
+}
+
+const { extended = false } = Astro.props;
+---
+
+<aside class={`author-geo-box ${extended ? 'author-geo-box--extended' : ''}`} itemscope itemtype="https://schema.org/Person">
+  <div class="author-header">
+    <img
+      src="/media/avatar-tue-pham.svg"
+      alt="Tuệ Phạm (Mr. Tuệ) - Chuyên gia XNK & AI Nông sản MDA Hub"
+      class="author-avatar"
+      width="90"
+      height="90"
+      itemprop="image"
+      loading="lazy"
+    />
+    <div class="author-meta">
+      <span class="author-tag">Chuyên gia Thẩm định &amp; Tác giả</span>
+      <h3 class="author-name" itemprop="name">Tuệ Phạm (Mr. Tuệ)</h3>
+      <p class="author-title" itemprop="jobTitle">
+        Chuyên gia Tư vấn Chiến lược XNK Nông sản &amp; Ứng dụng AI | Đồng sáng lập MDA Hub
+      </p>
+    </div>
+  </div>
+
+  <div class="author-bio" itemprop="description">
+    <p>
+      Hơn 10 năm kinh nghiệm thực chiến tư vấn thủ tục hải quan, thẩm định mã HS và xây dựng chuỗi cung ứng xuất khẩu trái cây tươi và thực phẩm sấy thăng hoa sang các thị trường khó tính như Úc (tiêu chuẩn BICON), Hoa Kỳ (tiêu chuẩn FDA), và Canada. Trực tiếp thiết kế và giảng dạy các chương trình Đào tạo XNK 1-1 và huấn luyện In-house ứng dụng AI tự động hóa rà soát chứng từ thương mại.
+    </p>
+  </div>
+
+  {extended && (
+    <div class="author-board">
+      <h4 class="board-title">Hội đồng Thẩm định Pháp lý &amp; Công nghệ AI MDA:</h4>
+      <div class="board-grid">
+        <div class="board-item">
+          <i class="bi bi-shield-check"></i>
+          <div>
+            <strong>Ban Pháp lý &amp; Hải quan:</strong>
+            <p>Thẩm định tính chính xác của Thông tư 85/2026/TT-BTC, 42/2026/TT-BCT và quy tắc xuất xứ FTA.</p>
+          </div>
+        </div>
+        <div class="board-item">
+          <i class="bi bi-cpu"></i>
+          <div>
+            <strong>Ban Công nghệ AI &amp; GEO Marketing:</strong>
+            <p>Kiểm định quy trình Prompt Engineering và tối ưu hóa hiện diện số chuẩn Generative Engine Optimization.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <div class="author-footer">
+    <div class="author-contact">
+      <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" class="contact-pill">
+        <i class="bi bi-chat-dots-fill"></i> Zalo: 0904.622.122
+      </a>
+      <a href="mailto:tue.pham@mekongdeltaagri.com" class="contact-pill">
+        <i class="bi bi-envelope-fill"></i> tue.pham@mekongdeltaagri.com
+      </a>
+    </div>
+    <span class="eeat-badge">
+      <i class="bi bi-patch-check-fill"></i> Xác thực chuẩn E-E-A-T &amp; GEO
+    </span>
+  </div>
+</aside>
+
+<style>
+  .author-geo-box {
+    background-color: var(--primary-50);
+    border: none;
+    border-radius: 16px;
+    padding: 24px;
+    margin-block: 32px;
+  }
+
+  .author-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-light);
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .author-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary-dark);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .author-name {
+    margin: 0;
+    font-size: 1.35rem;
+    color: var(--primary-deep);
+  }
+
+  .author-title {
+    margin: 4px 0 0;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+  }
+
+  .author-bio p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: var(--text-primary);
+    margin: 0 0 16px;
+  }
+
+  .author-board {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-subtle);
+  }
+
+  .board-title {
+    font-size: 1rem;
+    color: var(--primary-deep);
+    margin-bottom: 12px;
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .board-grid {
+      grid-template-columns: 1fr;
+    }
+    .author-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  .board-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #ffffff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+  }
+
+  .board-item i {
+    font-size: 20px;
+    color: var(--primary-dark);
+    margin-top: 2px;
+  }
+
+  .board-item p {
+    margin: 4px 0 0;
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+  }
+
+  .author-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(141, 196, 53, 0.25);
+  }
+
+  .author-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #ffffff;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+  }
+
+  .contact-pill:hover {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+  }
+
+  .eeat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+  }
+</style>

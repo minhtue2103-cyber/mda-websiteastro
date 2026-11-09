@@ -1,0 +1,123 @@
+---
+import Header from '../components/global/Header.astro';
+import DrawerMenu from '../components/global/DrawerMenu.astro';
+import Footer from '../components/global/Footer.astro';
+import Preloader from '../components/global/Preloader.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  schema?: Record<string, any> | Array<Record<string, any>>;
+}
+
+const {
+  title = "Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Nông sản",
+  description = "Hệ sinh thái tri thức và đào tạo Xuất Nhập Khẩu nông sản hàng đầu Việt Nam. Tư vấn chứng từ thương mại, mã HS, tuân thủ tiêu chuẩn FDA/BICON/SPS và đào tạo ứng dụng AI & AI Marketing chuyên sâu cho doanh nghiệp XNK.",
+  ogImage = "/media/logoMDAgri500x500.svg",
+  canonicalUrl,
+  schema,
+} = Astro.props;
+
+const canonical = canonicalUrl || new URL(Astro.url.pathname, Astro.site || 'https://mekongdeltaagri.com').href;
+const fullOgImage = new URL(ogImage, Astro.site || 'https://mekongdeltaagri.com').href;
+
+// Base Organization Schema
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  "name": "MD AGRI TRADING CO., LTD",
+  "alternateName": "Mekong Delta Agri (MDA Hub) - Minh Tam Trading",
+  "url": "https://mekongdeltaagri.com",
+  "logo": "https://mekongdeltaagri.com/media/logoMDAgri500x500.svg",
+  "description": description,
+  "telephone": "+84904622122",
+  "email": "tue.pham@mekongdeltaagri.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tầng 1, 53/104 Trần Khánh Dư, Phường Tân Định",
+    "addressLocality": "Quận 1",
+    "addressRegion": "TP. Hồ Chí Minh",
+    "addressCountry": "VN"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Tuệ Phạm (Mr. Tuệ)",
+    "jobTitle": "Chuyên gia Tư vấn Chiến lược XNK Nông sản & Ứng dụng AI"
+  },
+  "sameAs": [
+    "https://facebook.com/mekongdeltaagri",
+    "https://linkedin.com/company/mekongdeltaagri",
+    "https://youtube.com/@mekongdeltaagri"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={fullOgImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={fullOgImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/media/logoMDAgri500x500.svg" />
+
+    <!-- Google Fonts: Merriweather (Headings) & Source Serif 4 (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Agentic Web Resources Discovery -->
+    <link rel="alternate" type="text/markdown" title="LLMs Map" href="/llms.txt" />
+    <link rel="catalog" type="application/json" href="/.well-known/ai-catalog.json" />
+
+    <!-- Global JSON-LD Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    {schema && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify(Array.isArray(schema) ? schema : [schema])}
+      />
+    )}
+  </head>
+  <body>
+    <!-- Brand Preloader -->
+    <Preloader />
+
+    <!-- Global Header -->
+    <Header />
+
+    <!-- Off-Canvas Drawer Menu -->
+    <DrawerMenu />
+
+    <!-- Main Content Slot -->
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+  </body>
+</html>

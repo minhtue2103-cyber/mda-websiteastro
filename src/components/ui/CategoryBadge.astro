@@ -1,0 +1,71 @@
+---
+interface Props {
+  category: 'Chứng Từ & Pháp Lý XNK' | 'Đào Tạo XNK Thực Chiến' | 'Ứng Dụng AI Trong XNK' | 'AI Marketing Quốc Tế' | string;
+  size?: 'sm' | 'md';
+}
+
+const { category, size = 'md' } = Astro.props;
+
+const categoryMeta: Record<string, { bg: string; color: string; icon: string }> = {
+  'Chứng Từ & Pháp Lý XNK': {
+    bg: '#F4FBE8',
+    color: '#428442',
+    icon: 'bi-file-earmark-check-fill',
+  },
+  'Đào Tạo XNK Thực Chiến': {
+    bg: '#EEFBE8',
+    color: '#217A22',
+    icon: 'bi-mortarboard-fill',
+  },
+  'Ứng Dụng AI Trong XNK': {
+    bg: '#FFF3EB',
+    color: '#C25512',
+    icon: 'bi-cpu-fill',
+  },
+  'AI Marketing Quốc Tế': {
+    bg: '#428442',
+    color: '#FFFFFF',
+    icon: 'bi-globe-americas',
+  },
+};
+
+const meta = categoryMeta[category] || {
+  bg: '#F7FAF5',
+  color: '#374047',
+  icon: 'bi-tag-fill',
+};
+---
+
+<span
+  class={`category-badge category-badge--${size}`}
+  style={`background-color: ${meta.bg}; color: ${meta.color};`}
+>
+  <i class={`bi ${meta.icon}`}></i>
+  <span class="badge-text">{category}</span>
+</span>
+
+<style>
+  .category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    font-weight: 600;
+    line-height: 1;
+    transition: opacity var(--transition-fast);
+  }
+
+  .category-badge--sm {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+  }
+
+  .category-badge--md {
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+
+  .category-badge i {
+    font-size: 1.1em;
+  }
+</style>

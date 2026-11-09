@@ -1,0 +1,303 @@
+---
+import SocialLinks from '../shared/SocialLinks.astro';
+---
+
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-grid">
+      <!-- Col 1: Legal Entity & Contact -->
+      <div class="footer-col footer-col--brand">
+        <div class="footer-brand">
+          <img
+            src="/media/logoMDAgri500x500.svg"
+            alt="Mekong Delta Agri Logo"
+            width="56"
+            height="56"
+            class="footer-logo"
+            loading="lazy"
+          />
+          <div>
+            <h3 class="footer-brand__name">MEKONG DELTA AGRI</h3>
+            <span class="footer-brand__tag">MDA Agro-Export Knowledge Hub</span>
+          </div>
+        </div>
+
+        <p class="footer-desc">
+          Hệ sinh thái tri thức chứng từ thương mại, tư vấn tuân thủ pháp lý quốc tế (FDA, BICON, SPS) và đào tạo ứng dụng AI chuyên sâu cho doanh nghiệp xuất nhập khẩu nông sản Việt Nam.
+        </p>
+
+        <ul class="footer-legal-info">
+          <li>
+            <i class="bi bi-building"></i>
+            <span><strong>Đơn vị chủ quản:</strong> Công ty TNHH Thương mại MD AGRI (MD AGRI TRADING CO., LTD - Minh Tam Trading)</span>
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Tầng 1, 53/104 Trần Khánh Dư, P. Tân Định, Q. 1, TP. Hồ Chí Minh, Việt Nam</span>
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill"></i>
+            <span><strong>Hotline / Zalo:</strong> <a href="tel:0904622122">0904.622.122</a> (Mr. Tuệ Phạm)</span>
+          </li>
+          <li>
+            <i class="bi bi-envelope-fill"></i>
+            <span><strong>Email:</strong> <a href="mailto:tue.pham@mekongdeltaagri.com">tue.pham@mekongdeltaagri.com</a></span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 2: Training & Services Sitemap -->
+      <div class="footer-col">
+        <h4 class="footer-col__title">Hệ Sinh Thái Đào Tạo</h4>
+        <ul class="footer-links">
+          <li><a href="/dich-vu/">Tổng Quan Dịch Vụ</a></li>
+          <li><a href="/dich-vu/dao-tao-xnk-1-1/">Đào Tạo XNK Thực Chiến 1-1</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">Đào Tạo Chuyên Sâu Doanh Nghiệp</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">Ứng Dụng AI Cho Doanh Nghiệp XNK</a></li>
+          <li><a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">AI Marketing Nông Sản Quốc Tế</a></li>
+          <li><a href="/dang-ky-thu-khoa-hoc/">Đăng Ký Học Thử Miễn Phí</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Knowledge Base & Legal Links -->
+      <div class="footer-col">
+        <h4 class="footer-col__title">Tri Thức &amp; Pháp Lý</h4>
+        <ul class="footer-links">
+          <li><a href="/blog/">Cẩm Nang Tri Thức XNK &amp; AI</a></li>
+          <li><a href="/tin-tuc/">Bản Tin Thời Sự Hải Quan</a></li>
+          <li><a href="/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf" target="_blank">Tải Tài Liệu Đào Tạo Mẫu (.PDF)</a></li>
+          <li><a href="/llms.txt" target="_blank">Hồ Sơ Chuẩn llms.txt (AI Hub)</a></li>
+          <li><a href="/.well-known/ai-catalog.json" target="_blank">Khai Báo Chuẩn ARD Agentic</a></li>
+          <li><a href="/sitemap.xml" target="_blank">Sitemap Hệ Thống</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Community & Social Connect -->
+      <div class="footer-col">
+        <h4 class="footer-col__title">Kết Nối Cộng Đồng</h4>
+        <p class="footer-social-intro">
+          Tham gia cộng đồng doanh nghiệp và học viên MDA Hub để cập nhật cảnh báo kiểm dịch và xu hướng AI mới nhất:
+        </p>
+        <div class="footer-socials-wrapper">
+          <SocialLinks variant="footer" />
+        </div>
+        <div class="footer-cta-box">
+          <span>Tư vấn trực tiếp 1-1:</span>
+          <a href="https://zalo.me/0904622122" target="_blank" rel="noopener noreferrer" class="btn btn--secondary btn-sm">
+            <i class="bi bi-chat-dots-fill"></i> Nhắn Zalo Chuyên Gia
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom__inner">
+      <p class="copyright">
+        © 2024 - 2026 <strong>MD AGRI TRADING CO., LTD</strong> (Minh Tam Trading). Bản quyền được bảo lưu. Thiết kế &amp; vận hành trên nền tảng Astro SSG.
+      </p>
+      <div class="footer-badges">
+        <span class="geo-tag"><i class="bi bi-check-circle-fill"></i> GEO-Optimized</span>
+        <span class="geo-tag"><i class="bi bi-shield-fill-check"></i> E-E-A-T Verified</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: linear-gradient(180deg, var(--primary-deep) 0%, #1c3d1c 100%);
+    color: #e2ece0;
+    padding-top: 64px;
+    font-size: 0.95rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1.4fr;
+    gap: 40px;
+    padding-bottom: 56px;
+  }
+
+  @media (max-width: 1080px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 2px;
+  }
+
+  .footer-brand__name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-brand__tag {
+    font-size: 0.78rem;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .footer-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #c9dbc6;
+    margin-bottom: 20px;
+  }
+
+  .footer-legal-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: #dbe8d8;
+  }
+
+  .footer-legal-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-legal-info i {
+    color: var(--primary-light);
+    font-size: 14px;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .footer-legal-info a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  .footer-col__title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 0 20px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    color: #dbe8d8;
+    font-size: 0.92rem;
+    transition: all var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--primary-light);
+    padding-left: 4px;
+  }
+
+  .footer-social-intro {
+    font-size: 0.88rem;
+    color: #c9dbc6;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .footer-socials-wrapper {
+    margin-bottom: 24px;
+  }
+
+  .footer-cta-box {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-cta-box span {
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .btn-sm {
+    padding: 8px 16px;
+    font-size: 0.88rem;
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    background-color: #142a14;
+    padding-block: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
+    color: #a4bca1;
+  }
+
+  .footer-bottom__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .copyright {
+    margin: 0;
+  }
+
+  .copyright strong {
+    color: #ffffff;
+  }
+
+  .footer-badges {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .geo-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--primary-light);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+</style>

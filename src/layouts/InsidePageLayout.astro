@@ -1,0 +1,370 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import AuthorGeoBox from '../components/shared/AuthorGeoBox.astro';
+import TrainingGalleryPdf from '../components/shared/TrainingGalleryPdf.astro';
+import TestimonialSection from '../components/shared/TestimonialSection.astro';
+import ContactForm from '../components/shared/ContactForm.astro';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface SubNavPill {
+  name: string;
+  url: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  badge?: string;
+  heroTitle: string;
+  lead: string;
+  breadcrumbs: BreadcrumbItem[];
+  subNavigation?: SubNavPill[];
+  blufText?: string;
+  courseSummary?: {
+    format: string;
+    duration: string;
+    instructor: string;
+  };
+  showSharedElements?: boolean;
+}
+
+const {
+  title,
+  description,
+  badge = "MDA Knowledge Ecosystem",
+  heroTitle,
+  lead,
+  breadcrumbs,
+  subNavigation = [],
+  blufText,
+  courseSummary,
+  showSharedElements = true,
+} = Astro.props;
+
+// Schema BreadcrumbList
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((b, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": b.name,
+    "item": new URL(b.url, Astro.site || 'https://mekongdeltaagri.com').href,
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} schema={breadcrumbSchema}>
+  <!-- Page Hero & Header -->
+  <section class="inside-hero section--soft">
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        {breadcrumbs.map((b, i) => (
+          <>
+            {i > 0 && <span class="breadcrumb__separator">/</span>}
+            {i === breadcrumbs.length - 1 ? (
+              <span class="breadcrumb__current" aria-current="page">{b.name}</span>
+            ) : (
+              <a href={b.url}>{b.name}</a>
+            )}
+          </>
+        ))}
+      </nav>
+
+      <div class="inside-hero__content">
+        <span class="badge">{badge}</span>
+        <h1 class="page-hero__title">{heroTitle}</h1>
+        <p class="lead page-hero__lead">{lead}</p>
+
+        {subNavigation.length > 0 && (
+          <div class="sub-nav-pills">
+            {subNavigation.map((pill) => (
+              <a
+                href={pill.url}
+                class={`sub-nav-pill ${pill.active ? 'active' : ''}`}
+              >
+                {pill.name}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid (8/4) -->
+  <section class="section section--white">
+    <div class="container">
+      <div class="grid-8-4">
+        <!-- Main Column (Prose) -->
+        <article class="inside-main-content">
+          {blufText && (
+            <div class="geo-bluf-box">
+              <div class="geo-bluf-box__title">
+                <i class="bi bi-lightning-charge-fill"></i>
+                <span>Tóm Tắt Nhanh (GEO BLUF)</span>
+              </div>
+              <p>{blufText}</p>
+            </div>
+          )}
+
+          <div class="prose">
+            <slot />
+          </div>
+        </article>
+
+        <!-- Sticky Sidebar -->
+        <aside class="inside-sidebar">
+          <div class="sticky-sidebar-inner">
+            <!-- Service Tree Navigation -->
+            <div class="sidebar-box service-tree-box">
+              <h4 class="sidebar-title">
+                <i class="bi bi-diagram-3-fill"></i> Cây Dịch Vụ MDA
+              </h4>
+              <ul class="service-tree-list">
+                <li>
+                  <a href="/dich-vu/">
+                    <i class="bi bi-chevron-right"></i> Tổng quan hệ sinh thái
+                  </a>
+                </li>
+                <li>
+                  <a href="/dich-vu/dao-tao-xnk-1-1/">
+                    <i class="bi bi-chevron-right"></i> Đào tạo XNK 1-1 Thực chiến
+                  </a>
+                </li>
+                <li class="has-nested-tree">
+                  <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/">
+                    <i class="bi bi-chevron-right"></i> Đào tạo Doanh nghiệp (In-house)
+                  </a>
+                  <ul class="nested-tree-list">
+                    <li>
+                      <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ung-dung-ai-xnk/">
+                        &bull; Ứng dụng AI cho DN XNK
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/dich-vu/dao-tao-chuyen-sau-doanh-nghiep/ai-marketing/">
+                        &bull; AI Marketing Nông sản
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Course Summary Box (if provided) -->
+            {courseSummary && (
+              <div class="sidebar-box course-meta-box">
+                <h4 class="sidebar-title">
+                  <i class="bi bi-info-circle-fill"></i> Thông Tin Khóa Học
+                </h4>
+                <ul class="course-meta-list">
+                  <li>
+                    <strong>Hình thức:</strong>
+                    <span>{courseSummary.format}</span>
+                  </li>
+                  <li>
+                    <strong>Thời lượng:</strong>
+                    <span>{courseSummary.duration}</span>
+                  </li>
+                  <li>
+                    <strong>Giảng viên:</strong>
+                    <span>{courseSummary.instructor}</span>
+                  </li>
+                </ul>
+                <a href="/dang-ky-thu-khoa-hoc/" class="btn btn--secondary btn-full-width">
+                  <i class="bi bi-stars"></i> Đăng Ký Học Thử
+                </a>
+              </div>
+            )}
+
+            <!-- Hotline Box -->
+            <div class="sidebar-box hotline-box">
+              <span class="hotline-tag">Tư vấn viên trực tiếp:</span>
+              <p class="hotline-phone"><i class="bi bi-telephone-outbound-fill"></i> 0904.622.122</p>
+              <p class="hotline-note">Mr. Tuệ Phạm (Zalo / Call hỗ trợ 24/7)</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Shared Elements -->
+  {showSharedElements && (
+    <>
+      <div class="container">
+        <AuthorGeoBox />
+      </div>
+      <TrainingGalleryPdf />
+      <TestimonialSection />
+      <section class="section section--soft">
+        <div class="container" style="max-width: 820px;">
+          <ContactForm />
+        </div>
+      </section>
+    </>
+  )}
+</BaseLayout>
+
+<style>
+  .inside-hero {
+    padding-block: 40px 60px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .inside-hero__content {
+    max-width: 900px;
+  }
+
+  .sub-nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .sub-nav-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: all var(--transition-fast);
+  }
+
+  .sub-nav-pill:hover,
+  .sub-nav-pill.active {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    border-color: var(--primary-dark);
+  }
+
+  /* Sidebar */
+  .inside-sidebar {
+    position: relative;
+  }
+
+  .sticky-sidebar-inner {
+    position: sticky;
+    top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar-box {
+    background: var(--bg-secondary);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .sidebar-title {
+    font-size: 1.05rem;
+    color: var(--primary-deep);
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 8px;
+  }
+
+  .service-tree-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-tree-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .service-tree-list a:hover {
+    color: var(--primary-dark);
+    padding-left: 4px;
+  }
+
+  .nested-tree-list {
+    list-style: none;
+    padding-left: 20px;
+    margin: 8px 0 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .nested-tree-list a {
+    font-size: 0.86rem;
+    font-weight: normal;
+    color: var(--text-secondary);
+  }
+
+  .course-meta-box {
+    background: #ffffff;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .course-meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.9rem;
+  }
+
+  .course-meta-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-subtle);
+    padding-bottom: 6px;
+  }
+
+  .btn-full-width {
+    width: 100%;
+  }
+
+  .hotline-box {
+    background: var(--primary-50);
+    border-left: 4px solid var(--primary-light);
+  }
+
+  .hotline-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+  }
+
+  .hotline-phone {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-deep);
+    margin: 6px 0 2px;
+  }
+
+  .hotline-note {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+interface Source {
+  title: string;
+  url: string;
+}
+
+interface Props {
+  sources?: Source[];
+}
+
+const { sources = [] } = Astro.props;
+
+if (!sources || sources.length === 0) return null;
+---
+
+<div class="sources-list-block">
+  <h4 class="sources-title">
+    <i class="bi bi-shield-lock-fill"></i> Nguồn Tham Khảo &amp; Cơ Sở Pháp Lý
+  </h4>
+  <ul class="sources-list">
+    {sources.map((src) => (
+      <li class="source-item">
+        <a href={src.url} target="_blank" rel="noopener noreferrer nofollow" class="source-link">
+          <i class="bi bi-box-arrow-up-right"></i>
+          <span>{src.title}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .sources-list-block {
+    background-color: var(--primary-50);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-block: 28px;
+  }
+
+  .sources-title {
+    font-size: 0.98rem;
+    color: var(--primary-deep);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sources-title i {
+    color: var(--primary-dark);
+  }
+
+  .sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    word-break: break-all;
+  }
+
+  .source-link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+  }
+
+  .source-link i {
+    font-size: 0.85em;
+  }
+</style>
