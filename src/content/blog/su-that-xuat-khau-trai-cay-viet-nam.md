@@ -47,3 +47,4 @@ Trái cây tươi đòi hỏi chế độ thông gió, độ ẩm và nhiệt đ
 - Thực hiện kiểm tra chéo 12 bước chứng từ trước ngày hạ bãi xuất cảng.
 - Đào tạo đội ngũ nhân sự nắm vững cách tra cứu BICON và e-CFR của Mỹ thay vì dựa vào lời tư vấn trung gian.
 - Xây dựng quy trình làm việc chuẩn (SOP) với các nhà vườn và đơn vị xử lý chiếu xạ/hơi nước nóng.
+

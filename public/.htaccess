@@ -50,3 +50,4 @@ RewriteRule ^(.+)$ $1.html [L,QSA]
   ExpiresByType text/css "access plus 1 month"
   ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
+

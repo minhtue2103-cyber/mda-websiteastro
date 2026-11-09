@@ -59,3 +59,4 @@ export const collections = {
   news: newsCollection,
   blog: blogCollection,
 };
+

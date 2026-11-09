@@ -51,3 +51,4 @@ Theo các quy định cập nhật mới nhất, cơ quan hải quan siết ch�
 2. **Áp dụng tuần tự 6 Quy tắc GIR:** Không nhảy cóc quy tắc, luôn ưu tiên Quy tắc 1 (Chú giải chương và phân nhóm).
 3. **Đối chiếu Chú giải Chi tiết (Explana­tory Notes - EN) của WCO.**
 4. **Tham vấn hoặc nộp hồ sơ xin Xác định trước Mã HS khi có sự mơ hồ.**
+

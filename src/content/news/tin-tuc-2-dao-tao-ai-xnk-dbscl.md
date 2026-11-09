@@ -24,3 +24,4 @@ Chương trình đào tạo kéo dài 8 tuần, được thiết kế theo hình
 - **Tối ưu chi phí logistics và quản trị rủi ro:** Phân tích dữ liệu cước biển và lịch trình tàu để đưa ra quyết định giao hàng chính xác.
 
 Theo ông Nguyễn Hoàng Nam, đại diện doanh nghiệp tham gia: *"Việc ứng dụng AI không chỉ giúp chúng tôi tiết kiệm hơn 70% thời gian xử lý giấy tờ mà còn loại trừ triệt để nguy cơ sai sót gây phạt chậm trễ tại cảng đến."*
+

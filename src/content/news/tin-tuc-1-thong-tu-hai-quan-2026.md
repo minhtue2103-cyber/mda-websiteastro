@@ -32,3 +32,4 @@ Bước sang quý IV/2026, Bộ Tài chính và Bộ Công Thương đã chính 
 - Thực hiện rà soát lại toàn bộ hồ sơ kỹ thuật (Technical Data Sheet) và quy trình sản xuất trước khi áp mã HS.
 - Ứng dụng các giải pháp đối soát chứng từ tự động bằng AI nhằm phát hiện lỗi logic giữa Invoice, Packing List và C/O trước khi truyền tờ khai hải quan điện tử.
 - Đăng ký tham gia các khóa đào tạo cập nhật chuyên sâu để làm chủ quy trình tuân thủ mới.
+
