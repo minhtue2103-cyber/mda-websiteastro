@@ -67,6 +67,14 @@ const formattedDate = new Date(publishDate).toLocaleDateString('vi-VN', {
   day: 'numeric',
 });
 
+const computedRole = type === 'news'
+  ? 'legal'
+  : (category === 'Chứng Từ & Pháp Lý XNK'
+      ? 'legal'
+      : (category === 'Đào Tạo XNK Thực Chiến' || category === 'AI Marketing Quốc Tế'
+          ? 'jen-pham'
+          : 'tue-pham'));
+
 // JSON-LD Article Schema
 const articleSchemaType = type === 'news' ? 'NewsArticle' : 'TechArticle';
 const schemaObj = {
@@ -199,7 +207,7 @@ const schemaObj = {
             </div>
 
             <!-- E-E-A-T Author Box -->
-            <AuthorGeoBox />
+            <AuthorGeoBox role={computedRole} />
           </div>
 
           <!-- Sticky Sidebar (TOC & CTA) -->

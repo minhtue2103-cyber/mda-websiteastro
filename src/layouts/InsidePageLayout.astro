@@ -30,6 +30,7 @@ interface Props {
     duration: string;
     instructor: string;
   };
+  authorRole?: 'jen-pham' | 'legal' | 'tue-pham' | string;
   showSharedElements?: boolean;
 }
 
@@ -43,6 +44,7 @@ const {
   subNavigation = [],
   blufText,
   courseSummary,
+  authorRole = "tue-pham",
   showSharedElements = true,
 } = Astro.props;
 
@@ -200,7 +202,7 @@ const breadcrumbSchema = {
   {showSharedElements && (
     <>
       <div class="container">
-        <AuthorGeoBox />
+        <AuthorGeoBox role={authorRole} />
       </div>
       <TrainingGalleryPdf />
       <TestimonialSection />
