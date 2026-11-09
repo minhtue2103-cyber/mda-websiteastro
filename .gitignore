@@ -3,6 +3,8 @@ dist/
 
 # Dependencies
 node_modules/
+.venv/
+venv/
 
 # Logs
 logs
@@ -34,3 +36,15 @@ Thumbs.db
 !.vscode/settings.json
 !.vscode/extensions.json
 
+# Ignore raw raster images in media folder (only track .webp and .svg)
+public/media/**/*.jpg
+public/media/**/*.jpeg
+public/media/**/*.png
+
+# Ignore raw raster images in media folder (only track .webp and .svg)
+public/media/*.jpg
+public/media/*.jpeg
+public/media/*.png
+public/media/**/*.jpg
+public/media/**/*.jpeg
+public/media/**/*.png

@@ -10,10 +10,11 @@ const subNavigation = [
   { name: 'Câu chuyện MDA', url: '#cau-chuyen', active: true },
   { name: 'Sứ mệnh "True to Fruit"', url: '#su-menh' },
   { name: 'Tầm nhìn AI Nông sản', url: '#tam-nhin' },
+  { name: 'Tác động & Con số', url: '#con-so' },
   { name: 'Giá trị cốt lõi', url: '#gia-tri' },
 ];
 
-const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam Trading) là trung tâm tri thức và tư vấn pháp lý xuất nhập khẩu nông sản kết hợp giải pháp AI thực chiến tại TP.HCM. Chúng tôi hỗ trợ doanh nghiệp nông nghiệp Việt Nam vượt qua rào cản kỹ thuật khắt khe (FDA, BICON, SPS) để xuất khẩu bền vững sang Úc, Canada và Hoa Kỳ.";
+const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam Trading) là trung tâm tri thức và tư vấn pháp lý xuất nhập khẩu nông sản kết hợp giải pháp AI thực chiến tại TP.HCM. Được sáng lập và dẫn dắt bởi Ms Jen Phạm, chúng tôi hỗ trợ doanh nghiệp nông nghiệp Việt Nam vượt qua rào cản kỹ thuật khắt khe (FDA, BICON, SPS) để xuất khẩu bền vững sang Úc, Canada, EU và Hoa Kỳ.";
 ---
 
 <InsidePageLayout
@@ -22,71 +23,148 @@ const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam
   badge="Về Chúng Tôi"
   heroTitle="Giới Thiệu Về Mekong Delta Agri (MDA Hub)"
   lead="Được thành lập từ tâm huyết với nông sản Đồng bằng Sông Cửu Long, MDA Hub là cầu nối tri thức vững chắc đưa trái cây và thực phẩm chế biến Việt Nam chinh phục các tiêu chuẩn khắt khe toàn cầu."
+  heroImage="https://picsum.photos/id/1018/1200/480"
   breadcrumbs={breadcrumbs}
   subNavigation={subNavigation}
   blufText={bluf}
+  authorRole="jen-pham"
 >
-  <section id="cau-chuyen">
+  <!-- Section 1: Câu chuyện khởi nguồn (Split Story Block with Lorem Image) -->
+  <section id="cau-chuyen" class="story-section">
     <h2>1. Câu Chuyện Khởi Nguồn: Từ Nỗi Trăn Trở Của Người Làm Nông Nghiệp</h2>
-    <p>
-      Việt Nam may mắn sở hữu thổ nhưỡng trù phú bậc nhất thế giới tại Đồng bằng Sông Cửu Long, nơi cho ra đời những giống trái cây nhiệt đới thơm ngon đặc sắc như xoài cát Hòa Lộc, sầu riêng Ri6, bưởi da xanh và thanh long. Tuy nhiên, trong suốt nhiều năm qua, người nông dân và doanh nghiệp xuất khẩu luôn phải đối mặt với điệp khúc <em>"được mùa mất giá"</em> hoặc những cú sốc lớn khi container hàng bị giữ lại, trả về từ các cảng quốc tế vì không đáp ứng rào cản kỹ thuật kiểm dịch.
-    </p>
-    <p>
-      Chứng kiến những giọt mồ hôi của nhà nông và sự tổn thất nặng nề của doanh nghiệp xuất khẩu chỉ vì một sai sót nhỏ trong phân loại mã HS hay thiếu sót hồ sơ kiểm dịch thực vật, **Công ty TNHH Thương mại MD AGRI (Minh Tam Trading / MDA Hub)** đã được thành lập với mục tiêu trở thành điểm tựa tri thức pháp lý và công nghệ độc lập cho cộng đồng xuất khẩu nông sản Việt Nam.
-    </p>
+    
+    <div class="story-split">
+      <div class="story-split__text">
+        <p>
+          Việt Nam may mắn sở hữu thổ nhưỡng trù phú bậc nhất thế giới tại Đồng bằng Sông Cửu Long, nơi cho ra đời những giống trái cây nhiệt đới thơm ngon đặc sắc như xoài cát Hòa Lộc, sầu riêng Ri6, bưởi da xanh và thanh long. Tuy nhiên, trong suốt nhiều năm qua, người nông dân và doanh nghiệp xuất khẩu luôn phải đối mặt với điệp khúc <em>"được mùa mất giá"</em> hoặc những cú sốc lớn khi container hàng bị giữ lại, trả về từ các cảng quốc tế vì không đáp ứng rào cản kỹ thuật kiểm dịch.
+        </p>
+        <p>
+          Chứng kiến những giọt mồ hôi của nhà nông và sự tổn thất nặng nề của doanh nghiệp xuất khẩu chỉ vì một sai sót nhỏ trong phân loại mã HS hay thiếu sót hồ sơ kiểm dịch thực vật, <strong>Công ty TNHH Thương mại MD AGRI (Minh Tam Trading / MDA Hub)</strong> đã được thành lập với mục tiêu trở thành điểm tựa tri thức pháp lý và công nghệ độc lập cho cộng đồng xuất khẩu nông sản Việt Nam.
+        </p>
+      </div>
+      <div class="story-split__media">
+        <img
+          src="https://picsum.photos/id/1052/600/420"
+          alt="Vùng nguyên liệu nông sản Đồng bằng Sông Cửu Long"
+          width="600"
+          height="420"
+          loading="lazy"
+          class="story-img"
+        />
+        <span class="story-img-caption">Vùng nguyên liệu trái cây nhiệt đới đạt chuẩn xuất khẩu ĐBSCL</span>
+      </div>
+    </div>
   </section>
 
-  <section id="su-menh">
+  <!-- Section 2: Sứ mệnh True to Fruit (Split Block 2) -->
+  <section id="su-menh" class="story-section">
     <h2>2. Sứ Mệnh "True to Fruit" &amp; Minh Bạch Hóa Pháp Lý</h2>
-    <p>
-      Triết lý hoạt động cốt lõi của MDA Hub gói gọn trong phương châm <strong>"True to Fruit — Trọn Vẹn Giá Trị Nông Sản Việt"</strong>:
-    </p>
-    <ul>
-      <li>
-        <strong>Minh bạch hóa chuỗi cung ứng:</strong> Xóa bỏ tình trạng mù mờ thông tin chứng từ, giúp doanh nghiệp tự chủ hoàn toàn từ khâu đăng ký mã số vùng trồng (PUC), mã cơ sở đóng gói (PHC) đến tờ khai hải quan điện tử.
-      </li>
-      <li>
-        <strong>Đơn giản hóa rào cản pháp lý:</strong> Giải mã các quy định phức tạp của Bộ Nông nghiệp Úc (hệ thống BICON), Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA) và chuẩn mực SPS thành các hướng dẫn thực hành từng bước.
-      </li>
-      <li>
-        <strong>Chuyển giao tri thức thực chiến:</strong> Huấn luyện nhân sự xuất nhập khẩu theo phương pháp "cầm tay chỉ việc", trực tiếp trên chính bộ chứng từ và lô hàng thật của doanh nghiệp.
-      </li>
-    </ul>
+    
+    <div class="story-split story-split--reverse">
+      <div class="story-split__text">
+        <p>
+          Triết lý hoạt động cốt lõi của MDA Hub gói gọn trong phương châm <strong>"True to Fruit — Trọn Vẹn Giá Trị Nông Sản Việt"</strong>:
+        </p>
+        <ul class="styled-list">
+          <li>
+            <strong>Minh bạch hóa chuỗi cung ứng:</strong> Xóa bỏ tình trạng mù mờ thông tin chứng từ, giúp doanh nghiệp tự chủ hoàn toàn từ khâu đăng ký mã số vùng trồng (PUC), mã cơ sở đóng gói (PHC) đến tờ khai hải quan điện tử.
+          </li>
+          <li>
+            <strong>Đơn giản hóa rào cản pháp lý:</strong> Giải mã các quy định phức tạp của Bộ Nông nghiệp Úc (hệ thống BICON), Cục Quản lý Thực phẩm và Dược phẩm Hoa Kỳ (FDA) và chuẩn mực SPS thành các bảng kiểm tra (Checklist) hành động cụ thể.
+          </li>
+          <li>
+            <strong>Chuyển giao tri thức thực chiến:</strong> Huấn luyện nhân sự xuất nhập khẩu theo phương pháp "cầm tay chỉ việc", trực tiếp trên chính bộ chứng từ sống và lô hàng thật của doanh nghiệp.
+          </li>
+        </ul>
+      </div>
+      <div class="story-split__media">
+        <img
+          src="https://picsum.photos/id/1067/600/420"
+          alt="Huấn luyện thực chiến chứng từ XNK nông sản"
+          width="600"
+          height="420"
+          loading="lazy"
+          class="story-img"
+        />
+        <span class="story-img-caption">Mổ xẻ bộ chứng từ ngoại thương và rà soát điều khoản hợp đồng quốc tế</span>
+      </div>
+    </div>
   </section>
 
-  <section id="tam-nhin">
+  <!-- Pull Quote Banner (Farm Table Style) -->
+  <blockquote class="farmtable-quote">
+    <p>
+      "Một hợp đồng xuất khẩu thành công không chỉ nằm ở giá bán cạnh tranh, mà nằm ở sự chuẩn xác đến từng dấu phẩy trên bộ chứng từ và sự chuẩn bị kỹ lưỡng cho mọi tình huống ngoại lệ tại cảng đến."
+    </p>
+    <cite>&mdash; Ms Jen Phạm, Đồng sáng lập &amp; Chuyên gia Chiến lược XNK MDA Hub</cite>
+  </blockquote>
+
+  <!-- Section 3: Tầm nhìn AI Nông sản -->
+  <section id="tam-nhin" class="story-section">
     <h2>3. Tầm Nhìn Tiên Phong AI Trong Ngành Nông Sản</h2>
     <p>
       Bước sang giai đoạn 2024 - 2030, MDA Hub định hướng trở thành trung tâm tri thức đầu tiên tại Việt Nam tích hợp trí tuệ nhân tạo (AI) và tối ưu hóa công cụ tạo sinh (GEO - Generative Engine Optimization) vào chuỗi giá trị nông sản:
     </p>
-    <ul>
-      <li>
-        <strong>Tự động hóa kiểm soát chứng từ:</strong> Phát triển các mô hình AI chuyên dụng giúp đối soát chéo bộ chứng từ ngoại thương, phát hiện sai sót logic trước khi truyền tờ khai hải quan.
-      </li>
-      <li>
-        <strong>Định vị thương hiệu nông sản chuẩn GEO:</strong> Đưa thông tin sản phẩm và năng lực tuân thủ của doanh nghiệp Việt Nam vào kho tri thức của các công cụ AI toàn cầu (ChatGPT, Perplexity, Gemini), mở ra kênh tiếp cận người mua B2B quốc tế với chi phí tối ưu.
-      </li>
-    </ul>
+    <div class="vision-grid">
+      <div class="vision-card">
+        <div class="vision-card__icon"><i class="bi bi-cpu-fill"></i></div>
+        <h3>Tự Động Hóa Kiểm Soát Chứng Từ (Local AI)</h3>
+        <p>
+          Phát triển mô hình Middleware AI độc lập tích hợp cơ chế Data Masking cục bộ, tự động đối soát Hợp đồng ngoại thương, L/C MT700 và phát hiện lỗi sai trong 60 giây theo chuẩn UCP 600 và ISBP 821.
+        </p>
+      </div>
+      <div class="vision-card">
+        <div class="vision-card__icon"><i class="bi bi-globe-americas"></i></div>
+        <h3>Định Vị Nông Sản Chuẩn GEO Toàn Cầu</h3>
+        <p>
+          Đưa dữ liệu kỹ thuật và năng lực tuân thủ của doanh nghiệp Việt Nam vào kho tri thức của các công cụ AI thế giới (ChatGPT, Perplexity, Gemini), mở ra kênh tiếp cận người mua B2B quốc tế với chi phí tối ưu.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section id="gia-tri">
-    <h2>4. Hệ Giá Trị Cốt Lõi</h2>
+  <!-- Section 4: Con số tác động (Farm Table Impact Stats) -->
+  <section id="con-so" class="story-section">
+    <h2>4. Dấu Ấn &amp; Tác Động Thực Tế</h2>
+    <div class="stats-counter-grid">
+      <div class="stat-counter-card">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Doanh nghiệp &amp; Học viên đã kết nối và tham gia đào tạo</span>
+      </div>
+      <div class="stat-counter-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Hồ sơ thương mại được bảo mật tuyệt đối theo chuẩn GDPR</span>
+      </div>
+      <div class="stat-counter-card">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Thị trường xuất khẩu trọng điểm (Mỹ, Úc, Canada &amp; EU)</span>
+      </div>
+      <div class="stat-counter-card">
+        <span class="stat-number">60s</span>
+        <span class="stat-label">Thời gian đối soát chứng từ với Middleware Local AI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Hệ giá trị cốt lõi -->
+  <section id="gia-tri" class="story-section">
+    <h2>5. Hệ Giá Trị Cốt Lõi</h2>
     <div class="grid-3" style="margin-top: 24px;">
-      <div class="card card--tint" style="border-top: 3px solid var(--primary-light);">
+      <div class="card card--tint" style="border-top: 4px solid var(--primary-light);">
         <h3 style="font-size: 1.15rem; color: var(--primary-deep);"><i class="bi bi-shield-check"></i> Chính Xác</h3>
-        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Mọi tư vấn và tài liệu đều dựa trên cơ sở pháp lý vững chắc từ các thông tư hải quan và tiêu chuẩn quốc tế đã kiểm chứng.
+        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
+          Mọi tư vấn và tài liệu đều dựa trên cơ sở pháp lý vững chắc từ các thông tư hải quan (85, 42, 110/2026/TT-BTC) và tiêu chuẩn quốc tế đã kiểm chứng.
         </p>
       </div>
-      <div class="card card--tint" style="border-top: 3px solid var(--secondary);">
+      <div class="card card--tint" style="border-top: 4px solid var(--secondary);">
         <h3 style="font-size: 1.15rem; color: var(--secondary);"><i class="bi bi-tools"></i> Thực Chiến</h3>
-        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
-          Nói không với lý thuyết suông; giải quyết trực diện các bài toán tồn đọng thực tế của từng lô hàng cụ thể.
+        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
+          Nói không với lý thuyết suông; giải quyết trực diện các bài toán ngoại lệ, rủi ro cảng đến của từng mặt hàng và doanh nghiệp cụ thể.
         </p>
       </div>
-      <div class="card card--tint" style="border-top: 3px solid var(--primary-dark);">
+      <div class="card card--tint" style="border-top: 4px solid var(--primary-dark);">
         <h3 style="font-size: 1.15rem; color: var(--primary-dark);"><i class="bi bi-tree-fill"></i> Bền Vững</h3>
-        <p style="font-size: 0.9rem; margin: 0; color: var(--text-secondary);">
+        <p style="font-size: 0.92rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">
           Đồng hành dài hạn cùng người nông dân và doanh nghiệp xây dựng chuỗi cung ứng minh bạch, đạt chuẩn xanh toàn cầu.
         </p>
       </div>
@@ -94,3 +172,203 @@ const bluf = "Mekong Delta Agri (MDA Hub — MD AGRI TRADING CO., LTD / Minh Tam
   </section>
 </InsidePageLayout>
 
+<style>
+  .story-section {
+    margin-bottom: 48px;
+  }
+
+  .story-section h2 {
+    font-size: 1.45rem;
+    color: var(--primary-deep);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-50);
+  }
+
+  .story-split {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .story-split--reverse {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  .story-split--reverse .story-split__text {
+    order: 2;
+  }
+
+  .story-split--reverse .story-split__media {
+    order: 1;
+  }
+
+  .story-img {
+    border-radius: var(--card-radius);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .story-img-caption {
+    display: block;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  .styled-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .styled-list li {
+    position: relative;
+    padding-left: 24px;
+    line-height: 1.65;
+  }
+
+  .styled-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-mid);
+    font-weight: bold;
+  }
+
+  /* Farm Table Quote */
+  .farmtable-quote {
+    background: linear-gradient(135deg, var(--primary-50) 0%, #ffffff 100%);
+    border-left: 4px solid var(--primary-dark);
+    padding: 28px 32px;
+    border-radius: 12px;
+    margin: 40px 0;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .farmtable-quote p {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--primary-deep);
+    line-height: 1.7;
+    margin: 0 0 12px;
+  }
+
+  .farmtable-quote cite {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    display: block;
+  }
+
+  /* Vision Grid */
+  .vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .vision-card {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .vision-card__icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--primary-50);
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .vision-card h3 {
+    font-size: 1.1rem;
+    color: var(--primary-deep);
+    margin: 0 0 10px;
+  }
+
+  .vision-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Stats Counter Grid */
+  .stats-counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .stat-counter-card {
+    background: #ffffff;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--card-radius);
+    padding: 20px 16px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: var(--font-heading);
+    color: var(--secondary);
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .story-split,
+    .story-split--reverse {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .story-split--reverse .story-split__text {
+      order: 1;
+    }
+
+    .story-split--reverse .story-split__media {
+      order: 2;
+    }
+
+    .vision-grid,
+    .stats-counter-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .stats-counter-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
