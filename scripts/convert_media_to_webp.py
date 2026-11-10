@@ -106,6 +106,54 @@ def find_and_convert_media(media_dir: Path, quality: int = 85, dry_run: bool = F
     return replacement_map
 
 
+def is_part_of_external_url(content: str, start_pos: int) -> bool:
+    """
+    Kiểm tra xem vị trí start_pos có nằm trong một URL ngoại bộ (bắt đầu bằng http://, https://, hoặc //) hay không.
+    """
+    delims = set("\"'`()<>{} \t\r\n")
+    idx = start_pos - 1
+    while idx >= 0 and (start_pos - idx) < 500:
+        if content[idx] in delims:
+            break
+        idx -= 1
+    token_start = idx + 1
+    prefix = content[token_start:start_pos].lstrip()
+    return prefix.startswith(('http://', 'https://', '//'))
+
+
+def safe_replace_image_link(content: str, old_ref: str, new_ref: str) -> tuple[str, int]:
+    """
+    Thay thế chuỗi old_ref thành new_ref trong content, chỉ áp dụng cho link nội bộ,
+    bỏ qua các vị trí nằm trong URL ngoại bộ (http://, https://, //).
+    Không dùng lookbehind regex phức tạp để tương thích 100% với Python 3.11 và mọi phiên bản.
+    """
+    if old_ref not in content:
+        return content, 0
+
+    result = []
+    last_idx = 0
+    count = 0
+    len_old = len(old_ref)
+
+    while True:
+        idx = content.find(old_ref, last_idx)
+        if idx == -1:
+            result.append(content[last_idx:])
+            break
+
+        # Kiểm tra xem vị trí xuất hiện có nằm trong URL ngoại bộ không
+        if is_part_of_external_url(content, idx):
+            result.append(content[last_idx:idx + len_old])
+        else:
+            result.append(content[last_idx:idx])
+            result.append(new_ref)
+            count += 1
+
+        last_idx = idx + len_old
+
+    return "".join(result), count
+
+
 def replace_image_links_in_source(workspace_root: Path, replacement_map: dict, dry_run: bool = False) -> list:
     """
     Quét mã nguồn và thay thế các link ảnh nội bộ sang .webp.
@@ -147,15 +195,8 @@ def replace_image_links_in_source(workspace_root: Path, replacement_map: dict, d
                 continue
 
             new_ref = replacement_map[old_ref]
-            # Xây dựng regex để bảo đảm KHÔNG thay thế URL ngoại bộ (http://, https://, //)
-            # Match old_ref chỉ khi không đứng ngay sau http://, https:// hoặc //
-            escaped_old = re.escape(old_ref)
-            pattern = re.compile(r'(?<!https?:)(?<!//)' + escaped_old)
-
-            new_content, count = pattern.subn(new_ref, content)
-            if count > 0:
-                content = new_content
-                replacements_in_file += count
+            content, count = safe_replace_image_link(content, old_ref, new_ref)
+            replacements_in_file += count
 
         if content != original_content:
             rel_file = file_path.relative_to(workspace_root).as_posix()
@@ -314,6 +355,11 @@ def check_and_commit_git(
             # Stage thư mục scripts
             if (workspace_root / "scripts").exists():
                 run_git_command(["git", "add", "scripts/"], cwd=workspace_root)
+
+            # Stage thư mục tài liệu document nếu có
+            doc_path = workspace_root / "public" / "media" / "document"
+            if doc_path.exists():
+                run_git_command(["git", "add", "public/media/document/"], cwd=workspace_root)
 
             # Kiểm tra các file đã staged
             staged_output = run_git_command(["git", "diff", "--name-only", "--cached"], cwd=workspace_root)
