@@ -11,10 +11,10 @@ const {
 
 const modules = [
   {
-    code: "Module 01",
-    tag: "Đào tạo XNK 1-1",
-    title: "Bộ Checklist 12 Bước Kiểm Tra Chứng Từ Thương Mại",
-    desc: "Quy trình kiểm soát rủi ro cho Invoice, Packing List, B/L, C/O và Phytosanitary chống tồn đọng và phạt chậm tại cảng đến.",
+    code: "Checklist",
+    tag: "Checklist XNK",
+    title: "Giải Pháp Ứng Phó Thông Tư 85/2026/TT-BTC, Thông Tư 42/2026/TT-BCT & Công Văn 19916/CHQ-GSQL",
+    desc: "Giải pháp toàn diện ứng phó với những thay đổi đột ngột về phân loại mã HS và chính sách thuế nhập khẩu nông sản, thủy sản từ tháng 09/2026.",
     icon: "bi-card-checklist",
     image: "/media/THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.webp",
     downloadUrl: "/media/document/12 CÂU HỎI THỰC CHIẾN VỀ CHI PHÍ & HẢI QUAN.docx",
@@ -22,25 +22,25 @@ const modules = [
     fileFormat: "DOCX",
   },
   {
-    code: "Module 02",
+    code: "Cẩm Nang",
     tag: "Pháp Lý & Hải Quan",
     title: "Cẩm Nang Phân Loại Mã HS Nông Sản & Tối Ưu Thuế FTA",
     desc: "Giải mã Thông tư 85/2026/TT-BTC & 42/2026/TT-BCT, phân định trái cây tươi và nông sản sấy thăng hoa.",
     icon: "bi-file-earmark-ruled",
-    image: "https://picsum.photos/id/1052/600/420",
-    downloadUrl: "/media/document/THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
-    fileName: "THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
-    fileFormat: "DOCX",
+    image: "/media/AgTech_Drone_SupplyChain_Compliance_2026.webp",
+    downloadUrl: "/media/document/AgTech_Drone_SupplyChain_Compliance_2026.pdf",
+    fileName: "AgTech_Drone_SupplyChain_Compliance_2026.pdf",
+    fileFormat: "PDF",
   },
   {
-    code: "Module 03",
-    tag: "Tiêu Chuẩn Toàn Cầu",
-    title: "Thực Hành Đăng Ký FDA, Tra Cứu BICON & Chuẩn SPS",
-    desc: "Hướng dẫn từng bước tra cứu điều kiện nhập khẩu của Bộ Nông nghiệp Úc và thủ tục khai báo Prior Notice của FDA Mỹ.",
+    code: "Cẩm Nang",
+    tag: "AI Compliance",
+    title: "QUẢN TRỊ RỦI RO & TUÂN THỦ PHÁP LÝ KHI ỨNG DỤNG AI TRONG XUẤT NHẬP KHẨU & LOGISTICS",
+    desc: "Giải Pháp SOP Vận Hành, Bảo Mật Dữ Liệu (NĐ 13/2023/NĐ-CP) & Kiểm Soát Pháp Lý (EU AI Act, UCP 600, Incoterms 2020)",
     icon: "bi-globe2",
     image: "https://picsum.photos/id/1067/600/420",
-    downloadUrl: "/media/document/module-03-thuc-hanh-dang-ky-fda-bicon-sps.docx",
-    fileName: "module-03-thuc-hanh-dang-ky-fda-bicon-sps.docx",
+    downloadUrl: "/media/document/12 CÂU HỎI VỀ QUẢN TRỊ RỦI RO & TUÂN THỦ PHÁP LÝ KHI ỨNG DỤNG AI.docx",
+    fileName: "12 CÂU HỎI VỀ QUẢN TRỊ RỦI RO & TUÂN THỦ PHÁP LÝ KHI ỨNG DỤNG AI.docx",
     fileFormat: "DOCX",
   },
   {
@@ -121,15 +121,6 @@ const pdfUrl = "/media/document/AgTech_Drone_SupplyChain_Compliance_2026.pdf";
                 >
                   <i class="bi bi-file-earmark-arrow-down-fill"></i>
                   <span>Tải {m.code} ({m.fileFormat})</span>
-                </a>
-                <a
-                  href={pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="link-view-summary"
-                  title="Xem trong file PDF tổng hợp"
-                >
-                  <span>Xem PDF</span> <i class="bi bi-arrow-up-right"></i>
                 </a>
               </div>
             </div>
@@ -259,7 +250,7 @@ const pdfUrl = "/media/document/AgTech_Drone_SupplyChain_Compliance_2026.pdf";
     border-radius: var(--card-radius);
     overflow: hidden;
     background-size: cover;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
