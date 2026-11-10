@@ -27,26 +27,25 @@ const heroSlides = [
 const expertFaqs = [
   {
     question: "Làm thế nào để ứng dụng AI vào rà soát L/C và hợp đồng ngoại thương mà không lo ngại rò rỉ bí mật thương mại?",
-    answer: "MDA áp dụng kiến trúc Middleware Local AI độc lập kết hợp cơ chế Data Masking cục bộ ngay tại máy trạm. Trước khi dữ liệu chứng từ được xử lý qua mô hình ngôn ngữ lớn, toàn bộ thông tin nhạy cảm (tên người mua/bán, đơn giá CIF/FOB, số tài khoản, điều khoản thanh toán riêng) đều được mã hóa hoặc ẩn danh. Hệ thống chỉ đối soát logic tính toán và tính tương thích quy tắc UCP 600, ISBP 821, tuân thủ nghiêm ngặt chuẩn bảo mật doanh nghiệp và GDPR/EU mà không gửi dữ liệu thô lên đám mây công cộng."
+    answer: "MDA Hub áp dụng giải pháp AI tuân thủ bảo mật kết hợp Prompt Template chuyên ngành ngoại thương và cơ chế Data Masking ngay tại máy trạm. Trước khi dữ liệu chứng từ được đưa vào mô hình xử lý, toàn bộ thông tin nhạy cảm (tên đối tác, đơn giá, số tài khoản ngân hàng, điều khoản thương mại độc quyền) đều được ẩn danh hóa. AI tập trung đối soát chéo tính hợp lệ giữa Hợp đồng, L/C và bộ chứng từ (Invoice, B/L, C/O, Phyto) dựa trên tập quán quốc tế (UCP 600, ISBP 745, Incoterms 2020), loại bỏ rủi ro điều khoản gài bẫy mà không làm rò rỉ dữ liệu mật của doanh nghiệp."
   },
   {
-    question: "Tại sao doanh nghiệp xuất khẩu trái cây sấy thăng hoa và trái cây tươi thường gặp rủi ro phạt thuế hoặc ách tắc mã HS tại cảng đến?",
-    answer: "Theo quy định tại Thông tư 85/2026/TT-BTC và chuẩn phân loại hải quan thế giới (WCO), trái cây tươi (thuộc Chương 08) và trái cây qua xử lý nhiệt hoặc sấy thăng hoa (thuộc Chương 20) chịu sự điều chỉnh của hai khung thuế suất, tiêu chuẩn kỹ thuật và kiểm dịch SPS hoàn toàn khác nhau. Một sai lệch nhỏ ở 2 chữ số phân nhóm phụ có thể khiến lô hàng bị tạm giữ, kiểm tra thực tế (luồng Đỏ), phạt chậm thông quan và bị cơ quan hải quan truy thu thuế sau thông quan. MDA hướng dẫn doanh nghiệp lập Hồ sơ kỹ thuật quy trình sản xuất và Bảng thẩm định mã HS để giải trình minh bạch."
+    question: "Tại sao doanh nghiệp xuất khẩu trái cây sấy thăng hoa và nông sản chế biến thường gặp rủi ro phạt thuế hoặc ách tắc mã HS tại thị trường đích (như EU, Canada)?",
+    answer: "Trái cây tươi (Chương 08) và trái cây qua xử lý nhiệt hoặc sấy thăng hoa có bổ sung đường/phụ gia (thường chuyển sang Chương 20 hoặc 21) chịu mức thuế suất, quy tắc xuất xứ (PSR) và tiêu chuẩn kiểm tra an toàn thực phẩm hoàn toàn khác nhau. Sự không đồng nhất giữa danh mục quản lý chuyên ngành và biểu thuế, hoặc sai lệch ở cấp phân nhóm 6 số theo 6 quy tắc GRI, dễ khiến cơ quan hải quan nước nhập khẩu phân loại lại mã HS, truy thu thuế sau thông quan kèm tiền phạt lớn, thậm chí bị nghi ngờ gian lận thuế. MDA hỗ trợ doanh nghiệp xây dựng Bảng thẩm định thành phần, định mức chế biến sâu và thực hiện thủ tục Xác định trước mã HS (Prior Determination) để bảo đảm an toàn pháp lý tuyệt đối."
   },
   {
-    question: "Doanh nghiệp của chúng tôi có quy mô vừa và nhỏ (SME), dữ liệu chưa số hóa bài bản thì có thể ứng dụng AI vào quy trình XNK được không?",
-    answer: "Hoàn toàn khả thi. MDA thiết kế lộ trình tiếp cận dựa trên 'Độ sẵn sàng dữ liệu' (Data Readiness) thực tế của từng doanh nghiệp. Chúng tôi không yêu cầu doanh nghiệp phải đầu tư hệ thống ERP đắt đỏ hay thay đổi phần mềm đang dùng. Thay vào đó, chuyên gia sẽ hướng dẫn nhân sự chuẩn hóa các biểu mẫu Excel, PDF chứng từ hiện hữu, ứng dụng bộ Prompt Template chuyên ngành ngoại thương và áp dụng phương pháp Human-in-the-Loop (AI gợi ý kiểm tra, con người đối chiếu và phê duyệt cuối cùng), giúp tiết kiệm ngay 60-70% thời gian xử lý sự vụ."
+    question: "Doanh nghiệp SME hoặc hợp tác xã nông sản có bộ máy tinh gọn (<5 người) thì có thể tự chủ quy trình xuất nhập khẩu và ứng dụng AI được không?",
+    answer: "Hoàn toàn khả thi. MDA thiết kế mô hình đào tạo và chuyển giao thực chiến may đo cho các đội ngũ tinh gọn (đã chứng minh hiệu quả qua các case study vận hành Trading 2 chiều tuyến Canada và nông sản chế biến EU). Không cần đầu tư phần mềm đắt đỏ, doanh nghiệp được hướng dẫn chuẩn hóa luồng làm việc liên phòng ban (Sales - QC - Kho), ứng dụng AI để tự động hóa rà soát lỗi chứng từ (Invoice, Packing List, C/O, Phyto, Health Cert) và tự kê khai C/O ưu đãi FTA (Form EUR.1, CPTPP), giúp tiết kiệm hơn 50% thời gian xử lý sự vụ và tự chủ đến 80% quy trình xuất khẩu trực tiếp."
   },
   {
-    question: "Chương trình Huấn luyện Thực chiến 1-1 của Ms Jen Phạm khác biệt như thế nào so với các khóa học xuất nhập khẩu đại trà?",
-    answer: "Khác biệt cốt lõi nằm ở tính thực chiến và cá nhân hóa tuyệt đối: Không dạy lý thuyết suông trên tình huống mẫu. Ms Jen Phạm trực tiếp ngồi lại cùng bạn để mổ xẻ trên chính bộ chứng từ (Invoice, Packing List, B/L, C/O, Kiểm dịch) của mặt hàng bạn đang kinh doanh. Trọng tâm của khóa học là năng lực Quản lý ngoại lệ (Exception Management): cách ứng biến khi tàu hủy chuyến (Blank Sailing), chứng từ có sai sót (Discrepancy), hãng tàu phát sinh phụ phí bất hợp lý hoặc khách hàng quốc tế khiếu nại chất lượng hàng."
+    question: "Chương trình Huấn luyện Thực chiến của MDA có điểm gì khác biệt so với các khóa học xuất nhập khẩu đại trà trên thị trường?",
+    answer: "Khác biệt cốt lõi nằm ở định hướng chuyên sâu ngành dọc (trái cây nhiệt đới, nông sản chế biến sâu, hàng sức khỏe/mỹ phẩm) và giải quyết các bài toán rủi ro cao cấp: (1) Thực hành trực tiếp 100% trên bộ chứng từ thật của chính doanh nghiệp; (2) Giải mã kỹ thuật Audit L/C, ứng dụng giải pháp L/C UPAS giúp người bán nhận tiền sớm trong khi đối tác vẫn được trả chậm; (3) Cài cắm bộ điều khoản phòng thủ quốc tế (Model Clauses) về dung sai chất lượng/độ ẩm để chặn rủi ro khiếu nại (Quality Claims); (4) Tích hợp năng lực AI thẩm định đối tác và rà soát trọn bộ chứng từ trước khi tàu chạy."
   },
   {
-    question: "Quy trình triển khai tư vấn và tích hợp AI cho doanh nghiệp xuất khẩu diễn ra theo các giai đoạn nào?",
-    answer: "MDA luôn khởi đầu bằng Giai đoạn Khảo sát & Đánh giá (Discovery Phase) kéo dài 30 ngày. Trong giai đoạn này, chuyên gia MDA sẽ phỏng vấn trực tiếp các bộ phận (Mua hàng, Chứng từ, Logistics, Pháp chế) để lập bản đồ luồng công việc và nhận diện 2–3 'điểm nghẽn' gây lãng phí chi phí nhất. Sau đó, chúng tôi mới đề xuất giải pháp đào tạo In-house hoặc tích hợp Middleware Local AI với chỉ số KPI cam kết cụ thể, đảm bảo doanh nghiệp nhìn thấy hiệu quả hoàn vốn (ROI) rõ ràng trước khi mở rộng quy mô."
+    question: "MDA Agri Hub hỗ trợ doanh nghiệp tháo gỡ 'mê cung quy định' (Compliance Maze: BICON Úc, FDA Mỹ, Health Canada, SPS) theo lộ trình như thế nào?",
+    answer: "MDA đồng hành theo quy trình phân tích và xử lý 3 bước chuẩn: Căn cứ pháp lý -> Xác định rủi ro kỹ thuật/tài chính -> Kịch bản hành động đa bên. Chúng tôi cung cấp cẩm nang thực chiến (Export Playbooks), rà soát tính đồng bộ giữa chứng nhận an toàn sinh học (Phyto, Health Cert, NPN Health Canada) với mã HS và tờ khai hải quan, đồng thời tích hợp công cụ tra cứu tự động và tư vấn chuyên sâu về rào cản kỹ thuật SPS/Kiểm dịch của các nước thành viên WTO, giúp lô hàng thông quan suôn sẻ ngay từ lần đầu xuất bến."
   }
 ];
----
 
 <BaseLayout
   title="Mekong Delta Agri (MDA Hub) | Đào tạo XNK Thực chiến, Tư vấn Pháp lý & Ứng dụng AI Doanh Nghiệp"
@@ -251,15 +250,8 @@ const expertFaqs = [
         <!-- Cột Trái 30%: 4 Lợi Ích Cốt Lõi Khi Hợp Tác Cùng MDA Hub -->
         <div class="faq-col-left">
           <span class="badge">Giải Đáp Thực Chiến</span>
-          <h2 class="section-title faq-col-left__title">Lợi Ích Hợp Tác Cùng MDA</h2>
+          <h2 class="section-title faq-col-left__title">Hợp Tác Cùng MDA</h2>
           
-          <div class="faq-highlight-box">
-            <i class="bi bi-patch-question-fill"></i>
-            <p>
-              "Áp sai Mã HS hoặc thiếu chuẩn bị cho ngoại lệ cảng đến có thể biến lô hàng nông sản trị giá hàng chục nghìn USD thành rủi ro tồn ứ và phạt thuế."
-            </p>
-          </div>
-
           <!-- 4 Lợi Ích Cốt Lõi (Dạng ft-sub-benefit Bỏ Border) -->
           <div class="core-benefits-wrapper">
             <h3 class="core-benefits__title">
@@ -319,6 +311,12 @@ const expertFaqs = [
 
         <!-- Cột Phải 70%: 5 Câu hỏi thực tế & Câu trả lời chuyên gia -->
         <div class="faq-col-right">
+          <div class="faq-highlight-box">
+            <i class="bi bi-patch-question-fill"></i>
+            <p>
+              "Áp sai Mã HS hoặc thiếu chuẩn bị cho ngoại lệ cảng đến có thể biến lô hàng nông sản trị giá hàng chục nghìn USD thành rủi ro tồn ứ và phạt thuế."
+            </p>
+          </div>
           <FaqAccordion
             items={expertFaqs}
             title="5 Câu Hỏi Thực Tế & Góc Nhìn Tư Vấn Chuyên Gia"
