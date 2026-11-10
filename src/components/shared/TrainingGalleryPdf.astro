@@ -17,6 +17,9 @@ const modules = [
     desc: "Quy trình kiểm soát rủi ro cho Invoice, Packing List, B/L, C/O và Phytosanitary chống tồn đọng và phạt chậm tại cảng đến.",
     icon: "bi-card-checklist",
     image: "https://picsum.photos/id/1018/600/420",
+    downloadUrl: "/media/document/Bộ 12 Câu Hỏi.docx",
+    fileName: "Bộ 12 Câu Hỏi.docx",
+    fileFormat: "DOCX",
   },
   {
     code: "Module 02",
@@ -25,6 +28,9 @@ const modules = [
     desc: "Giải mã Thông tư 85/2026/TT-BTC & 42/2026/TT-BCT, phân định trái cây tươi và nông sản sấy thăng hoa.",
     icon: "bi-file-earmark-ruled",
     image: "https://picsum.photos/id/1052/600/420",
+    downloadUrl: "/media/document/THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
+    fileName: "THAY ĐỔI QUY ĐỊNH VỀ HS CODE & CHÍNH SÁCH THUẾ THÁNG 09-2026.docx",
+    fileFormat: "DOCX",
   },
   {
     code: "Module 03",
@@ -33,6 +39,9 @@ const modules = [
     desc: "Hướng dẫn từng bước tra cứu điều kiện nhập khẩu của Bộ Nông nghiệp Úc và thủ tục khai báo Prior Notice của FDA Mỹ.",
     icon: "bi-globe2",
     image: "https://picsum.photos/id/1067/600/420",
+    downloadUrl: "/media/document/module-03-thuc-hanh-dang-ky-fda-bicon-sps.docx",
+    fileName: "module-03-thuc-hanh-dang-ky-fda-bicon-sps.docx",
+    fileFormat: "DOCX",
   },
   {
     code: "Module 04",
@@ -41,6 +50,9 @@ const modules = [
     desc: "Bộ câu lệnh thực chiến giúp chuyên viên XNK rà soát mâu thuẫn điều khoản Incoterms và phát hiện sai số chỉ trong vài giây.",
     icon: "bi-cpu-fill",
     image: "https://picsum.photos/id/1070/600/420",
+    downloadUrl: "/media/document/module-04-bo-25-prompts-ai-ra-soat-hop-dong.docx",
+    fileName: "module-04-bo-25-prompts-ai-ra-soat-hop-dong.docx",
+    fileFormat: "DOCX",
   },
   {
     code: "Module 05",
@@ -49,6 +61,9 @@ const modules = [
     desc: "Xây dựng nội dung kỹ thuật để các công cụ AI (ChatGPT, Perplexity) chủ động trích dẫn doanh nghiệp với người mua quốc tế.",
     icon: "bi-graph-up-arrow",
     image: "https://picsum.photos/id/1080/600/420",
+    downloadUrl: "/media/document/module-05-chien-luoc-story-answering-geo-ai.docx",
+    fileName: "module-05-chien-luoc-story-answering-geo-ai.docx",
+    fileFormat: "DOCX",
   },
   {
     code: "Module 06",
@@ -57,13 +72,16 @@ const modules = [
     desc: "Bóc tách trọn vẹn bộ hồ sơ thực tế của một lô hàng mẫu thành công từ vùng trồng ĐBSCL đến bàn ăn người tiêu dùng quốc tế.",
     icon: "bi-folder-check",
     image: "https://picsum.photos/id/1062/600/420",
+    downloadUrl: "/media/document/module-06-ho-so-xuat-khau-trai-cay-uc-canada.docx",
+    fileName: "module-06-ho-so-xuat-khau-trai-cay-uc-canada.docx",
+    fileFormat: "DOCX",
   },
 ];
 
 // Double list for smooth infinite continuous auto-sliding marquee
 const doubleModules = [...modules, ...modules];
 
-const pdfUrl = "/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf";
+const pdfUrl = "/media/document/AgTech_Drone_SupplyChain_Compliance_2026.pdf";
 ---
 
 <section class="section section--white training-gallery-section" id="tai-lieu-dao-tao">
@@ -95,8 +113,23 @@ const pdfUrl = "/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf";
               <h3 class="gallery-card__title">{m.title}</h3>
               <p class="gallery-card__desc">{m.desc}</p>
               <div class="gallery-card__action">
-                <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="link-view-white">
-                  Xem tóm tắt trong tài liệu &rarr;
+                <a
+                  href={encodeURI(m.downloadUrl)}
+                  download={m.fileName}
+                  class="btn-card-download"
+                  title={`Tải file tài liệu ${m.fileName}`}
+                >
+                  <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                  <span>Tải {m.code} ({m.fileFormat})</span>
+                </a>
+                <a
+                  href={pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-view-summary"
+                  title="Xem trong file PDF tổng hợp"
+                >
+                  <span>Xem PDF</span> <i class="bi bi-arrow-up-right"></i>
                 </a>
               </div>
             </div>
@@ -129,7 +162,7 @@ const pdfUrl = "/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf";
         <a href={pdfUrl} target="_blank" rel="noopener noreferrer" class="btn btn--outline-light btn--lg">
           <i class="bi bi-eye-fill"></i> Xem Trực Tiếp
         </a>
-        <a href={pdfUrl} download="mda-tai-lieu-dao-tao-mau-xnk-ai.pdf" class="btn btn--secondary btn--lg">
+        <a href={pdfUrl} download="AgTech_Drone_SupplyChain_Compliance_2026.pdf" class="btn btn--secondary btn--lg">
           <i class="bi bi-file-earmark-arrow-down-fill"></i> Tải Trọn Bộ (.PDF)
         </a>
       </div>
@@ -326,19 +359,49 @@ const pdfUrl = "/media/mda-tai-lieu-dao-tao-mau-xnk-ai.pdf";
     overflow: hidden;
   }
 
-  .link-view-white {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--secondary);
+  .gallery-card__action {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+
+  .btn-card-download {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: color var(--transition-fast), transform var(--transition-fast);
+    background: var(--secondary);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .link-view-white:hover {
+  .btn-card-download:hover {
+    background: var(--secondary-hover);
     color: #ffffff;
-    transform: translateX(4px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+  }
+
+  .link-view-summary {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .link-view-summary:hover {
+    color: #ffffff;
+    text-decoration: underline;
   }
 
   /* =====================================================================
