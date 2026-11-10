@@ -49,15 +49,15 @@ export const GET: APIRoute = async ({ site }) => {
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.7">
 ${allUrls
-  .map(
-    (item) => `  <url>
+      .map(
+        (item) => `  <url>
     <loc>${item.url}</loc>
     <lastmod>${item.lastmod}</lastmod>
     <changefreq>${item.changefreq}</changefreq>
     <priority>${item.priority}</priority>
   </url>`
-  )
-  .join('\n')}
+      )
+      .join('\n')}
 </urlset>`;
 
   return new Response(xml, {
