@@ -3,7 +3,7 @@ title: Dùng AI và No Code thay thế ERP đắt tiền cho SME xuất nhập k
 description: So sánh chi phí ERP và mô hình AI No-Code với n8n, AI OCR, Google Sheets giúp SME xuất nhập khẩu tự động hóa hóa đơn, công nợ và bảo mật Data Masking.
 publishDate: 2026-11-13
 category: Ứng Dụng AI Trong XNK
-headlinePhoto: MDA-Hub-AI-Driven.webp
+headlinePhoto: /media/MDA-Hub-AI-Driven.webp
 headlinePhotoAlt: "Hình ảnh minh họa cho bài viết: Dùng AI và No Code thay thế ERP đắt tiền cho SME xuất nhập khẩu"
 headlinePhotoCaption: Chuyên mục Ứng Dụng AI Trong XNK — MDA Agro-Export Hub
 author: Tuệ Phạm (Mr. Tuệ)
