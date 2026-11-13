@@ -54,7 +54,11 @@ Bên cạnh hồ sơ giấy tờ, DAFF không nhân nhượng đối với tiêu
 2. **Đối chiếu chéo trọn bộ chứng từ:** Đặt song song Hóa đơn thương mại (**Invoice**), Phiếu đóng gói (**Packing List**), Vận đơn (**B/L**), Giấy chứng nhận xuất xứ (**C/O**) và **Phyto** để rà khớp từng mã cơ sở, số seal và trọng lượng, đồng thời cập nhật [quy định HS Code và tuân thủ hải quan](/blog/cap-nhat-quy-dinh-hs-code-va-chinh-sach-thue-xnk).
 3. **Kiểm nghiệm độc lập khi cần thiết:** Thực hiện kiểm tra mẫu qua bên thứ ba như **SGS** hoặc **Eurofins** để xác nhận các chỉ tiêu hóa học và sinh học trước khi truyền tờ khai hải quan.
 
-| Tiêu chí quản lý của DAFF | Trái cây tươi (Fresh Fruit) | Trái cây chế biến (Processed Fruit) | |:--- |:--- |:--- | | Trọng tâm kiểm soát | Kiểm soát sinh vật gây hại (Pest control) | Xác minh quy trình chế biến (Process verification) | | Hồ sơ cốt lõi | Giấy kiểm dịch thực vật (PPD), mã cơ sở xử lý VHT/Chiếu xạ | Tuyên bố nhà sản xuất chứng minh ngưỡng nhiệt và độ ẩm | | Kiểm tra tại đích | Lấy mẫu của PPD và kiểm tra vật lý khi hàng cập cảng Úc | Thông quan nhanh hơn nếu chứng minh diệt sạch hạt giống, đất và vi sinh vật sống |
+| Tiêu chí quản lý của DAFF | Trái cây tươi (Fresh Fruit) | Trái cây chế biến (Processed Fruit) |
+| :--- | :--- | :--- |
+| Trọng tâm kiểm soát | Kiểm soát sinh vật gây hại (Pest control) | Xác minh quy trình chế biến (Process verification) |
+| Hồ sơ cốt lõi | Giấy kiểm dịch thực vật (PPD), mã cơ sở xử lý VHT/Chiếu xạ | Tuyên bố nhà sản xuất chứng minh ngưỡng nhiệt và độ ẩm |
+| Kiểm tra tại đích | Lấy mẫu của PPD và kiểm tra vật lý khi hàng cập cảng Úc | Thông quan nhanh hơn nếu chứng minh diệt sạch hạt giống, đất và vi sinh vật sống |
 
 ---
 

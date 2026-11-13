@@ -41,7 +41,11 @@ Vi phạm tuân thủ dữ liệu AI không còn là câu chuyện kỹ thuật 
 
 Nếu không đặt ranh giới rõ ràng, nhân sự sẽ tự suy đoán và thường xử lý sai cách. Ban Pháp Lý MDA khuyến nghị doanh nghiệp xuất khẩu nông sản áp dụng ngay khung phân loại dữ liệu ba tầng:
 
-| Phân tầng dữ liệu | Loại tài liệu điển hình | Quy tắc sử dụng AI bắt buộc | |:--- |:--- |:--- | | Tầng 1 Tuyệt mật | Giá vốn COGS, biên lợi nhuận, thông số sấy IQF, danh sách hợp tác xã riêng, NDA, chứng từ ngân hàng | Cấm tải lên bất kỳ công cụ AI công cộng nào trong mọi trường hợp | | Tầng 2 Bảo mật | Chuỗi email trao đổi với buyer, dự thảo hợp đồng, điều khoản B/L, sổ tay kiểm soát chất lượng QC | Chỉ được phép xử lý sau khi chạy qua quy trình 5 bước Data Masking | | Tầng 3 Công khai | Bài viết truyền thông đã xuất bản, bảng thông số sản phẩm công khai, quy định nhập khẩu và tra cứu mã HS chung | Được phép dùng tự do trên các công cụ AI để tăng tốc độ làm việc |
+| Phân tầng dữ liệu | Loại tài liệu điển hình | Quy tắc sử dụng AI bắt buộc |
+| :--- | :--- | :--- |
+| Tầng 1 Tuyệt mật | Giá vốn COGS, biên lợi nhuận, thông số sấy IQF, danh sách hợp tác xã riêng, NDA, chứng từ ngân hàng | Cấm tải lên bất kỳ công cụ AI công cộng nào trong mọi trường hợp |
+| Tầng 2 Bảo mật | Chuỗi email trao đổi với buyer, dự thảo hợp đồng, điều khoản B/L, sổ tay kiểm soát chất lượng QC | Chỉ được phép xử lý sau khi chạy qua quy trình 5 bước Data Masking |
+| Tầng 3 Công khai | Bài viết truyền thông đã xuất bản, bảng thông số sản phẩm công khai, quy định nhập khẩu và tra cứu mã HS chung | Được phép dùng tự do trên các công cụ AI để tăng tốc độ làm việc |
 
 Doanh nghiệp cũng có thể tham khảo thêm [quy chuẩn bảo mật AI và Data Masking](/blog/chuan-bi-du-lieu-bao-mat-ai-no-code-thay-erp-sme) khi tích hợp tự động hóa chứng từ cho đội ngũ vận hành.
 

@@ -47,7 +47,11 @@ Tại Việt Nam, các nhà máy chế biến sâu hàng đầu đã đầu tư 
 
 Ở chiều ngược lại, để vượt qua sự hoài nghi của các chuỗi bán lẻ Bắc Mỹ và châu Úc, các nhà máy chế biến nông sản Việt Nam phải chứng minh năng lực bằng hồ sơ pháp lý và kiểm toán minh bạch:
 
-| Trụ cột tuân thủ | Yêu cầu thực thi tại nhà máy | Giá trị pháp lý khi thông quan | |:--- |:--- |:--- | | **Minh bạch R&D** | Cung cấp đầy đủ Specification Sheets, cam kết pháp lý `0% Phụ gia - 0% Đường bổ sung`, sẵn sàng mở **Virtual Audits** từ xa | Giúp người mua xác thực quy trình sản xuất theo thời gian thực | | **Chứng nhận GFSI** | Duy trì vận hành quy mô lớn theo chuẩn **BRCGS** và **IFS Food** | Ngôn ngữ an toàn thực phẩm chung được các hệ thống siêu thị toàn cầu công nhận | | **Hồ sơ thị trường đích** | Đầy đủ mã **FDA**, chứng nhận **Kosher / Halal** và tuân thủ [chứng từ BICON Úc](/blog/chung-tu-tuan-thu-bicon-va-kiem-dich-sinh-hoc-xuat-khau-uc) | Đảm bảo mỗi lô hàng đều vững chắc về mặt pháp lý ngay tại cảng nhập khẩu |
+| Trụ cột tuân thủ | Yêu cầu thực thi tại nhà máy | Giá trị pháp lý khi thông quan |
+| :--- | :--- | :--- |
+| **Minh bạch R&D** | Cung cấp đầy đủ Specification Sheets, cam kết pháp lý `0% Phụ gia - 0% Đường bổ sung`, sẵn sàng mở **Virtual Audits** từ xa | Giúp người mua xác thực quy trình sản xuất theo thời gian thực |
+| **Chứng nhận GFSI** | Duy trì vận hành quy mô lớn theo chuẩn **BRCGS** và **IFS Food** | Ngôn ngữ an toàn thực phẩm chung được các hệ thống siêu thị toàn cầu công nhận |
+| **Hồ sơ thị trường đích** | Đầy đủ mã **FDA**, chứng nhận **Kosher / Halal** và tuân thủ [chứng từ BICON Úc](/blog/chung-tu-tuan-thu-bicon-va-kiem-dich-sinh-hoc-xuat-khau-uc) | Đảm bảo mỗi lô hàng đều vững chắc về mặt pháp lý ngay tại cảng nhập khẩu |
 
 Khi hạ tầng sấy thăng hoa hiện đại kết hợp cùng hương vị trái cây nhiệt đới đặc trưng của Việt Nam và hồ sơ tuân thủ chuẩn mực, Clean-Label không còn là rào cản kỹ thuật mà trở thành lợi thế cạnh tranh bền vững cho doanh nghiệp xuất khẩu.
 

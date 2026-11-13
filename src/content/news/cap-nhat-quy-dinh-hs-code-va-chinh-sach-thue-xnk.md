@@ -24,7 +24,11 @@ featured: true
 
 Tháng 9/2026 đánh dấu bước ngoặt lớn đối với các doanh nghiệp xuất nhập khẩu tại Việt Nam khi ba thông tư quan trọng chính thức có hiệu lực liên tiếp. Theo tổng hợp từ [MDA Agro-Export Hub](https://mekongdeltaagri.com/argo-export/hs-code-exim-trade-compliance/), các doanh nghiệp cần nắm chắc mốc thời gian và phạm vi tác động của từng văn bản:
 
-| Văn bản pháp quy | Ngày hiệu lực | Nội dung thay đổi cốt lõi | Tác động thực tế tới doanh nghiệp | |:--- |:--- |:--- |:--- | | **Thông tư 85/2026/TT-BTC** | 15/09/2026 | Cải tổ toàn diện quy trình phân loại, phân tích hàng hóa XNK và chuẩn hóa cơ sở dữ liệu tham chiếu mới | Tác động trực tiếp đến mã HS Code, biểu thuế và kiểm soát thương mại; phá bỏ thói quen sao chép mã HS cũ | | **Thông tư 42/2026/TT-BCT** | 12/09/2026 | Bộ Công Thương ban hành danh mục kiểm soát chi tiết đối với hàng hóa lưỡng dụng (Dual-use goods) | Tăng ma sát kiểm tra với thiết bị công nghệ, máy móc công nghiệp và linh kiện điện tử | | **Thông tư 110/2026/TT-BTC** | 12/09/2026 | Bãi bỏ 22 Thông tư và 3 Quyết định cũ trong lĩnh vực thuế | Buộc doanh nghiệp kiểm toán lại toàn bộ bảng tham chiếu thuế, SOP nội bộ và trích dẫn pháp lý trên ERP |
+| Văn bản pháp quy | Ngày hiệu lực | Nội dung thay đổi cốt lõi | Tác động thực tế tới doanh nghiệp |
+| :--- | :--- | :--- | :--- |
+| **Thông tư 85/2026/TT-BTC** | 15/09/2026 | Cải tổ toàn diện quy trình phân loại, phân tích hàng hóa XNK và chuẩn hóa cơ sở dữ liệu tham chiếu mới | Tác động trực tiếp đến mã HS Code, biểu thuế và kiểm soát thương mại; phá bỏ thói quen sao chép mã HS cũ |
+| **Thông tư 42/2026/TT-BCT** | 12/09/2026 | Bộ Công Thương ban hành danh mục kiểm soát chi tiết đối với hàng hóa lưỡng dụng (Dual-use goods) | Tăng ma sát kiểm tra với thiết bị công nghệ, máy móc công nghiệp và linh kiện điện tử |
+| **Thông tư 110/2026/TT-BTC** | 12/09/2026 | Bãi bỏ 22 Thông tư và 3 Quyết định cũ trong lĩnh vực thuế | Buộc doanh nghiệp kiểm toán lại toàn bộ bảng tham chiếu thuế, SOP nội bộ và trích dẫn pháp lý trên ERP |
 
 Nếu doanh nghiệp vẫn đang vận hành theo lối mòn tra cứu thủ công, nguy cơ vướng kiểm tra sau thông quan hoặc bị giữ hàng tại cảng sẽ tăng lên đáng kể.
 
