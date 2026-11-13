@@ -1,13 +1,18 @@
 import { defineCollection, z } from 'astro:content';
 
+// Chuẩn hóa trường ngày (YAML không ngoặc kép -> Date) về chuỗi "YYYY-MM-DD"
+const dateStringSchema = z
+  .union([z.string(), z.date()])
+  .transform((val) => (val instanceof Date ? val.toISOString().slice(0, 10) : val));
+
 // 1. Collection Tin Tức (/tin-tuc/[slug]) -> Headline Photo + Content (Không yêu cầu Category)
 const newsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    publishDate: z.string(),
-    updatedDate: z.string().optional(),
+    publishDate: dateStringSchema,
+    updatedDate: dateStringSchema.optional(),
     headlinePhoto: z.string(),
     headlinePhotoAlt: z.string(),
     headlinePhotoCaption: z.string().optional(),
@@ -22,8 +27,8 @@ const blogCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    publishDate: z.string(),
-    updatedDate: z.string().optional(),
+    publishDate: dateStringSchema,
+    updatedDate: dateStringSchema.optional(),
     category: z.enum([
       'Chứng Từ & Pháp Lý XNK',
       'Đào Tạo XNK Thực Chiến',
