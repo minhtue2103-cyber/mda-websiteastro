@@ -351,12 +351,99 @@ h4 {
 }
 
 .prose blockquote {
-  border-left: 4px solid var(--primary-light);
-  padding: 16px 24px;
-  margin: 24px 0;
+  border-left: 5px solid var(--primary-dark);
+  padding: 22px 28px;
+  margin: 28px 0;
+  background: linear-gradient(135deg, var(--primary-50) 0%, #ffffff 100%);
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 4px 16px rgba(45, 94, 45, 0.08);
+  font-style: normal;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--primary-deep);
+}
+
+.prose blockquote p {
+  margin-bottom: 0.9rem;
+}
+
+.prose blockquote p:first-child {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-deep);
+  margin-bottom: 0.75rem;
+}
+
+.prose blockquote p:last-child,
+.prose blockquote ul:last-child,
+.prose blockquote ol:last-child {
+  margin-bottom: 0;
+}
+
+.prose blockquote ul,
+.prose blockquote ol {
+  font-size: 1.03rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Tables inside Prose */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.96rem;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(45, 94, 45, 0.06);
+}
+
+.prose thead {
+  background-color: var(--primary-deep);
+  color: #ffffff;
+}
+
+.prose th {
+  padding: 14px 16px;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.prose td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+.prose tbody tr:hover {
   background-color: var(--primary-50);
-  border-radius: 0 8px 8px 0;
-  font-style: italic;
+  transition: background-color var(--transition-fast);
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Breadcrumbs */
